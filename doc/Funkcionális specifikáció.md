@@ -11,13 +11,23 @@ A játék elindításakor a felhasználó a főmenüt látja először. Innen go
 - Beállítások: A program konfigurálására alkalmas oldalra visz.
 - Kilépés: Bezárja a programot.
 
-##### 2.2 Új játék
+##### 2.2 Új játék menüpont
 Ebben a menüpontban a játékos kiválaszthatja, milyen játékot szeretne indítani, majd továbbnavigálhat a játék oldalra. Alternatívaként visszamehet a főmenübe, ha nem szeretne elindítani egy játékot.
 
 Az új játék tulajdonságait három, egymástól függetlenül állítható listából lehet kiválasztani:
 - Játékmód: kiválasztható, hogy milyen típusú sudoku játék induljon.
 - Nehézség: megadja, hogy mekkora kihívást jelentő pályát generáljon a játék.
 - Játékosszám: eldönthető, hogy egyedül, vagy párharcban szeretnénk játszani.
+
+##### 2.3 Játék
+A játék során a felhasználó kap egy sudoku táblát, melyet a játék szabályainak megfelelően ki kell töltenie. Minden kitöltött elemnél a program opcionálisan ellenőrzi, hogy a cellába a megfelelő szám került-e, jelezve hiba esetén.
+
+A kitöltés módszere:
+- Navigálás a cellák között a nyílbillentyűk (<kbd>&uarr;</kbd>, <kbd>&larr;</kbd>, <kbd>&darr;</kbd>, <kbd>&rarr;</kbd>), vagy a <kbd>W</kbd>, <kbd>A</kbd>, <kbd>S</kbd>, <kbd>D</kbd> billentyűk segítségével. Amennyiben az adott irányba már nincs több cella, a kiválasztás a tábla másik felére ugrik.
+- Számok bevitele az <kbd>1</kbd>-<kbd>9</kbd> billentyűk vagy numpad <kbd>1</kbd>-<kbd>9</kbd> billentyűk segítségével.
+- A kitöltés és a javaslat mód közötti váltás az <kbd>S</kbd> (mint "suggestion") billentyűvel, vagy az erre való gombbal.
+
+A játék befejezésekor eredményünket regisztrálhatjuk a ranglétrára, és új játékot kezdhetünk azonos, vagy más beállításokkal, esetleg visszatérhetünk a főmenübe.
 
 ### 3. Jelenlegi üzleti folyamatok modellje
 
