@@ -35,7 +35,7 @@ A kívánt játéktípust és -nehézséget, valamint az egy- vagy többjátéko
 Mint ahogy azt a következő folyamatábrán is lehet látni, a játékprogram nélküli, fizikai alapon való Sudoku-zás menete elég bonyolult tud lenni.
 
 ![Alt text](./resource/kovspec_jelenlegi_uzleti.svg)
-Nyílvánvalóan a legegyszerűbb eset az, amikor csak magunkhoz tudjuk kapni az újságot és megoldjunk egy feladványt.
+Nyílvánvalóan a legegyszerűbb eset az, amikor csak magunkhoz tudjuk kapni az újságot és megoldunk egy feladványt.
 Ez nem mindig van így sajnos. Ennél bonyolultabb helyzet alakul ki akkor, ha nincs épp újságunk, vagy van, de épp nincs megfelelő Sudoku az újságban. Minden ehhez hasonló alkalommal le kell menni a boltba, és költekezni.   
-Ha valaki időre, mások ellen szeretne játszani, akkor a  barátokkal való játék elég kényelmetlen tud lenni, és több szervezést igényel.
+Ha valaki időre, mások ellen szeretne játszani, akkor a  barátokkal való játék is elég kényelmetlen tud lenni, és több szervezést igényelhet.
 ### 5. Igényelt üzleti folyamatok modellje
