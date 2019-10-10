@@ -1,0 +1,246 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<definitions xmlns="http://www.omg.org/spec/BPMN/20100524/MODEL" xmlns:bpmndi="http://www.omg.org/spec/BPMN/20100524/DI" xmlns:omgdi="http://www.omg.org/spec/DD/20100524/DI" xmlns:omgdc="http://www.omg.org/spec/DD/20100524/DC" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" id="sid-38422fae-e03e-43a3-bef4-bd33b32041b2" targetNamespace="http://bpmn.io/bpmn" exporter="bpmn-js (https://demo.bpmn.io)" exporterVersion="5.0.4">
+  <process id="Process_1" isExecutable="false">
+    <startEvent id="StartEvent_0qbjejr" name="Kezdőállapot">
+      <outgoing>SequenceFlow_0iyjcqr</outgoing>
+    </startEvent>
+    <exclusiveGateway id="ExclusiveGateway_1r4223j" name="Van-e kéznél újság, amiben van kitöltetlen sudoku?">
+      <incoming>SequenceFlow_0iyjcqr</incoming>
+      <incoming>SequenceFlow_19qi8qp</incoming>
+      <outgoing>SequenceFlow_16x27bk</outgoing>
+      <outgoing>SequenceFlow_17f4erm</outgoing>
+    </exclusiveGateway>
+    <sequenceFlow id="SequenceFlow_0iyjcqr" sourceRef="StartEvent_0qbjejr" targetRef="ExclusiveGateway_1r4223j" />
+    <exclusiveGateway id="ExclusiveGateway_0n3s7u7" name="Megfelelő nehézségű a sudoku?">
+      <incoming>SequenceFlow_16x27bk</incoming>
+      <outgoing>SequenceFlow_0sgcilo</outgoing>
+      <outgoing>SequenceFlow_09fvmoz</outgoing>
+    </exclusiveGateway>
+    <sequenceFlow id="SequenceFlow_16x27bk" name="Van" sourceRef="ExclusiveGateway_1r4223j" targetRef="ExclusiveGateway_0n3s7u7" />
+    <task id="Task_037javk" name="Megoldani egy feladványt">
+      <incoming>SequenceFlow_1d7wl7j</incoming>
+      <incoming>SequenceFlow_0r88e44</incoming>
+      <outgoing>SequenceFlow_121es0u</outgoing>
+    </task>
+    <sequenceFlow id="SequenceFlow_0sgcilo" name="Igen" sourceRef="ExclusiveGateway_0n3s7u7" targetRef="ExclusiveGateway_1shgnpn" />
+    <exclusiveGateway id="ExclusiveGateway_1j0q98c" name="További feladványok megoldása?">
+      <incoming>SequenceFlow_121es0u</incoming>
+      <outgoing>SequenceFlow_19qi8qp</outgoing>
+      <outgoing>SequenceFlow_1x9p5m3</outgoing>
+    </exclusiveGateway>
+    <sequenceFlow id="SequenceFlow_121es0u" sourceRef="Task_037javk" targetRef="ExclusiveGateway_1j0q98c" />
+    <sequenceFlow id="SequenceFlow_19qi8qp" name="Igen" sourceRef="ExclusiveGateway_1j0q98c" targetRef="ExclusiveGateway_1r4223j" />
+    <endEvent id="EndEvent_0hzqpmi" name="Vége">
+      <incoming>SequenceFlow_1x9p5m3</incoming>
+    </endEvent>
+    <sequenceFlow id="SequenceFlow_1x9p5m3" name="Igen" sourceRef="ExclusiveGateway_1j0q98c" targetRef="EndEvent_0hzqpmi" />
+    <task id="Task_116sn4a" name="Boltba lemenni">
+      <incoming>SequenceFlow_09fvmoz</incoming>
+      <incoming>SequenceFlow_17f4erm</incoming>
+      <outgoing>SequenceFlow_11r9962</outgoing>
+    </task>
+    <sequenceFlow id="SequenceFlow_11r9962" sourceRef="Task_116sn4a" targetRef="Task_19jy1yu" />
+    <sequenceFlow id="SequenceFlow_17f4erm" name="Nincs" sourceRef="ExclusiveGateway_1r4223j" targetRef="Task_116sn4a" />
+    <sequenceFlow id="SequenceFlow_09fvmoz" name="Nem" sourceRef="ExclusiveGateway_0n3s7u7" targetRef="Task_116sn4a" />
+    <task id="Task_19jy1yu" name="Kiválasztani egy megfelelő sudoku-t tartalmazó újságot">
+      <incoming>SequenceFlow_11r9962</incoming>
+      <outgoing>SequenceFlow_0wqwjbn</outgoing>
+    </task>
+    <task id="Task_1ajfu5t" name="KIFIZETNI">
+      <incoming>SequenceFlow_0wqwjbn</incoming>
+      <outgoing>SequenceFlow_1a24zmd</outgoing>
+    </task>
+    <task id="Task_02mubhb" name="Hazamenni">
+      <incoming>SequenceFlow_1a24zmd</incoming>
+      <outgoing>SequenceFlow_07s34wc</outgoing>
+    </task>
+    <sequenceFlow id="SequenceFlow_1a24zmd" sourceRef="Task_1ajfu5t" targetRef="Task_02mubhb" />
+    <sequenceFlow id="SequenceFlow_0wqwjbn" sourceRef="Task_19jy1yu" targetRef="Task_1ajfu5t" />
+    <sequenceFlow id="SequenceFlow_07s34wc" sourceRef="Task_02mubhb" targetRef="ExclusiveGateway_1shgnpn" />
+    <exclusiveGateway id="ExclusiveGateway_1shgnpn" name="Többszemélyes játék?">
+      <incoming>SequenceFlow_0sgcilo</incoming>
+      <incoming>SequenceFlow_07s34wc</incoming>
+      <outgoing>SequenceFlow_1d7wl7j</outgoing>
+      <outgoing>SequenceFlow_1p7zahv</outgoing>
+    </exclusiveGateway>
+    <sequenceFlow id="SequenceFlow_1d7wl7j" name="Nem" sourceRef="ExclusiveGateway_1shgnpn" targetRef="Task_037javk" />
+    <task id="Task_1k4hp1u" name="Áthívni a barátokat">
+      <incoming>SequenceFlow_1p7zahv</incoming>
+      <outgoing>SequenceFlow_0t3syi3</outgoing>
+    </task>
+    <task id="Task_1nkr0fn" name="Lefénymásolni a feladványokat">
+      <incoming>SequenceFlow_0t3syi3</incoming>
+      <outgoing>SequenceFlow_0viau8n</outgoing>
+    </task>
+    <sequenceFlow id="SequenceFlow_0t3syi3" sourceRef="Task_1k4hp1u" targetRef="Task_1nkr0fn" />
+    <intermediateThrowEvent id="IntermediateThrowEvent_037lvpx" name="Barátok érkezésére való várakozás">
+      <incoming>SequenceFlow_0viau8n</incoming>
+      <outgoing>SequenceFlow_0r88e44</outgoing>
+    </intermediateThrowEvent>
+    <sequenceFlow id="SequenceFlow_0viau8n" sourceRef="Task_1nkr0fn" targetRef="IntermediateThrowEvent_037lvpx" />
+    <sequenceFlow id="SequenceFlow_0r88e44" sourceRef="IntermediateThrowEvent_037lvpx" targetRef="Task_037javk" />
+    <sequenceFlow id="SequenceFlow_1p7zahv" name="Igen" sourceRef="ExclusiveGateway_1shgnpn" targetRef="Task_1k4hp1u" />
+  </process>
+  <bpmndi:BPMNDiagram id="BpmnDiagram_1">
+    <bpmndi:BPMNPlane id="BpmnPlane_1" bpmnElement="Process_1">
+      <bpmndi:BPMNShape id="StartEvent_0qbjejr_di" bpmnElement="StartEvent_0qbjejr">
+        <omgdc:Bounds x="182" y="182" width="36" height="36" />
+        <bpmndi:BPMNLabel>
+          <omgdc:Bounds x="169" y="225" width="62" height="14" />
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="ExclusiveGateway_1r4223j_di" bpmnElement="ExclusiveGateway_1r4223j" isMarkerVisible="true">
+        <omgdc:Bounds x="315" y="175" width="50" height="50" />
+        <bpmndi:BPMNLabel>
+          <omgdc:Bounds x="236" y="133" width="88" height="53" />
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNEdge id="SequenceFlow_0iyjcqr_di" bpmnElement="SequenceFlow_0iyjcqr">
+        <omgdi:waypoint x="218" y="200" />
+        <omgdi:waypoint x="315" y="200" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNShape id="ExclusiveGateway_0n3s7u7_di" bpmnElement="ExclusiveGateway_0n3s7u7" isMarkerVisible="true">
+        <omgdc:Bounds x="405" y="175" width="50" height="50" />
+        <bpmndi:BPMNLabel>
+          <omgdc:Bounds x="398" y="130" width="63" height="40" />
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNEdge id="SequenceFlow_16x27bk_di" bpmnElement="SequenceFlow_16x27bk">
+        <omgdi:waypoint x="365" y="200" />
+        <omgdi:waypoint x="405" y="200" />
+        <bpmndi:BPMNLabel>
+          <omgdc:Bounds x="373" y="182" width="18" height="14" />
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNShape id="Task_037javk_di" bpmnElement="Task_037javk">
+        <omgdc:Bounds x="1150" y="160" width="100" height="80" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNEdge id="SequenceFlow_0sgcilo_di" bpmnElement="SequenceFlow_0sgcilo">
+        <omgdi:waypoint x="455" y="200" />
+        <omgdi:waypoint x="815" y="200" />
+        <bpmndi:BPMNLabel>
+          <omgdc:Bounds x="658" y="182" width="21" height="14" />
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNShape id="ExclusiveGateway_1j0q98c_di" bpmnElement="ExclusiveGateway_1j0q98c" isMarkerVisible="true">
+        <omgdc:Bounds x="1305" y="175" width="50" height="50" />
+        <bpmndi:BPMNLabel>
+          <omgdc:Bounds x="1300" y="230" width="59" height="40" />
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNEdge id="SequenceFlow_121es0u_di" bpmnElement="SequenceFlow_121es0u">
+        <omgdi:waypoint x="1250" y="200" />
+        <omgdi:waypoint x="1305" y="200" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="SequenceFlow_19qi8qp_di" bpmnElement="SequenceFlow_19qi8qp">
+        <omgdi:waypoint x="1330" y="175" />
+        <omgdi:waypoint x="1330" y="100" />
+        <omgdi:waypoint x="340" y="100" />
+        <omgdi:waypoint x="340" y="175" />
+        <bpmndi:BPMNLabel>
+          <omgdc:Bounds x="789" y="82" width="21" height="14" />
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNShape id="EndEvent_0hzqpmi_di" bpmnElement="EndEvent_0hzqpmi">
+        <omgdc:Bounds x="1382" y="182" width="36" height="36" />
+        <bpmndi:BPMNLabel>
+          <omgdc:Bounds x="1388" y="225" width="25" height="14" />
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNEdge id="SequenceFlow_1x9p5m3_di" bpmnElement="SequenceFlow_1x9p5m3">
+        <omgdi:waypoint x="1355" y="200" />
+        <omgdi:waypoint x="1382" y="200" />
+        <bpmndi:BPMNLabel>
+          <omgdc:Bounds x="1358" y="182" width="21" height="14" />
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNShape id="Task_116sn4a_di" bpmnElement="Task_116sn4a">
+        <omgdc:Bounds x="400" y="270" width="100" height="80" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNEdge id="SequenceFlow_11r9962_di" bpmnElement="SequenceFlow_11r9962">
+        <omgdi:waypoint x="500" y="310" />
+        <omgdi:waypoint x="530" y="310" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="SequenceFlow_17f4erm_di" bpmnElement="SequenceFlow_17f4erm">
+        <omgdi:waypoint x="340" y="225" />
+        <omgdi:waypoint x="340" y="290" />
+        <omgdi:waypoint x="400" y="290" />
+        <bpmndi:BPMNLabel>
+          <omgdc:Bounds x="356" y="273" width="28" height="14" />
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="SequenceFlow_09fvmoz_di" bpmnElement="SequenceFlow_09fvmoz">
+        <omgdi:waypoint x="430" y="225" />
+        <omgdi:waypoint x="430" y="270" />
+        <bpmndi:BPMNLabel>
+          <omgdc:Bounds x="438" y="226" width="23" height="14" />
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNShape id="Task_19jy1yu_di" bpmnElement="Task_19jy1yu">
+        <omgdc:Bounds x="530" y="270" width="100" height="80" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Task_1ajfu5t_di" bpmnElement="Task_1ajfu5t">
+        <omgdc:Bounds x="660" y="270" width="100" height="80" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Task_02mubhb_di" bpmnElement="Task_02mubhb">
+        <omgdc:Bounds x="790" y="270" width="100" height="80" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNEdge id="SequenceFlow_1a24zmd_di" bpmnElement="SequenceFlow_1a24zmd">
+        <omgdi:waypoint x="760" y="310" />
+        <omgdi:waypoint x="790" y="310" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="SequenceFlow_0wqwjbn_di" bpmnElement="SequenceFlow_0wqwjbn">
+        <omgdi:waypoint x="630" y="310" />
+        <omgdi:waypoint x="660" y="310" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="SequenceFlow_07s34wc_di" bpmnElement="SequenceFlow_07s34wc">
+        <omgdi:waypoint x="840" y="270" />
+        <omgdi:waypoint x="840" y="225" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNShape id="ExclusiveGateway_1shgnpn_di" bpmnElement="ExclusiveGateway_1shgnpn" isMarkerVisible="true">
+        <omgdc:Bounds x="815" y="175" width="50" height="50" />
+        <bpmndi:BPMNLabel>
+          <omgdc:Bounds x="801" y="145" width="78" height="27" />
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNEdge id="SequenceFlow_1d7wl7j_di" bpmnElement="SequenceFlow_1d7wl7j">
+        <omgdi:waypoint x="865" y="200" />
+        <omgdi:waypoint x="1150" y="200" />
+        <bpmndi:BPMNLabel>
+          <omgdc:Bounds x="996" y="182" width="23" height="14" />
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNShape id="Task_1k4hp1u_di" bpmnElement="Task_1k4hp1u">
+        <omgdc:Bounds x="920" y="270" width="100" height="80" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Task_1nkr0fn_di" bpmnElement="Task_1nkr0fn">
+        <omgdc:Bounds x="1050" y="270" width="100" height="80" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNEdge id="SequenceFlow_0t3syi3_di" bpmnElement="SequenceFlow_0t3syi3">
+        <omgdi:waypoint x="1020" y="310" />
+        <omgdi:waypoint x="1050" y="310" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNShape id="IntermediateThrowEvent_037lvpx_di" bpmnElement="IntermediateThrowEvent_037lvpx">
+        <omgdc:Bounds x="1192" y="292" width="36" height="36" />
+        <bpmndi:BPMNLabel>
+          <omgdc:Bounds x="1171" y="335" width="79" height="40" />
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNEdge id="SequenceFlow_0viau8n_di" bpmnElement="SequenceFlow_0viau8n">
+        <omgdi:waypoint x="1150" y="310" />
+        <omgdi:waypoint x="1192" y="310" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="SequenceFlow_0r88e44_di" bpmnElement="SequenceFlow_0r88e44">
+        <omgdi:waypoint x="1210" y="292" />
+        <omgdi:waypoint x="1210" y="240" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="SequenceFlow_1p7zahv_di" bpmnElement="SequenceFlow_1p7zahv">
+        <omgdi:waypoint x="853" y="212" />
+        <omgdi:waypoint x="960" y="270" />
+        <bpmndi:BPMNLabel>
+          <omgdc:Bounds x="911" y="230" width="21" height="14" />
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNEdge>
+    </bpmndi:BPMNPlane>
+  </bpmndi:BPMNDiagram>
+</definitions>
