@@ -30,12 +30,23 @@ A kitöltés módszere:
 A játék befejezésekor eredményünket regisztrálhatjuk a ranglétrára, és új játékot kezdhetünk azonos, vagy más beállításokkal, esetleg visszatérhetünk a főmenübe.
 
 ##### 2.4 Statisztikák és ranglétra
-
 Ebben a menüpontban megtekinthetjük, hogy profilunk milyen játékadatokkal rendelkezik, és hogyan teljesít a többi játékossal szemben.
 
 Első kategóriába olyan adatok tartoznak, mint a játékban töltött összidő, a lejátszott és a sikeresen kitöltött játékok száma, a megnyert párbajok száma, valamint ugyanezen adatok sudoku típusonként lebontva.
 
 A második kategória egyszerű listákból áll, ahol láthatjuk, melyik játékos hanyadik helyen helyezkedik el a listában. Időtartamonként létezik egy-egy ilyen lista, például a napi, heti, havi, éves, és örök ranglétra. A ranglétrában időtartam mellett szűrhetünk sudoku típusra, vagy játékmódra is.
+
+##### 2.6 Beállítások
+Itt a felhasználó megtekintheti és módosíthatja a program beállításait, valamint kezelheti a fiókját.
+
+A beállítások a kezdeti verzióban a következőek:
+- ellenőrzés ki-/bekapcsolása: megadja, hogy a játék során egy adott mező kitöltésekor annak tartalmát leellenőrizze-e a program
+- hang ki-/bekapcsolása: megadja, hogy a kiválasztott mező megváltozásakor legyen-e hanghatás
+  
+A felhasználókezelése a kezdeti verzióban a következő műveletekkel rendelkezik:
+- ki- és bejelentkezés
+- felhasználó törlése
+- felhasználó megjelenítési nevének módosítása
 
 ### 3. Jelenlegi üzleti folyamatok modellje
 
