@@ -29,6 +29,14 @@ A kitöltés módszere:
 
 A játék befejezésekor eredményünket regisztrálhatjuk a ranglétrára, és új játékot kezdhetünk azonos, vagy más beállításokkal, esetleg visszatérhetünk a főmenübe.
 
+##### 2.4 Statisztikák és ranglétra
+
+Ebben a menüpontban megtekinthetjük, hogy profilunk milyen játékadatokkal rendelkezik, és hogyan teljesít a többi játékossal szemben.
+
+Első kategóriába olyan adatok tartoznak, mint a játékban töltött összidő, a lejátszott és a sikeresen kitöltött játékok száma, a megnyert párbajok száma, valamint ugyanezen adatok sudoku típusonként lebontva.
+
+A második kategória egyszerű listákból áll, ahol láthatjuk, melyik játékos hanyadik helyen helyezkedik el a listában. Időtartamonként létezik egy-egy ilyen lista, például a napi, heti, havi, éves, és örök ranglétra. A ranglétrában időtartam mellett szűrhetünk sudoku típusra, vagy játékmódra is.
+
 ### 3. Jelenlegi üzleti folyamatok modellje
 
 ### 4. Igényelt üzleti folyamatok modellje
