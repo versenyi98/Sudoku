@@ -12,29 +12,29 @@ A játék elindításakor a felhasználó a főmenüt látja először. Innen go
 - Kilépés: Bezárja a programot.
 
 ##### 2.2 Új játék menüpont
-Ebben a menüpontban a játékos kiválaszthatja, milyen játékot szeretne indítani, majd továbbnavigálhat a játék oldalra. Alternatívaként visszamehet a főmenübe, ha nem szeretne elindítani egy játékot.
+Ebben a menüpontban a játékos kiválaszthatja, milyen játékot szeretne indítani, majd továbbnavigálhat a játék oldalra. Alternatívaként visszamehet a főmenübe, ha mégsem szeretne játékot indítani.
 
 Az új játék tulajdonságait három, egymástól függetlenül állítható listából lehet kiválasztani:
-- Játékmód: kiválasztható, hogy milyen típusú sudoku játék induljon.
+- Játék típus: kiválasztható, hogy milyen típusú sudoku játék induljon.
 - Nehézség: megadja, hogy mekkora kihívást jelentő pályát generáljon a játék.
-- Játékosszám: eldönthető, hogy egyedül, vagy párharcban szeretnénk játszani.
+- Játékmód: eldönthető, hogy egyedül, vagy párharcban szeretnénk játszani.
 
 ##### 2.3 Játék
-A játék során a felhasználó kap egy sudoku táblát, melyet a játék szabályainak megfelelően ki kell töltenie. Minden kitöltött elemnél a program opcionálisan ellenőrzi, hogy a cellába a megfelelő szám került-e, jelezve hiba esetén.
+A felhasználó kap egy sudoku táblát, melyet a játék szabályainak megfelelően ki kell töltenie. Minden kitöltött elemnél a program opcionálisan ellenőrzi, hogy a cellába a megfelelő szám került-e, jelezve hiba esetén.
 
 A kitöltés módszere:
-- Navigálás a cellák között a nyílbillentyűk (<kbd>&uarr;</kbd>, <kbd>&larr;</kbd>, <kbd>&darr;</kbd>, <kbd>&rarr;</kbd>), vagy a <kbd>W</kbd>, <kbd>A</kbd>, <kbd>S</kbd>, <kbd>D</kbd> billentyűk segítségével. Amennyiben az adott irányba már nincs több cella, a kiválasztás a tábla másik felére ugrik.
+- Navigálás a cellák között a nyílbillentyűk (<kbd>&uarr;</kbd>, <kbd>&larr;</kbd>, <kbd>&darr;</kbd>, <kbd>&rarr;</kbd>), vagy a <kbd>W</kbd>, <kbd>A</kbd>, <kbd>S</kbd>, <kbd>D</kbd> billentyűk segítségével. Amennyiben az adott irányban már nincs több cella, a fókusz a tábla ellenkező felére ugrik.
 - Számok bevitele az <kbd>1</kbd>-<kbd>9</kbd> billentyűk vagy numpad <kbd>1</kbd>-<kbd>9</kbd> billentyűk segítségével.
 - A kitöltés és a javaslat mód közötti váltás az <kbd>S</kbd> (mint "suggestion") billentyűvel, vagy az erre való gombbal.
 
-A játék befejezésekor eredményünket regisztrálhatjuk a ranglétrára, és új játékot kezdhetünk azonos, vagy más beállításokkal, esetleg visszatérhetünk a főmenübe.
+A játék befejezésekor eredményünk regisztrálódik a ranglétrára, és új játékot kezdhetünk azonos, vagy más beállításokkal, esetleg visszatérhetünk a főmenübe.
 
 ##### 2.4 Statisztikák és ranglétra
 Ebben a menüpontban megtekinthetjük, hogy profilunk milyen játékadatokkal rendelkezik, és hogyan teljesít a többi játékossal szemben. Amennyiben nem vagyunk bejelentkezve, vagy nincs internetkapcsolatunk, ez a menü nem érhető el.
 
-Első kategóriába olyan adatok tartoznak, mint a játékban töltött összidő, a lejátszott és a sikeresen kitöltött játékok száma, a megnyert párbajok száma, valamint ugyanezen adatok sudoku típusonként lebontva.
+Az első kategóriába olyan adatok tartoznak, mint a játékban töltött összidő, a lejátszott és a sikeresen kitöltött játékok száma, a megnyert párbajok száma, valamint ugyanezen adatok sudoku típusonként lebontva.
 
-A második kategória egyszerű listákból áll, ahol láthatjuk, melyik játékos hanyadik helyen helyezkedik el a listában. Időtartamonként létezik egy-egy ilyen lista, például a napi, heti, havi, éves, és örök ranglétra. A ranglétrában időtartam mellett szűrhetünk sudoku típusra, vagy játékmódra is. A sorrend megállapításának alapja a megnyert játékok időtartama és a sikeresen teljesített valamint feladott játékok aránya.
+A második kategória egyszerű listákból áll, ahol láthatjuk, melyik játékos hanyadik helyen helyezkedik el a listában. A listák időtartamonként (napi, heti, havi, éves, és örök ranglétra), valamint sudoku típusonként vannak lebontva. Opcionálisan szűrhetünk játékmódra is, vagyis hogy egyedül, vagy párban játszottunk. A sorrend megállapításának alapja a megnyert játékok időtartama, a sikeresen teljesített valamint a feladott játékok aránya, és a nehézségi szint szorzója.
 
 ##### 2.6 Beállítások
 Itt a felhasználó megtekintheti és módosíthatja a program beállításait, valamint kezelheti a fiókját.
@@ -43,7 +43,7 @@ A beállítások a kezdeti verzióban a következőek:
 - ellenőrzés ki-/bekapcsolása: megadja, hogy a játék során egy adott mező kitöltésekor annak tartalmát leellenőrizze-e a program
 - hang ki-/bekapcsolása: megadja, hogy a kiválasztott mező megváltozásakor legyen-e hanghatás
   
-A felhasználókezelése a kezdeti verzióban a következő műveletekkel rendelkezik:
+A felhasználó kezelése a kezdeti verzióban a következő műveletekkel rendelkezik:
 - ki- és bejelentkezés
 - felhasználó törlése
 - felhasználó megjelenítési nevének módosítása
