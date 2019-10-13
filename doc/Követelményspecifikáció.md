@@ -2,6 +2,11 @@ Sudoku Követelményspecifikáció
 ==========================================
 
 ### 1. Áttekintés
+A termék egy olyan rés betömését célozza meg, mely valamilyen módon a mai napig kihasználatlan maradt: nincsen olyan sudoku program, mely az alapvető 9x9-es sudoku-n kívül más típusokat is ismerne, vagy többjátékos módot tartalmazna. A cél eléréséhez a játékosok számára egy olyan egyszerűen használható, de mégis minden szükséges funkciót tartalmazó játékot kell létrehozni, mely a lehető legtöbb féle-fajta sudoku játékot tartalmazza.
+
+A játéknak megfelelőnek kell lennie a versenyszellemű játékosoknak is (az olyan funkciókkal, mint a párbaj, vagy a ranglétra), de alkalmazkodnia kell az olyanok igényeihez is, akik csak nyugodtan szeretnének játszani (tehát nem szabad teljesítmény alapján lezárnia az egyes funkciókat, mint a nehéz mód).
+
+Ahhoz, hogy minden funkciót élvezhessünk, szükség van egy internatkapcsolatra, azonban a legtöbb anélkül is elérhető. Gépigény szempontjából egy ilyen egyszerű játék nem szabad, hogy túl nagy szükségletekkel rendelkezzen.
  
 ### 2. Jelenlegi rendszer
 
