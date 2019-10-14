@@ -33,7 +33,7 @@
     <endEvent id="EndEvent_0hzqpmi" name="Vége">
       <incoming>SequenceFlow_1x9p5m3</incoming>
     </endEvent>
-    <sequenceFlow id="SequenceFlow_1x9p5m3" name="Igen" sourceRef="ExclusiveGateway_1j0q98c" targetRef="EndEvent_0hzqpmi" />
+    <sequenceFlow id="SequenceFlow_1x9p5m3" name="Nem" sourceRef="ExclusiveGateway_1j0q98c" targetRef="EndEvent_0hzqpmi" />
     <task id="Task_116sn4a" name="Boltba lemenni">
       <incoming>SequenceFlow_09fvmoz</incoming>
       <incoming>SequenceFlow_17f4erm</incoming>
@@ -151,7 +151,7 @@
         <omgdi:waypoint x="1355" y="200" />
         <omgdi:waypoint x="1382" y="200" />
         <bpmndi:BPMNLabel>
-          <omgdc:Bounds x="1358" y="182" width="21" height="14" />
+          <omgdc:Bounds x="1358" y="182" width="22" height="14" />
         </bpmndi:BPMNLabel>
       </bpmndi:BPMNEdge>
       <bpmndi:BPMNShape id="Task_116sn4a_di" bpmnElement="Task_116sn4a">
