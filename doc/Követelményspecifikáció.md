@@ -9,7 +9,11 @@ A játéknak megfelelőnek kell lennie a versenyszellemű játékosoknak is (az 
 Ahhoz, hogy minden funkciót élvezhessünk, szükség van egy internatkapcsolatra, azonban a legtöbb anélkül is elérhető. Gépigény szempontjából egy ilyen egyszerű játék nem szabad, hogy túl nagy szükségletekkel rendelkezzen.
  
 ### 2. Jelenlegi rendszer
-
+A mai napokban szinte lehetetlen a klasszikus játékokat jó minőségben megtalálni.<br/>
+A jó minőség alatt a legtöbb esetben inkább a játék különböző lehetőségeivel való<br/>
+élés illetve a többjátékos mód értendő. Manapság ha rákeresünk egy klasszikus<br/>
+játékra mint például a pacman vagy sudoku, akkor a legegyszerűbb változatukat<br/>
+találnánk meg, vagy pedig egy annyira megváltoztatott játékot ami már nem is   nevezhető<br/> ugyanannak a játéknak.Mindezekfölött, az előbb említettek minden esetben elveszik<br/> úgy a fiatalok kedvét mint a már idősebb generációk kedvét a játéktól.Manapság a játékok <br/> egyre több erőforrást vesznek igénybe, ami nagyonköltséges tud lenni, főleg a technológia <br/> robbanószerű fejlődése miatt, nem túlzás azt kijelenteni, hogy a legfrissebb játékokat <br/> 'teljesen kiélvezni', kis vagyonba kerül, még akkor is ha csak 1-2 alkatrészt kell vásárolni.<br/>Egyre kevesebb olyan játékot látunk amely széleskörű felhasználóbázisnak tud minőségi<br/> időtöltési lehetőséget biztosítani megengedhető pénzügyi kereteken belül.Mindezek felül,<br/> manapság a játéktermek mennek ki a divatból és egyre nehezebb egyetlen helyen megtalálni<br/> azokat a klasszikus játékokat, amiért régen siettunk haza iskolából.
 ### 3. Vágyalom rendszer
 ##### 3.1 Célok, összegyűjtött játékok
 Célunk egy olyan játékprogram létrehozása, mely egy helyen gyűjti össze a különböző típusú és nehézségű sudoku játékokat, melyeket minden játékos szabadon elérhet. Ezek közé tartozik a
