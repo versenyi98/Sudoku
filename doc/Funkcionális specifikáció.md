@@ -49,5 +49,13 @@ A felhasználó kezelése a kezdeti verzióban a következő műveletekkel rende
 - felhasználó megjelenítési nevének módosítása
 
 ### 3. Jelenlegi üzleti folyamatok modellje
+A következő folyamatábra a jelenlegi üzleti folyamatokat próbálja meg bemutatni a felahasználó szemszögéből:
+![Jelenlegi üzleti folyamatok modellje](./resource/funkspec_jelenlegi_uzleti.svg)
+Nyilvánvalóan egy Sudoku feladvány megoldásáról szól a folyamatábra. Ha felhasználónknak nincs otthon valamilyen formában megoldatlan Sudoku feladványa, akkor el kell mennie boltba.
+Ott ki kell választana egy számára megfelelő feladatgyűjteményt, vagy újságot. Ezután következik a fizetés, majd a hazajutás. Ez jó esetben 5-10 percet vesz igénybe, rosszabb esetekben órákról is szó lehet.
+Ha van otthon kitöltetlen, megfelelő nehézségű és játékmódú feladvány, akkor természetesen egy pár pillanat alatt letudja a felhasználó. 
+Ha egyedül szeretne játszani, akkor már kész is van minden teendővel. Ellenkező esetben össze kell hívnia barátait, majd a nyomdában sokszorosítani a feladványokat. Rosszabb esetben ez is órákig tarthat.
+A feladat sikeres megoldása után újrakezdődik az egész folyamat, vagy a felhasználó nem játszik tovább.
+
 
 ### 4. Igényelt üzleti folyamatok modellje
