@@ -44,3 +44,10 @@ Nyílvánvalóan a legegyszerűbb eset az, amikor csak magunkhoz tudjuk kapni az
 Ez nem mindig van így sajnos. Ennél bonyolultabb helyzet alakul ki akkor, ha nincs épp újságunk, vagy van, de épp nincs megfelelő Sudoku az újságban. Minden ehhez hasonló alkalommal le kell menni a boltba, és költekezni.   
 Ha valaki időre, mások ellen szeretne játszani, akkor a  barátokkal való játék is elég kényelmetlen tud lenni, és több szervezést igényelhet.
 ### 5. Igényelt üzleti folyamatok modellje
+A következő folyamatábra a játékprogram segítségével történe Sudoku-zás menetrendjét mutatja be:
+![Alt text](./resource/kovspec_igenyelt_uzleti.svg)
+
+Elsőre bonyolultabbnak tűnhet, mint a korábbi ábra, de itt minden elágazás során a rosszabbik eset csak pár kattintással számít rosszabbnak, míg ezelőtt percekkel/órákkal voltak rosszabbak a rossz esetek. Például az előző módon, ha többszemélyes játékot akartunk játszani, akkor össze kellett gyűjteni barátainkat, és mindenkinek feladatot kellett biztosítanunk.
+Jelen esetben csak aktív internetkapcsolatra van szükségünk, és ezután már csak egy kattintás választ el minket a többjátékos módtól. Ha barátainkkal szeretnénk játszani, akkor őket is csak egyszer kell összegyűjteni, és legközelebb már a barátlistánkban fognak szerepelni.
+   
+   Ezek után minden egyes feladat (nehézség választás, játékmód választás stb.) 2-3 kattintással elvégezhető.
