@@ -34,7 +34,7 @@ Az apache HTTP szerver elérést biztosít több PHP fájlhoz is, melyek API vé
 
 A műveletek végeredményét a kliens számára JSON formátumban továbbítja a HTTP szerver. Ezek eljárások (tehát visszatérési érték nélküli műveletek) esetében a sikerességet tartalmazzák, függvények (visszatérési értékkel rendelkező műveletek) esetén pedig mind a sikerességet, mind pedig a kért adatokat tartalmazzák.
 
-Amennyiben szükséges biztonságos továbbítás, POST kérés történik, egyébként GET kérés. 
+Amennyiben szükséges biztonságos továbbítás, POST kérés történik, egyébként GET kérés.
 
 ### 10. Implementációs terv
 ### 11. Tesztterv
