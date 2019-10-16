@@ -61,3 +61,10 @@ A feladat sikeres megoldása után újrakezdődik az egész folyamat, vagy a fel
 
 
 ### 4. Igényelt üzleti folyamatok modellje
+A következő folyamatábra az igényelt üzleti folyamatokat próbálja meg bemutatni:
+![Igényelt üzleti folyamatok modellje](./resource/funkspec_igenyelt_uzleti.svg)
+A folyamatábra szintén egy vagy több Sudoku feladvány megoldásáról szól, ellenben digitális formában, ezzel jelentősen leegyszerűsítve a fenti ábrát. 
+A felhasználónak, ha játszani támad kedve, nem kell boltba utaznia, csupán leülnie a számítógépe elé.
+Miután megnyitotta az alkalmazást eldönti, hogy milyen nehézségen szeretne játszani, illetve kiválasztja a számára legmegfelelőbb játéktípust.
+Ezután már kezdődhet is a játék. A feladvány sikeres elkészítése esetén opcionálisan elmentheti a pontszámait, mellyel részt vehet a rangsorolásban, amivel a barátok összemérhetik az eredményeiket.
+Amennyiben nem sikerült elkészíteni, akár el is mentheti és később onnan folytatja, ahol abba hagyta. 
