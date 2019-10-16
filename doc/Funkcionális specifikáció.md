@@ -2,7 +2,9 @@ Sudoku Funkcionális specifikáció
 ==========================================
 
 ### 1. Jelenlegi helyzet
-
+A mai napokban szinte lehetetlen a klasszikus játékokat jó minőségű
+formában elérni, pedig az igény ezekre a csodálatos alkotásokra még mindíg
+óriási. A jó minőség alatt a legtöbb esetben inkább a játék különböző lehetőségeivel való élés illetve a többjátékos mód értendő. Manapság ha rákeresünk egy klasszikus 80as vagy 90es játékra, akkor a legegyszerűbb változatukat találnánk meg, vagy pedig egy annyira megváltoztatott játékot ami már nem is nevezhető ugyanannak a játéknak. Mindezekfölött, az előbb említettek minden esetben elveszik úgy a fiatalok kedvét mint a már idősebb generációk kedvét a játéktól. Manapság a játékok egyre több erőforrást vesznek igénybe, ami nagyon költséges tud lenni, főleg a technológia robbanószerű fejlődése miatt, nem túlzás azt kijelenteni, hogy a legfrissebb játékokat 'teljesen kiélvezni', kis vagyonba kerül, még akkor is ha csak 1-2 alkatrészt kell vásárolni. A már meglévő klasszikus játékok vérszegényen vannak megvalósítva, de ez probléma könnyen lehet orvosolható úgy, hogy hatékonyabban, modern technológiákkal építjük újra az ikonikus gyermekkori játékokat. Egyre kevesebb olyan játékot látunk amely széleskörű felhasználóbázisnak tud minőségi időtöltési lehetőséget biztosítani megengedhető pénzügyi kereteken belül. Mindezek felül, manapság a játéktermek mennek ki a divatból és egyre nehezebb egyetlen helyen megtalálni azokat a klasszikus játékokat, amiért régen siettunk haza iskolából.
 ### 2. Vágyálom rendszer
 ##### 2.1 Főmenü
 A játék elindításakor a felhasználó a főmenüt látja először. Innen gombok segítségével almenükbe navigálhat tovább, melyek a következőek:
