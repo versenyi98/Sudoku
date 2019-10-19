@@ -15,6 +15,16 @@ A sprintek témája a fejlesztés során fog kialakulni. A sprintek időbeli beo
 *  \#3. Sprint: 2019. 10. 05. - 2019. 11. 18.
 *  \#4. Sprint: 2019. 11. 19. - 2019. 12. 02.
 *  \#5. Sprint: 2019. 12. 03. - 2019. 12. 16.
+##### 2.2 Feladatkövető rendszer használata
+Trello-n minden egyes nagyobb feladathoz (továbbiakban issue) létrehozunk egy Epicet, amelyet a megfelelő "Epics" listában tárolunk.
+A feladatot részekre bontjuk és mindegyik részfeladatnak külön issue-számot adunk, és kártyát hozunk létre a "Backlog" listába. Minden részfeladathoz beállítjuk a határidőt,
+illetve a megbízott fejlesztőt. Ha a feladatot a fejlesztő elkezdi csinálni, akkor a "Backlog" listából átkerül a feladat kártyája az "In progress" listába.
+Ha a fejlesztő kész van az adott issue-val, és egy másik fejlesztő jóváhagyására vár, akkor az "In testing" listába kerül a kártya.
+Ezután, ha a jóváhagyás megtörtént, akkor a kártya a "Done" listába kerül át, és "kész"-nek jelöli a fejlesztő.
+Ha egy Epic minden részfeladata készen van, akkor az Epic-et a "Complete Epic" funkcióval le kell zárni-
+Minden Sprinthez tartozik egy kártya, aminek nincs issue-száma. A sprint kártyákhoz csatolva vannak a sprintben aktuális Epic kártyák, és
+az Epic nélküli issue-k is.
+
 
 ### 3. Üzleti folyamatok modellje
 ### 4. Követelmények
