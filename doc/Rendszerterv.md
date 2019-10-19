@@ -29,7 +29,17 @@ Minden Trello-s issue-hoz, amely a forrás változtatását kívánja, létrehoz
 Minden commit-ot a branch nevével kell kezdeni, jelen időben (Present Simple). A commit címének végén nincs pont. Angol nyelven kell commit-ot írni, a fejezet címek és fájl nevek 
 magyarról angolra fordítása nem szükséges, de megengedett. Ha az issue kész, akkor egy Pull Request-et kell létrehozni, ahol egy, az issue 
 megoldásával megbízott fejlesztőn kívüli fejlesztőnek jóvá kell hagyni a módosításokat. A módosítások jóváhagyása a master branch-ra való merge-eléssel történik.
-
+#### 2.4 Fejlesztők
+A játékrendszer fejlesztésére négy fejlesztő áll rendelkezésre. 
+A fejlesztők fő feladatkörei jól elválaszthatóak: 
+1. Felhasználói felülettel kapcsolatos feladatok megoldása
+2. Mesterséges intelligencával kapcsolatos feladatok megoldása:
+    1. Megoldott Sudoku-t visszalépéssel generáló algoritmus
+    2. Megoldandó Sudoku-t visszalépéssel generáló algoritmus:   
+    Az algoritmus egy megoldott Sudoku-ból hagy el számokat, úgy, 
+    hogy a hátralevő mezők alapján megoldható legyen a Sudoku, és
+    egyértelmű legyen, tehát csak egy megoldás létezzen.
+3. Adatbázissal való kommunikáció kiépítése
 ### 3. Üzleti folyamatok modellje
 ### 4. Követelmények
 ### 5. Funkcionális  terv
