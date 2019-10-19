@@ -3,6 +3,43 @@ Sudoku Rendszerterv
 
 ### 1. A rendszer célja
 ### 2. Projekt terv
+##### 2.1 Sprintek
+A fejlesztést kéthetes szakaszokra, sprintekre osztjuk. Minden sprint végén összegezzük az sprint feladatait, és megtervezzük a következő sprintet:
+* Kitaláljuk milyen feladatokat teljesítünk
+* Felosztjuk egymás között a feladatokat
+* Beosztjuk, hogy melyik feladatot meddig illene megcsinálni 
+
+A sprintek témája a fejlesztés során fog kialakulni. A sprintek időbeli beosztása:
+*  \#1. Sprint: 2019. 10. 08. - 2019. 10. 21.
+*  \#2. Sprint: 2019. 10. 22. - 2019. 11. 04.
+*  \#3. Sprint: 2019. 10. 05. - 2019. 11. 18.
+*  \#4. Sprint: 2019. 11. 19. - 2019. 12. 02.
+*  \#5. Sprint: 2019. 12. 03. - 2019. 12. 16.
+##### 2.2 Feladatkövető rendszer használata
+Trello-n minden egyes nagyobb feladathoz (továbbiakban issue) létrehozunk egy Epicet, amelyet a megfelelő "Epics" listában tárolunk.
+A feladatot részekre bontjuk és mindegyik részfeladatnak külön issue-számot adunk, és kártyát hozunk létre a "Backlog" listába. Minden részfeladathoz beállítjuk a határidőt,
+illetve a megbízott fejlesztőt. Ha a feladatot a fejlesztő elkezdi csinálni, akkor a "Backlog" listából átkerül a feladat kártyája az "In progress" listába.
+Ha a fejlesztő kész van az adott issue-val, és egy másik fejlesztő jóváhagyására vár, akkor az "In testing" listába kerül a kártya.
+Ezután, ha a jóváhagyás megtörtént, akkor a kártya a "Done" listába kerül át, és "kész"-nek jelöli a fejlesztő.
+Ha egy Epic minden részfeladata készen van, akkor az Epic-et a "Complete Epic" funkcióval le kell zárni-
+Minden Sprinthez tartozik egy kártya, aminek nincs issue-száma. A sprint kártyákhoz csatolva vannak a sprintben aktuális Epic kártyák, és
+az Epic nélküli issue-k is.
+#### 2.3 Verziókezelő rendszer használata
+Minden Trello-s issue-hoz, amely a forrás változtatását kívánja, létrehoz a kijelölt fejlesztő egy branch-ot, "S*n*" névvel, ahol az *n* az issue számát jelöli.
+Minden commit-ot a branch nevével kell kezdeni, jelen időben (Present Simple). A commit címének végén nincs pont. Angol nyelven kell commit-ot írni, a fejezet címek és fájl nevek 
+magyarról angolra fordítása nem szükséges, de megengedett. Ha az issue kész, akkor egy Pull Request-et kell létrehozni, ahol egy, az issue 
+megoldásával megbízott fejlesztőn kívüli fejlesztőnek jóvá kell hagyni a módosításokat. A módosítások jóváhagyása a master branch-ra való merge-eléssel történik.
+#### 2.4 Fejlesztők
+A játékrendszer fejlesztésére négy fejlesztő áll rendelkezésre. 
+A fejlesztők fő feladatkörei jól elválaszthatóak: 
+1. Felhasználói felülettel kapcsolatos feladatok megoldása
+2. Mesterséges intelligencával kapcsolatos feladatok megoldása:
+    1. Megoldott Sudoku-t visszalépéssel generáló algoritmus
+    2. Megoldandó Sudoku-t visszalépéssel generáló algoritmus:   
+    Az algoritmus egy megoldott Sudoku-ból hagy el számokat, úgy, 
+    hogy a hátralevő mezők alapján megoldható legyen a Sudoku, és
+    egyértelmű legyen, tehát csak egy megoldás létezzen.
+3. Adatbázissal való kommunikáció kiépítése
 ### 3. Üzleti folyamatok modellje
 ### 4. Követelmények
 ### 5. Funkcionális  terv
