@@ -24,7 +24,11 @@ Ezután, ha a jóváhagyás megtörtént, akkor a kártya a "Done" listába ker�
 Ha egy Epic minden részfeladata készen van, akkor az Epic-et a "Complete Epic" funkcióval le kell zárni-
 Minden Sprinthez tartozik egy kártya, aminek nincs issue-száma. A sprint kártyákhoz csatolva vannak a sprintben aktuális Epic kártyák, és
 az Epic nélküli issue-k is.
-
+#### 2.3 Verziókezelő rendszer használata
+Minden Trello-s issue-hoz, amely a forrás változtatását kívánja, létrehoz a kijelölt fejlesztő egy branch-ot, "S*n*" névvel, ahol az *n* az issue számát jelöli.
+Minden commit-ot a branch nevével kell kezdeni, jelen időben (Present Simple). A commit címének végén nincs pont. Angol nyelven kell commit-ot írni, a fejezet címek és fájl nevek 
+magyarról angolra fordítása nem szükséges, de megengedett. Ha az issue kész, akkor egy Pull Request-et kell létrehozni, ahol egy, az issue 
+megoldásával megbízott fejlesztőn kívüli fejlesztőnek jóvá kell hagyni a módosításokat. A módosítások jóváhagyása a master branch-ra való merge-eléssel történik.
 
 ### 3. Üzleti folyamatok modellje
 ### 4. Követelmények
