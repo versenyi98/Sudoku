@@ -11,7 +11,11 @@ Sudoku Rendszerterv
 A játékrendszer fejlesztése Java programozási nyelven for történni.
 Pontosabban a JDK-8 használata lesz az alapértelmezett.
 A Java programozási nyelv eszközei mellett, a grafikus felhasználói felület (*GUI - Graphical User Interface*) biztosítására a JavaFX szoftver platform lesz használva.
-
+##### 6.2 Integrált fejlesztői környezet
+A feljesztés során használt integrált fejlesztői környezet (*IDE - Integrated Developement Environment*) a JetBrains által fejlesztett IntelliJ IDEA lesz.
+A sikeres fejlesztéshez elegendő az IntelliJ IDEA Community Edition, tehát a mindenki számára ingyenesen elérhető verzió. 
+A kényelmes fejlesztéshez használható ugyen az IntelliJ IDEA Ultimate Edition, tehát az a verzió, amely minden eszközzel rendelkezik, de a licenszek korlátozott száma miatt 
+ez nem minden fejlesztőnknek elérhető.
 ### 7. Absztrakt domain modell
 ### 8. Architekturális terv
 ### 9. Adatbázis terv
