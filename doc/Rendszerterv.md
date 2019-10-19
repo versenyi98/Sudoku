@@ -3,6 +3,19 @@ Sudoku Rendszerterv
 
 ### 1. A rendszer célja
 ### 2. Projekt terv
+##### 2.1 Sprintek
+A fejlesztést kéthetes szakaszokra, sprintekre osztjuk. Minden sprint végén összegezzük az sprint feladatait, és megtervezzük a következő sprintet:
+* Kitaláljuk milyen feladatokat teljesítünk
+* Felosztjuk egymás között a feladatokat
+* Beosztjuk, hogy melyik feladatot meddig illene megcsinálni 
+
+A sprintek témája a fejlesztés során fog kialakulni. A sprintek időbeli beosztása:
+*  \#1. Sprint: 2019. 10. 08. - 2019. 10. 21.
+*  \#2. Sprint: 2019. 10. 22. - 2019. 11. 04.
+*  \#3. Sprint: 2019. 10. 05. - 2019. 11. 18.
+*  \#4. Sprint: 2019. 11. 19. - 2019. 12. 02.
+*  \#5. Sprint: 2019. 12. 03. - 2019. 12. 16.
+
 ### 3. Üzleti folyamatok modellje
 ### 4. Követelmények
 ### 5. Funkcionális  terv
