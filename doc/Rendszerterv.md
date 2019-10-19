@@ -16,6 +16,8 @@ A feljesztés során használt integrált fejlesztői környezet (*IDE - Integra
 A sikeres fejlesztéshez elegendő az IntelliJ IDEA Community Edition, tehát a mindenki számára ingyenesen elérhető verzió. 
 A kényelmes fejlesztéshez használható ugyen az IntelliJ IDEA Ultimate Edition, tehát az a verzió, amely minden eszközzel rendelkezik, de a licenszek korlátozott száma miatt 
 ez nem minden fejlesztőnknek elérhető.
+##### 6.3 Platform
+A fejlesztés Linux operációs rendszeren fog történni, de a Java nyelv platformfüggetlensége miatt a rendszer cross-platform (*más szóval multi-platform*) módon fog működni, ami jelen esetben azt jelenti, hogy elérhető lesz Windows, Linux, és Mac operációs rendszeren.
 ### 7. Absztrakt domain modell
 ### 8. Architekturális terv
 ### 9. Adatbázis terv
