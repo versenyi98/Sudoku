@@ -7,6 +7,11 @@ Sudoku Rendszerterv
 ### 4. Követelmények
 ### 5. Funkcionális  terv
 ### 6. Fizikai környezet
+##### 6.1 Választott programozási nyelv
+A játékrendszer fejlesztése Java programozási nyelven for történni.
+Pontosabban a JDK-8 használata lesz az alapértelmezett.
+A Java programozási nyelv eszközei mellett, a grafikus felhasználói felület (*GUI - Graphical User Interface*) biztosítására a JavaFX szoftver platform lesz használva.
+
 ### 7. Absztrakt domain modell
 ### 8. Architekturális terv
 ### 9. Adatbázis terv
