@@ -18,6 +18,8 @@ A kényelmes fejlesztéshez használható ugyen az IntelliJ IDEA Ultimate Editio
 ez nem minden fejlesztőnknek elérhető.
 ##### 6.3 Platform
 A fejlesztés Linux operációs rendszeren fog történni, de a Java nyelv platformfüggetlensége miatt a rendszer cross-platform (*más szóval multi-platform*) módon fog működni, ami jelen esetben azt jelenti, hogy elérhető lesz Windows, Linux, és Mac operációs rendszeren.
+##### 6.4 Verziókezelő rendszer
+A verziókezeléshez Git lesz használva, pontosabban Github. A rendszer forrása a kiadás pillanatáig privát repository-ban fog helyet foglalni, csak a fejlesztők és a megrendelő hozzáférése garantált.
 ### 7. Absztrakt domain modell
 ### 8. Architekturális terv
 ### 9. Adatbázis terv
