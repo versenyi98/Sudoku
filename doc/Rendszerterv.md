@@ -7,6 +7,22 @@ Sudoku Rendszerterv
 ### 4. Követelmények
 ### 5. Funkcionális  terv
 ### 6. Fizikai környezet
+##### 6.1 Választott programozási nyelv
+A játékrendszer fejlesztése Java programozási nyelven for történni.
+Pontosabban a JDK-8 használata lesz az alapértelmezett.
+A Java programozási nyelv eszközei mellett, a grafikus felhasználói felület (*GUI - Graphical User Interface*) biztosítására a JavaFX szoftver platform lesz használva.
+##### 6.2 Integrált fejlesztői környezet
+A feljesztés során használt integrált fejlesztői környezet (*IDE - Integrated Developement Environment*) a JetBrains által fejlesztett IntelliJ IDEA lesz.
+A sikeres fejlesztéshez elegendő az IntelliJ IDEA Community Edition, tehát a mindenki számára ingyenesen elérhető verzió. 
+A kényelmes fejlesztéshez használható ugyen az IntelliJ IDEA Ultimate Edition, tehát az a verzió, amely minden eszközzel rendelkezik, de a licenszek korlátozott száma miatt 
+ez nem minden fejlesztőnknek elérhető.
+##### 6.3 Platform
+A fejlesztés Linux operációs rendszeren fog történni, de a Java nyelv platformfüggetlensége miatt a rendszer cross-platform (*más szóval multi-platform*) módon fog működni, ami jelen esetben azt jelenti, hogy elérhető lesz Windows, Linux, és Mac operációs rendszeren.
+##### 6.4 Verziókezelő rendszer
+A verziókezeléshez Git lesz használva, pontosabban Github. A rendszer forrása a kiadás pillanatáig privát repository-ban fog helyet foglalni, csak a fejlesztők és a megrendelő hozzáférése garantált.
+##### 6.5 Feladatkövető rendszer  
+A (kötelezően) választott feladatkövető rendszer a Trello lesz. A verziókezelő rendszerrel ellentétben a kiadás pillanata után is privát marad a rendszer fejlesztése során felmerült feladatokat tartalmazó tábla. 
+
 ### 7. Absztrakt domain modell
 ### 8. Architekturális terv
 ### 9. Adatbázis terv
