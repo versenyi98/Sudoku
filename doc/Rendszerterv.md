@@ -2,6 +2,13 @@ Sudoku Rendszerterv
 =============================
 
 ### 1. A rendszer célja
+##### 1.1 Jelenlegi célok
+A rendszer célja jelenleg az, hogy egy platformot tudjunk biztosítani a Sudoku játék rajongóinak.
+A platformon eleinte elérhető lenne a "kényelmes", (casual) illetve "versengő" (competitive).
+A rendszerben Normál Sudoku, Killer Sudoku, X Sudoku, Samurai Sudoku, Szabálytalan Sudoku, illetve személyre
+szabott Sudoku játékmód lesz elérhető első lépésként, kezdő, normál és nehéz nehézségben.   
+A játék során szerzett ismerettségeket fenntartását, illetve a barátainkkal való kapcsolattartást játékon belül a barátlista funkció 
+támogatja.
 ### 2. Projekt terv
 ##### 2.1 Sprintek
 A fejlesztést kéthetes szakaszokra, sprintekre osztjuk. Minden sprint végén összegezzük az sprint feladatait, és megtervezzük a következő sprintet:
