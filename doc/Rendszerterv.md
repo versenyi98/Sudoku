@@ -102,6 +102,32 @@ A műveletek végeredményét a kliens számára JSON formátumban továbbítja 
 Amennyiben szükséges biztonságos továbbítás, POST kérés történik, egyébként GET kérés.
 
 ### 10. Implementációs terv
+##### 10.1 Sudoku generálás
+A Sudoku generálás feladatát egy mesterséges intelligenciás algoritmus, pontosabban
+egy visszalépéses algoritmus implementálása fogja megoldani.   
+Egy megoldott hagyományos Sudoku játék generálásának az állapottérreprezentációja:
+* Állapotok halmaza:
+    * Minden állapothoz tartozik:
+        * egy 9 x 9-es mátrix, ami a jelenlegi Sudoku táblát reprezentálja
+        * egy (x, y) pozíciót, amely táblában a legelső üres cellát jelöli
+    * Kényszerfeltételek
+        * a jelenlegi (x, y) pozíció előtti (tehát a fentebbi sorokban, 
+        illetve az adott *y* sorban levő, de *x* pozíciót megelőző) cellák 
+        mind nem egyenlők nullával
+        * a jelenleg (x, y) pozícióban, és utána levő cellák értéke mind 
+        egyenlő nullával
+* Kezdőállapot: (x, y) = (0, 0) és minden cella értéke egyenlő nullával
+* Célállapot:   (x, y) = (9, 0) és minden i = [0, 8] és j = [0, 8] tartományon belül
+    igaz, hogy a mátrix *(i, j)* indexű eleme nem nulla.
+* Operátor: Az (x, y) indexre *n* értékű szám elhelyezése
+* Operátor alkalmazási előfeltételek:
+    * 1 <= n <= 9
+    * x < 9
+* Operátor hatása
+    * a mátrix (x, y) indexű eleme *n* értékű lesz
+    * y = egészrész((x + 1) / 9)
+    * x = (x + 1) (mod 9)
+
 ### 11. Tesztterv
 ### 12. Telepítési terv
 ### 13. Karbantartási  terv
