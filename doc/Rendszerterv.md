@@ -114,3 +114,16 @@ Ha új funkció implementálása a cél, negyedéves ritmusban történik az új
 
 A verziószámozás egyszerű: év.hónap.javítófrissítés. A főverzió az év.hónap részből áll, ahol a hónap 3-al osztható\*. Az alverzió 1-től növekedő szám, mely azt jelzi, hogy az adott főverzión belül hány javításokat tartalmzó frissítés jelent meg.  
 A legelső verzió a 2019.12 verziószámot viseli.
+
+##### 13.2 Felhasználói visszajelzés
+A felhasználói visszajelzések fogadása e-mailen keresztül folyik. Külön e-mail címek (innentől: "csatornák") szolgálnak a különböző típusú visszajelzések fogadására:
+
+- help@cheesysudoku.hu: általános csatorna a többi csatornába nem illő témákkal kapcsolatban. Ide jönnek az olyan kérdések, amik pl. a telepítéssel vagy a használattal való probléma orvoslásában kérnek segítséget.
+- bugreport@cheesysudoku.hu: a programban fellelt hibák bejelentésére alkotott csatorna.
+- featurerequest@cheesysudoku.hu: az új funkciók kérésére lévő csatorna. Ezek közül a csapat kiválogatja, melyek kerüljenek be a játékba, és a következő negyedéves frissítésben implementálja is.
+
+Minden csatorna működtetésért és megfigyeléséért egy arra kiválasztott csapattag a felelős. Ennek a csapattagnak a feladatai közé tartozik:
+
+- válaszolni az e-mailekre
+- kiválogatni a többszörös kéréseket. Ez a `bugreport` és a `featurerequest` csatornák esetén mindössze annyit jelent, hogy amilyen kérés többszörösen érkezik be, abból csak egy példányt prezentáljon a csapat többi tagja felé. A `help` csatorna esetében ez a feladat egy gyakori kérdések szekció működtetését jelenti az olyan kérdések esetén melyek nagyon sokszor fordulnak elő.
+- felületes szűrést végezni a többiek felé prezentálás előtt: a `featurerequest` csatorna működtetőjének feladata az is, hogy a nyilvánvalóan megvalósíthatatlan és/vagy a játék jelenlegi verziójával teljesen inkompatibilis kéréseket elvesse.
