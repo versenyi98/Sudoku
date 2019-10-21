@@ -128,6 +128,17 @@ Egy megoldott hagyományos Sudoku játék generálásának az állapottérreprez
     * y = egészrész((x + 1) / 9)
     * x = (x + 1) (mod 9)
 
+##### 10.2 Teljes Sudoku-ból hiányos Sudoku generálása
+###### Lépések *n* darab érték elhagyásához. visszalépéses keresővel:
+1. Az összes még nem elhagyott cella véletlenszerű sorbaállítása
+2. Ha a sorban nincs több cella, akkor visszalépés.
+2. Ellenőrizni, ha a sorrendben első cellát elhagyjuk, akkor egyértelműen
+fog létezni a megoldás vagy sem?
+4. Ha nem, akkor a cella kivétele a sor elejéről és a 2. lépés elvégzése újra.
+5. Ha igen, akkor a cella elhagyása a mátrixból.
+6. Ellenőrizni, hogy elhagytunk-e *n* darab cellát?
+7. Ha nem, akkor új állapot létrehozása, és az 1. lépés elvégzése újra.
+8. Ha igen, akkor végeztünk
 ### 11. Tesztterv
 ### 12. Telepítési terv
 ### 13. Karbantartási  terv
