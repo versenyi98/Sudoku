@@ -102,6 +102,43 @@ A műveletek végeredményét a kliens számára JSON formátumban továbbítja 
 Amennyiben szükséges biztonságos továbbítás, POST kérés történik, egyébként GET kérés.
 
 ### 10. Implementációs terv
+##### 10.1 Sudoku generálás
+A Sudoku generálás feladatát egy mesterséges intelligenciás algoritmus, pontosabban
+egy visszalépéses algoritmus implementálása fogja megoldani.   
+Egy megoldott hagyományos Sudoku játék generálásának az állapottérreprezentációja:
+* Állapotok halmaza:
+    * Minden állapothoz tartozik:
+        * egy 9 x 9-es mátrix, ami a jelenlegi Sudoku táblát reprezentálja
+        * egy (x, y) pozíciót, amely táblában a legelső üres cellát jelöli
+    * Kényszerfeltételek
+        * a jelenlegi (x, y) pozíció előtti (tehát a fentebbi sorokban, 
+        illetve az adott *y* sorban levő, de *x* pozíciót megelőző) cellák 
+        mind nem egyenlők nullával
+        * a jelenleg (x, y) pozícióban, és utána levő cellák értéke mind 
+        egyenlő nullával
+* Kezdőállapot: (x, y) = (0, 0) és minden cella értéke egyenlő nullával
+* Célállapot:   (x, y) = (9, 0) és minden i = [0, 8] és j = [0, 8] tartományon belül
+    igaz, hogy a mátrix *(i, j)* indexű eleme nem nulla.
+* Operátor: Az (x, y) indexre *n* értékű szám elhelyezése
+* Operátor alkalmazási előfeltételek:
+    * 1 <= n <= 9
+    * x < 9
+* Operátor hatása
+    * a mátrix (x, y) indexű eleme *n* értékű lesz
+    * y = egészrész((x + 1) / 9)
+    * x = (x + 1) (mod 9)
+
+##### 10.2 Teljes Sudoku-ból hiányos Sudoku generálása
+###### Lépések *n* darab érték elhagyásához. visszalépéses keresővel:
+1. Az összes még nem elhagyott cella véletlenszerű sorbaállítása
+2. Ha a sorban nincs több cella, akkor visszalépés.
+2. Ellenőrizni, ha a sorrendben első cellát elhagyjuk, akkor egyértelműen
+fog létezni a megoldás vagy sem?
+4. Ha nem, akkor a cella kivétele a sor elejéről és a 2. lépés elvégzése újra.
+5. Ha igen, akkor a cella elhagyása a mátrixból.
+6. Ellenőrizni, hogy elhagytunk-e *n* darab cellát?
+7. Ha nem, akkor új állapot létrehozása, és az 1. lépés elvégzése újra.
+8. Ha igen, akkor végeztünk
 ### 11. Tesztterv
 ### 12. Telepítési terv
 ### 13. Karbantartási  terv
