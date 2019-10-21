@@ -127,3 +127,11 @@ Minden csatorna működtetésért és megfigyeléséért egy arra kiválasztott 
 - válaszolni az e-mailekre
 - kiválogatni a többszörös kéréseket. Ez a `bugreport` és a `featurerequest` csatornák esetén mindössze annyit jelent, hogy amilyen kérés többszörösen érkezik be, abból csak egy példányt prezentáljon a csapat többi tagja felé. A `help` csatorna esetében ez a feladat egy gyakori kérdések szekció működtetését jelenti az olyan kérdések esetén melyek nagyon sokszor fordulnak elő.
 - felületes szűrést végezni a többiek felé prezentálás előtt: a `featurerequest` csatorna működtetőjének feladata az is, hogy a nyilvánvalóan megvalósíthatatlan és/vagy a játék jelenlegi verziójával teljesen inkompatibilis kéréseket elvesse.
+
+##### 13.3 Szerver működtetése
+
+Amennyiben az eredetileg felállított szerver kapacitása kevésnek bizonyulna a felhasználószám növekedésével, azt vagy egy erősebb, vagy több, terheléselosztással dolgozó szerverrel kell helyettesíteni.
+
+A folyamat a szolgáltatásban apróbb kiesést fog okozni, amelyet minimalizál, ha az új szerver(eke)t a hálózathoz csatoláson kívül üzembe állítjuk a régi kikapcsolása előtt.
+
+A szerverek működtetése a megrendelő feladata, a karbantartásban azonban a fejlesztői csapat is részt vesz.
