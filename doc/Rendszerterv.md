@@ -105,3 +105,12 @@ Amennyiben szükséges biztonságos továbbítás, POST kérés történik, egy�
 ### 11. Tesztterv
 ### 12. Telepítési terv
 ### 13. Karbantartási  terv
+##### 13.1 Verziók és Frissítés
+A program befejezése után annak frissítése két menetrend szerint történik.
+
+Amennyiben bug vagy egyéb hiba felfedezése okozza a frissítést, az a lehető leghamarabb javításra kerül, és megtörténik a publikálása. Az ilyen jellegű frissítések nem okozzák a főverziószám növelését, azonban a bug jellegétől függően okozhatnak az előző verzióval való részleges vagy teljes inkompatibilitást.
+
+Ha új funkció implementálása a cél, negyedéves ritmusban történik az új verziók kiadása. Ez nem történik meg minden negyedévben, csak akkor, ha az elmúlt hónapokban történt tényleges változtatás.
+
+A verziószámozás egyszerű: év.hónap.javítófrissítés. A főverzió az év.hónap részből áll, ahol a hónap 3-al osztható\*. Az alverzió 1-től növekedő szám, mely azt jelzi, hogy az adott főverzión belül hány javításokat tartalmzó frissítés jelent meg.  
+A legelső verzió a 2019.12 verziószámot viseli.
