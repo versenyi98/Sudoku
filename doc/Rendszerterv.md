@@ -54,6 +54,23 @@ A fejlesztők fő feladatkörei jól elválaszthatóak:
 3. Adatbázissal való kommunikáció kiépítése
 ### 3. Üzleti folyamatok modellje
 ### 4. Követelmények
+|Modul|Név  |Kifejtés|
+|-----|-----|--------|
+|Bejelentkezés      |Helyes jelszó      |Helyes jelszó megadása esetén a  felhasználó eléri a kívánt fiókot|
+|                   |Helytelen jelszó   |Helytelen jelszó esetén a kívánt fiók nem elérhető|
+|                   |Elfelejtett jelszó |Elfelejtett jelszó esetén a felhasználó e-mailben kap egy kódot, amivel meg tudja jelszavát változtatni|
+|Barátok kezelése   |Barát hozzáadása   |Egy játékost fel tudunk venni a barátlistára|
+|                   |Barát törlése      |Egy játékost eltávolíthatunk a barátlistáról|
+|Játék indítása     |Hagyományos Sudoku |Hagyományos Sudoku játékra való lehetőség|
+|                   |Sudoku X           |Sudoku X játékra való lehetőség|
+|                   |Killer Sudoku      |Killer Sudoku játékra való lehetőség|
+|                   |Samurai Sudoku     |Samurai Sudoku játékra való lehetőség|
+|                   |Szabálytalan Sudoku|Szabálytalan Sudoku játékra való lehetőség|
+|                   |Könnyű nehézségű játék       |Könnyű nehézségű játékra való lehetőség|
+|                   |Közepes nehézségű játék      |Közepes nehézségű játékra való lehetőség|
+|                   |Nehéz nehézségű játék        |Nehéz nehézségű  játékra való lehetőség|
+|                   |Többszemélyes játék          |A felsorolt nehézségű és módú feladványok megoldása barátok ellen|
+
 ### 5. Funkcionális  terv
 ### 6. Fizikai környezet
 ##### 6.1 Választott programozási nyelv
