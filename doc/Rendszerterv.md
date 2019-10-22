@@ -66,11 +66,10 @@ A fejlesztők fő feladatkörei jól elválaszthatóak:
 |                   |Killer Sudoku      |Killer Sudoku játékra való lehetőség|
 |                   |Samurai Sudoku     |Samurai Sudoku játékra való lehetőség|
 |                   |Szabálytalan Sudoku|Szabálytalan Sudoku játékra való lehetőség|
-|                   |Barátságos játék   |Barátságos játékra való lehetőség|
-|                   |Versengő játék     |Versengő játékra való lehetőség|
 |                   |Könnyű nehézségű játék       |Könnyű nehézségű játékra való lehetőség|
 |                   |Közepes nehézségű játék      |Közepes nehézségű játékra való lehetőség|
 |                   |Nehéz nehézségű játék        |Nehéz nehézségű  játékra való lehetőség|
+|                   |Többszemélyes játék          |A felsorolt nehézségű és módú feladványok megoldása barátok ellen|
 
 ### 5. Funkcionális  terv
 ### 6. Fizikai környezet
