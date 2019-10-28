@@ -42,7 +42,7 @@ public class BaseSudokuGenerator {
         return (cellHeight > 0 && cellHeight > 0 && cellNumbersHorizontal > 0 && cellNumbersVertical > 0);
     }
 
-    public void fillBlankTable() {
+    private void fillBlankTable() {
         if (isPropertiesSet()) {
 
             table = new int[height][width];
@@ -90,10 +90,11 @@ public class BaseSudokuGenerator {
     }
 
     public void generate() {
-        generateRec(0, 0);
+        fillBlankTable();
+        generateSolved(0, 0);
     }
 
-    public void generateRec(int x, int y) {
+    private void generateSolved(int x, int y) {
 
         List<Integer> numbers = new ArrayList<Integer>();
         for (int i = 0; i < cellHeight * cellWidth; i++) {
@@ -108,7 +109,7 @@ public class BaseSudokuGenerator {
                 table[y][x] = numbers.get(i);
                 if (x == width - 1 && y == height - 1) return;
 
-                generateRec((x + 1) % width, y + ((x + 1) / width));
+                generateSolved((x + 1) % width, y + ((x + 1) / width));
                 if (table[y + (x + 1) / width][(x + 1) % width] != -1) {
                     return;
                 }
