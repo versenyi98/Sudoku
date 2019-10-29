@@ -39,20 +39,19 @@ public class BaseSudokuGenerator {
     }
 
     private boolean isPropertiesSet() {
-        return (cellHeight > 0 && cellHeight > 0 && cellNumbersHorizontal > 0 && cellNumbersVertical > 0);
+        return (cellHeight > 0 && cellWidth > 0 && cellNumbersHorizontal > 0 && cellNumbersVertical > 0);
     }
 
-    public void fillBlankTable() {
-        if (isPropertiesSet()) {
+    private void fillBlankTable() {
 
-            table = new int[height][width];
+        table = new int[height][width];
 
-            for (int i = 0; i < height; i++) {
-                for (int j = 0; j < width ; j++) {
-                    table[i][j] = -1;
-                }
+        for (int i = 0; i < height; i++) {
+            for (int j = 0; j < width ; j++) {
+                table[i][j] = -1;
             }
         }
+
     }
 
     private boolean operatorRequirement(int posX, int posY, int value) {
@@ -89,11 +88,15 @@ public class BaseSudokuGenerator {
         }
     }
 
-    public void generate() {
-        generateRec(0, 0);
+    public void generate(int cellsToRemove) {
+        if (isPropertiesSet()) {
+            fillBlankTable();
+            generateSolved(0, 0);
+            generateUnsolved(cellsToRemove);
+        }
     }
 
-    public void generateRec(int x, int y) {
+    private void generateSolved(int x, int y) {
 
         List<Integer> numbers = new ArrayList<Integer>();
         for (int i = 0; i < cellHeight * cellWidth; i++) {
@@ -108,12 +111,129 @@ public class BaseSudokuGenerator {
                 table[y][x] = numbers.get(i);
                 if (x == width - 1 && y == height - 1) return;
 
-                generateRec((x + 1) % width, y + ((x + 1) / width));
+                generateSolved((x + 1) % width, y + ((x + 1) / width));
                 if (table[y + (x + 1) / width][(x + 1) % width] != -1) {
                     return;
                 }
             }
         }
         table[y][x] = -1;
+    }
+
+    private boolean isValid(int table[][]) {
+
+        for (int i = 0; i < height; i++) {
+            for (int j = 0; j < width; j++) {
+                for (int k = j + 1; k < width; k++) {
+                    if (table[i][j] == table[i][k] && table[i][j] != 0) return false;
+                }
+            }
+        }
+
+        for (int i = 0; i < width; i++) {
+            for (int j = 0; j < height; j++) {
+                for (int k = j + 1; k < height; k++) {
+                    if (table[j][i] == table[k][i] && table[j][i] != 0) return false;
+                }
+            }
+        }
+
+        for (int i = 0; i < cellNumbersVertical; i++) {
+            for (int j = 0; j < cellNumbersHorizontal; j++) {
+                List<Integer> cellItems = new ArrayList<Integer>();
+                for (int k = 0; k < cellWidth; k++) {
+                    for (int l = 0; l < cellHeight; l++) {
+                        cellItems.add(table[i * cellHeight + l][j * cellWidth + k]);
+                    }
+                }
+                Collections.sort(cellItems);
+
+                for (int k = 0; k < cellItems.size() - 1; k++) {
+                    if (cellItems.get(k) == cellItems.get(k + 1) && cellItems.get(k) != 0) return false;
+                }
+            }
+        }
+
+        return true;
+    }
+
+    private boolean generateUnsolved(int cellsLeft) {
+        if (cellsLeft == 0) return true;
+
+        List<Integer> cells = new ArrayList<Integer>();
+
+        for (int i = 0; i < width * height; i++) {
+            cells.add(i);
+        }
+
+        Collections.shuffle(cells);
+
+        for (int i = 0; i < cells.size(); i++) {
+            if (table[cells.get(i) / width][cells.get(i) % width] == 0) continue;
+
+            int save = table[cells.get(i) / width][cells.get(i) % width];
+            table[cells.get(i) / width][cells.get(i) % width] = 0;
+
+            if (countSolutions() == 1) {
+
+                boolean next = generateUnsolved(cellsLeft - 1);
+                if (next) return true;
+            }
+
+            table[cells.get(i) / width][cells.get(i) % width] = save;
+        }
+
+        return false;
+    }
+
+    private int countSolutions() {
+
+        int returnValue = 0;
+
+        List<Integer> emptyCells = new ArrayList<Integer>();
+        List<Integer> values = new ArrayList<Integer>();
+
+        for (int i = 0; i < height; i++) {
+            for (int j = 0; j < width; j++) {
+                if (table[i][j] == 0) {
+                    emptyCells.add(i * width + j);
+                    values.add(1);
+                }
+            }
+        }
+
+        while (true) {
+            int tableCopy[][] = new int[height][width];
+
+            for (int k = 0; k < height; k++) {
+                for (int l = 0; l < width; l++) {
+                    tableCopy[k][l] = table[k][l];
+                }
+            }
+
+            int actual = 0;
+            for (int j = 0; j < emptyCells.size(); j++) {
+                actual = j;
+                tableCopy[emptyCells.get(j) / width][emptyCells.get(j) % width] = values.get(j);
+                if (!isValid(tableCopy)) break;
+            }
+
+            while (true) {
+                if (actual == -1) return returnValue;
+
+                if (values.get(actual) == cellWidth * cellHeight) {
+                    actual--;
+                } else {
+                    values.set(actual, values.get(actual) + 1);
+                    for (int j = actual + 1; j < values.size(); j++) {
+                        values.set(j, 1);
+                    }
+                    break;
+                }
+            }
+
+            if (!isValid(tableCopy)) continue;
+            returnValue++;
+        }
     }
 }

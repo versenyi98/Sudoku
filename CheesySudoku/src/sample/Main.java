@@ -24,9 +24,7 @@ public class Main extends Application {
         generator.setCellNumbersHorizontal(3);
         generator.setCellNumbersVertical(3);
 
-        generator.fillBlankTable();
-
-        generator.generate();
+        generator.generate(30);
         generator.printSudoku();
     }
 
