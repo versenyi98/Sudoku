@@ -39,20 +39,19 @@ public class BaseSudokuGenerator {
     }
 
     private boolean isPropertiesSet() {
-        return (cellHeight > 0 && cellHeight > 0 && cellNumbersHorizontal > 0 && cellNumbersVertical > 0);
+        return (cellHeight > 0 && cellWidth > 0 && cellNumbersHorizontal > 0 && cellNumbersVertical > 0);
     }
 
     private void fillBlankTable() {
-        if (isPropertiesSet()) {
 
-            table = new int[height][width];
+        table = new int[height][width];
 
-            for (int i = 0; i < height; i++) {
-                for (int j = 0; j < width ; j++) {
-                    table[i][j] = -1;
-                }
+        for (int i = 0; i < height; i++) {
+            for (int j = 0; j < width ; j++) {
+                table[i][j] = -1;
             }
         }
+
     }
 
     private boolean operatorRequirement(int posX, int posY, int value) {
@@ -90,9 +89,11 @@ public class BaseSudokuGenerator {
     }
 
     public void generate(int cellsToRemove) {
-        fillBlankTable();
-        generateSolved(0, 0);
-        generateUnsolved(cellsToRemove);
+        if (isPropertiesSet()) {
+            fillBlankTable();
+            generateSolved(0, 0);
+            generateUnsolved(cellsToRemove);
+        }
     }
 
     private void generateSolved(int x, int y) {
