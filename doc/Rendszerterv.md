@@ -99,7 +99,7 @@ adatbázist, ami csak 100 felhasználó elért eredményét képes tárolni, ebb
 esetben az egyetlen szélsőséges eset az, amikor több felhasználónak ugyanolyan
 eredménye van, de már nincs tárhely az adatbázisban. Ebben az esetben, annak a
 felhasználónak az eredménye kerül be az adatbázisba, amelyik hamarabb elérte az
-adott pontszámot.A változások kezelésénél két esetet különböztetünk meg: amikor
+adott pontszámot. A változások kezelésénél két esetet különböztetünk meg: amikor
 az adatbázis kapacitása nő ,illetve amikor az adatbázis kapacitása csökken. A csökkent
 kapacitás esetén töröljük azokat a tárolt eredményeket, ameyek a jelenlegi toplista
 alján vannak. A növelt kapacitás esetén, hasonlóképpen kezeljük a bejövő eredményeket,
