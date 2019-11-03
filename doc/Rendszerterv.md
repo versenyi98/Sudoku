@@ -91,6 +91,20 @@ A (kötelezően) választott feladatkövető rendszer a Trello lesz. A verzióke
 
 ### 7. Absztrakt domain modell
 ### 8. Architekturális terv
+A rendszerben található Sudoku játékokat az MVC(Model - View - Controller) tervezési
+minta segítségével valósítjuk meg. Az alkalmazás úgy lesz előállítva, hogy
+skálázható legyen, de ugyanakkor a kezdeti erőforrások is kielégítő tapasztalatot
+biztosítsanak a felhasználónak. Elősször tekintsünk egy kimondottan kis méretű
+adatbázist, ami csak 100 felhasználó elért eredményét képes tárolni, ebben az
+esetben az egyetlen szélsőséges eset az, amikor több felhasználónak ugyanolyan
+eredménye van, de már nincs tárhely az adatbázisban. Ebben az esetben, annak a
+felhasználónak az eredménye kerül be az adatbázisba, amelyik hamarabb elérte az
+adott pontszámot.A változások kezelésénél két esetet különböztetünk meg: amikor
+az adatbázis kapacitása nő ,illetve amikor az adatbázis kapacitása csökken. A csökkent
+kapacitás esetén töröljük azokat a tárolt eredményeket, ameyek a jelenlegi toplista
+alján vannak. A növelt kapacitás esetén, hasonlóképpen kezeljük a bejövő eredményeket,
+mint az eredeti kapacitáskor, annyi különbséggel, hogy megnő a toplistában feltüntetett
+eredmények száma.
 ### 9. Adatbázis terv
 ##### 9.1 Környezet
 A backendet egy linux szerver alkotja, mely két komponenst futtat: egy MySQL adatbázist, és egy Apache HTTP szervert. Az adatbázis elérése HTTP GET és/vagy POST kéréseken keresztül történik, melyeket PHP dolgoz fel.
