@@ -6,14 +6,14 @@ public class BaseSudokuGenerator {
 
     public BaseSudokuGenerator() {}
 
-    private int table[][];
+    protected int table[][];
 
     private int cellWidth = -1;
     private int cellHeight = -1;
     private int cellNumbersHorizontal = -1;
     private int cellNumbersVertical = -1;
-    private int width = -1;
-    private int height = -1;
+    protected int width = -1;
+    protected int height = -1;
 
     public int getCellWidth() { return cellWidth; }
     public int getCellHeight() { return cellHeight; }
@@ -54,7 +54,7 @@ public class BaseSudokuGenerator {
 
     }
 
-    private boolean operatorRequirement(int posX, int posY, int value) {
+    protected boolean operatorRequirement(int posX, int posY, int value) {
 
         for (int i = 0; i < width; i++) {
             if (table[posY][i] == value) return false;
