@@ -37,4 +37,28 @@ public class XSudokuGenerator extends BaseSudokuGenerator {
 
         return true;
     }
+
+    @Override
+    protected boolean isValid(int[][] table) {
+        if(!super.isValid(table))
+            return false;
+
+        // this check relies on the behaviour that arrays of the primitive type "boolean" default every item to "false"
+        // DO NOT replace with the reference type "Boolean" unless you add Array.fill(array, false)
+        boolean[] mainDiagonalCheck = new boolean[this.width];
+        boolean[] subsidiaryDiagonalCheck = new boolean[this.width];
+        for(int i = 0; i < this.width; i ++) {
+            if(mainDiagonalCheck[table[i][i] - 1]) { // we have already encountered this number in the main diagonal
+                return false;
+            }
+            mainDiagonalCheck[table[i][i] - 1] = true;
+
+            if(subsidiaryDiagonalCheck[table[i][this.width - i - 1] - 1]) {
+                return false;
+            }
+            subsidiaryDiagonalCheck[table[i][this.width - i - 1] - 1] = true;
+        }
+
+        return true;
+    }
 }

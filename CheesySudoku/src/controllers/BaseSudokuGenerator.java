@@ -96,7 +96,7 @@ public class BaseSudokuGenerator {
         }
     }
 
-    private void generateSolved(int x, int y) {
+    protected void generateSolved(int x, int y) {
 
         List<Integer> numbers = new ArrayList<Integer>();
         for (int i = 0; i < cellHeight * cellWidth; i++) {
@@ -120,7 +120,7 @@ public class BaseSudokuGenerator {
         table[y][x] = -1;
     }
 
-    private boolean isValid(int table[][]) {
+    protected boolean isValid(int table[][]) {
 
         for (int i = 0; i < height; i++) {
             for (int j = 0; j < width; j++) {
