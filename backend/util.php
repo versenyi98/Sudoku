@@ -10,4 +10,18 @@
 
         return $result;
     }
+
+    function getDBConnection()
+    {
+        $username = "root";
+        $host = "localhost";
+        $password = "sajtládakecske";
+        $database = "Sudoku";
+
+        $conn = new mysqli($host, $username, $password, $database);
+
+        if($conn->connect_error)
+            return false;
+        return $conn;
+    }
 ?>
