@@ -76,7 +76,7 @@ public class IrregularSudokuGenerator extends BaseSudokuGenerator {
                 }
                 if (br) break;
             }
-            generatePattern(i, currentCoord, 1);
+            generatePattern(i, currentCoord, 1, new ArrayList<Pair<Integer, Integer>>());
         }
 
         for (int i = 0; i < height; i++) {
@@ -87,7 +87,7 @@ public class IrregularSudokuGenerator extends BaseSudokuGenerator {
         }
     }
 
-    private boolean generatePattern(int currentPattern, Pair<Integer, Integer> currentCoord, int count) {
+    private boolean generatePattern(int currentPattern, Pair<Integer, Integer> currentCoord, int count, List<Pair<Integer, Integer>> neighbours) {
 
         int y = currentCoord.getValue();
         int x = currentCoord.getKey();
@@ -150,8 +150,6 @@ public class IrregularSudokuGenerator extends BaseSudokuGenerator {
             return true;
         }
 
-        List<Pair<Integer, Integer>> neighbours = new ArrayList<Pair<Integer, Integer>>();
-
         if (inBounds(x + 1, y) && pattern[y][x + 1] == -1) {
             neighbours.add(new Pair<Integer, Integer>(x + 1, y));
         }
@@ -170,7 +168,11 @@ public class IrregularSudokuGenerator extends BaseSudokuGenerator {
         int position = 0;
 
         while (position < neighbours.size()) {
-            boolean ret = generatePattern(currentPattern, neighbours.get(position), count + 1);
+            if (pattern[neighbours.get(position).getValue()][neighbours.get(position).getKey()] != -1) {
+                position++;
+                continue;
+            }
+            boolean ret = generatePattern(currentPattern, neighbours.get(position), count + 1, neighbours);
             if (ret) return true;
             position++;
         }
