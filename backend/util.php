@@ -1,4 +1,10 @@
 <?php
+    // getToken is an alias for getSalt, the format is the same
+    function getToken()
+    {
+        return getSalt();
+    }
+
     function getSalt()
     {
         $alphabet = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789";

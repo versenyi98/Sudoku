@@ -62,4 +62,22 @@
 		$conn->close();
 		die(json_encode($error));
 	}
+
+	// correct login info, attempt to write new token to DB
+	$token = getToken();
+	if(!$conn->real_query("UPDATE User SET Token = '" . $token . "' WHERE Name = '" . $_POST["username"] . "';"))
+	{
+		http_response_code(500);
+		$error = array(
+			$error_out_code => $error_database,
+			$error_out_msg => "The connection to the database server has been severed."
+		);
+		$conn->close();
+		die(json_encode($error));
+	}
+
+	// at this point, the token has been successully written to the database
+	// send the token out to the client
+	$result = array("token" => $token);
+	echo json_encode($result);
 ?>
