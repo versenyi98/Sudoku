@@ -1,4 +1,27 @@
 <?php
+    include_once("errors.php");
+    
+    function dieWithError($httpCode, $errorCode, $errorMsg, $conn = null)
+    {
+        // set the http response code
+        http_response_code($httpCode);
+
+        // collect the error into a format that can be easily jsonified (array)
+        $error = array(
+            $error_out_code => $errorCode,
+            $error_out_msg => $errorMsg
+        );
+
+        // if there is a DB connection, close it before dying
+        if($conn != null)
+        {
+            $conn->close();
+        }
+
+        // die and send out the error message and code
+        die(json_encode($error));
+    }
+
     // getToken is an alias for getSalt, the format is the same
     function getToken()
     {
