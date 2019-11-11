@@ -1,6 +1,7 @@
 package controllers;
 
 import java.util.*;
+import javafx.util.*;
 
 public class BaseSudokuGenerator {
 
@@ -8,8 +9,8 @@ public class BaseSudokuGenerator {
 
     protected int table[][];
 
-    private int cellWidth = -1;
-    private int cellHeight = -1;
+    protected int cellWidth = -1;
+    protected int cellHeight = -1;
     private int cellNumbersHorizontal = -1;
     private int cellNumbersVertical = -1;
     protected int width = -1;
@@ -42,7 +43,7 @@ public class BaseSudokuGenerator {
         return (cellHeight > 0 && cellWidth > 0 && cellNumbersHorizontal > 0 && cellNumbersVertical > 0);
     }
 
-    private void fillBlankTable() {
+    protected void fillBlankTable() {
 
         table = new int[height][width];
 
@@ -51,7 +52,10 @@ public class BaseSudokuGenerator {
                 table[i][j] = -1;
             }
         }
+    }
 
+    protected boolean inBounds(int x, int y) {
+        return  (x >= 0 && x < width && y >= 0 && y < height);
     }
 
     protected boolean operatorRequirement(int posX, int posY, int value) {
