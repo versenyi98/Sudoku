@@ -79,12 +79,8 @@ public class IrregularSudokuGenerator extends BaseSudokuGenerator {
             generatePattern(i, currentCoord, 1, new ArrayList<Pair<Integer, Integer>>());
         }
 
-        for (int i = 0; i < height; i++) {
-            for (int j = 0; j < width; j++) {
-                System.out.print(pattern[i][j]);
-            }
-            System.out.println();
-        }
+        printPattern();
+        System.out.println();
     }
 
     private boolean generatePattern(int currentPattern, Pair<Integer, Integer> currentCoord, int count, List<Pair<Integer, Integer>> neighbours) {
@@ -185,6 +181,56 @@ public class IrregularSudokuGenerator extends BaseSudokuGenerator {
             }
         }
         return false;
+    }
+
+    @Override
+    protected boolean operatorRequirement(int posX, int posY, int value) {
+
+        for (int i = 0; i < width; i++) {
+            if (table[posY][i] == value) return false;
+        }
+
+        for (int i = 0; i < height; i++) {
+            if (table[i][posX] == value) return false;
+        }
+
+        for (int i = 0; i < height; i++) {
+            for (int j = 0; j < width; j++) {
+
+                if (pattern[i][j] == pattern[posY][posX]) {
+                    if (table[posY][posX] == value) {
+                        return false;
+                    }
+                }
+            }
+        }
+
+        return true;
+    }
+
+    @Override
+    public void generate(int cellsToRemove) {
+        if (isPropertiesSet()) {
+            System.out.println("Generate");
+            fillBlankTable();
+            generateSolved(0, 0);
+            //generateUnsolved(cellsToRemove);
+        }
+    }
+
+    public void printPattern() {
+        for (int i = 0; i < cellNumbersVertical; i++) {
+            for (int j = 0; j < cellHeight; j++) {
+                for (int k = 0; k < cellNumbersHorizontal; k++) {
+                    for (int l = 0; l < cellWidth; l++) {
+                        System.out.print(pattern[i * cellHeight + j][k * cellWidth + l] + " ");
+                    }
+                    System.out.print(" ");
+                }
+                System.out.println();
+            }
+            System.out.println();
+        }
     }
 
     public int[][] getPattern() {
