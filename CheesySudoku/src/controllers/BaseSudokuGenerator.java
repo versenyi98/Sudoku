@@ -126,35 +126,22 @@ public class BaseSudokuGenerator {
 
     protected boolean isValid(int table[][]) {
 
-        for (int i = 0; i < height; i++) {
-            for (int j = 0; j < width; j++) {
-                for (int k = j + 1; k < width; k++) {
-                    if (table[i][j] == table[i][k] && table[i][j] != 0) return false;
-                }
-            }
-        }
+        boolean[][] row = new boolean[height][width];
+        boolean[][] column = new boolean[width][height];
+        boolean[][] cells = new boolean[cellNumbersHorizontal * cellNumbersVertical][cellHeight * cellWidth];
 
         for (int i = 0; i < width; i++) {
             for (int j = 0; j < height; j++) {
-                for (int k = j + 1; k < height; k++) {
-                    if (table[j][i] == table[k][i] && table[j][i] != 0) return false;
-                }
-            }
-        }
+                if (table[j][i] == 0) continue;
 
-        for (int i = 0; i < cellNumbersVertical; i++) {
-            for (int j = 0; j < cellNumbersHorizontal; j++) {
-                List<Integer> cellItems = new ArrayList<Integer>();
-                for (int k = 0; k < cellWidth; k++) {
-                    for (int l = 0; l < cellHeight; l++) {
-                        cellItems.add(table[i * cellHeight + l][j * cellWidth + k]);
-                    }
+                int cellNumber = (i / cellWidth) * cellNumbersHorizontal + (j / cellHeight);
+                if (row[j][table[j][i] - 1] || column[i][table[j][i] - 1] || cells[cellNumber][table[j][i] - 1]) {
+                    return false;
                 }
-                Collections.sort(cellItems);
 
-                for (int k = 0; k < cellItems.size() - 1; k++) {
-                    if (cellItems.get(k) == cellItems.get(k + 1) && cellItems.get(k) != 0) return false;
-                }
+                row[j][table[j][i] - 1] = true;
+                column[i][table[j][i] - 1] = true;
+                cells[cellNumber][table[j][i] - 1] = true;
             }
         }
 
