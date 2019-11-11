@@ -11,8 +11,8 @@ public class BaseSudokuGenerator {
 
     protected int cellWidth = -1;
     protected int cellHeight = -1;
-    private int cellNumbersHorizontal = -1;
-    private int cellNumbersVertical = -1;
+    protected int cellNumbersHorizontal = -1;
+    protected int cellNumbersVertical = -1;
     protected int width = -1;
     protected int height = -1;
 
@@ -39,7 +39,7 @@ public class BaseSudokuGenerator {
         this.height = cellHeight * cellNumbersVertical;
     }
 
-    private boolean isPropertiesSet() {
+    protected boolean isPropertiesSet() {
         return (cellHeight > 0 && cellWidth > 0 && cellNumbersHorizontal > 0 && cellNumbersVertical > 0);
     }
 
@@ -78,9 +78,9 @@ public class BaseSudokuGenerator {
     }
 
     public void printSudoku() {
-        for (int i = 0; i < cellNumbersHorizontal; i++) {
+        for (int i = 0; i < cellNumbersVertical; i++) {
             for (int j = 0; j < cellHeight; j++) {
-                for (int k = 0; k < cellNumbersVertical; k++) {
+                for (int k = 0; k < cellNumbersHorizontal; k++) {
                     for (int l = 0; l < cellWidth; l++) {
                         System.out.print(table[i * cellHeight + j][k * cellWidth + l] + " ");
                     }
