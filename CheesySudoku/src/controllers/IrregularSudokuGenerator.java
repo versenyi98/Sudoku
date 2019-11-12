@@ -213,7 +213,6 @@ public class IrregularSudokuGenerator extends BaseSudokuGenerator {
     }
 
     public void printPattern() {
-
         for (int i = 0; i < cellNumbersVertical; i++) {
             for (int j = 0; j < cellHeight; j++) {
                 for (int k = 0; k < cellNumbersHorizontal; k++) {
