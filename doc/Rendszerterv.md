@@ -72,6 +72,26 @@ A fejlesztők fő feladatkörei jól elválaszthatóak:
 |                   |Többszemélyes játék          |A felsorolt nehézségű és módú feladványok megoldása barátok ellen|
 
 ### 5. Funkcionális  terv
+![A sudoku program adatbázisának szerkezete](./resource/rendszerterv_funk_terv.svg)
+
+A játék elindításakor ellenőrizzük, hogy van-e bejelentkezett felhasználó. Ha nincs, akkor a bejelentkező oldalra továbbítuk,
+ellenkező esetben a főmenüre.
+##### 5.1 Bejelentkező oldal
+Itt a felhaszáló kiválaszthatja, hogy szeretne bejelentkezni vagy guest -ként egyedül játszani. Amennyiben bejelentkezik
+lehetősége van a felhasználói adatok mentésére.
+##### 5.2 Főmenü
+A felhasznáó itt a kattintással vagy a gombok segítségével navigálhat tovább az alábbi oldalakra, melyek az alpontokban
+kerülnek kifejtésre.
+* Új játék
+* Statisztikák
+* Beállítások
+
+Továbbá itt találkató a kilépés gomb is.
+
+##### 5.3 Új játék
+##### 5.4 Statisztikák
+##### 5.5 Beállítások
+
 ### 6. Fizikai környezet
 ##### 6.1 Választott programozási nyelv
 A játékrendszer fejlesztése Java programozási nyelven for történni.
