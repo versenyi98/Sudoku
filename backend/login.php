@@ -32,8 +32,8 @@
 	}
 
 	// get the hash of the password sent, and check if it matches with our hash
-	$clientPassHash = hash("SHA256", $_POST['password'] + $passhash[1]);
-	if($passhash != $clientPassHash)
+	$clientPassHash = hash("SHA256", $_POST['password'] . $passhash[1]);
+	if($passhash[0] != $clientPassHash)
 	{
 		dieWithError(401, $error_wrong_auth, "The password provided is incorrect.", $conn);
 	}
