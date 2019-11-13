@@ -1,4 +1,5 @@
 <?php
+    header('Content-type:application/json');
     include_once("errors.php");
     
     function dieWithError($httpCode, $errorCode, $errorMsg, $conn = null)
@@ -8,8 +9,9 @@
 
         // collect the error into a format that can be easily jsonified (array)
         $error = array(
-            $error_out_code => $errorCode,
-            $error_out_msg => $errorMsg
+            "success" => false,
+            "errorCode" => $errorCode,
+            "errorMessage" => $errorMsg
         );
 
         // if there is a DB connection, close it before dying

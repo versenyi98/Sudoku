@@ -1,5 +1,4 @@
 <?php
-    header('Content-type:application/json');
     include_once('util.php');
     include_once('errors.php');
 
