@@ -44,6 +44,7 @@
 	{
 		dieWithError(500, $error_database, "The connection to the database server has been severed.", $conn);
 	}
+	$conn->close();
 
 	// at this point, the token has been successully written to the database
 	// send the token out to the client
