@@ -204,12 +204,33 @@ public class IrregularSudokuGenerator extends BaseSudokuGenerator {
     }
 
     @Override
-    public void generate(int cellsToRemove) {
-        if (isPropertiesSet()) {
-            fillBlankTable();
-            generateSolved(0, 0);
-            //generateUnsolved(cellsToRemove);
+    protected boolean isValid(int table[][]) {
+
+        boolean[][] row = new boolean[height][width];
+        boolean[][] column = new boolean[width][height];
+        boolean[][] cells = new boolean[cellNumbersHorizontal * cellNumbersVertical][cellHeight * cellWidth];
+
+        for (int i = 0; i < width; i++) {
+            for (int j = 0; j < height; j++) {
+                if (table[j][i] == 0) continue;
+
+                if (row[j][table[j][i] - 1] || column[i][table[j][i] - 1] || cells[pattern[j][i]][table[j][i] - 1]) {
+                    return false;
+                }
+
+                row[j][table[j][i] - 1] = true;
+                column[i][table[j][i] - 1] = true;
+                cells[pattern[j][i]][table[j][i] - 1] = true;
+            }
         }
+
+        return true;
+    }
+
+    @Override
+    public void generate(int cellsToRemove) {
+        super.generate(cellsToRemove);
+        printPattern();
     }
 
     public void printPattern() {
