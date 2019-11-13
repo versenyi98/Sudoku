@@ -17,7 +17,7 @@ public class Main extends Application {
         primaryStage.setScene(new Scene(root, 300, 275));
         primaryStage.show();
 
-        BaseSudokuGenerator generator = new BaseSudokuGenerator();
+        BaseSudokuGenerator generator = new IrregularSudokuGenerator();
 
         generator.setCellWidth(3);
         generator.setCellHeight(3);
