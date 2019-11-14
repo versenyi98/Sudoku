@@ -121,9 +121,18 @@ Elérhető kölön táblázat sudoku típusonként és időintervallumonként:
 * éves
 * összesített
 
-
-
 ##### 5.6 Beállítások
+A felhasználó itt módosíthatja a program beállításait, kezelheti felhasználói fiókját. Ezt az oldalt éri el a főmenüből és a játékból egyaránt.
+
+Program beállítások:
+* Ellenőrzés (ki/be)
+* Hang (ki/be)
+* Navigálás (a táblán üres cellára navigálás esetén ugorjon-e a túloldalra)
+
+Fiók kezelés:
+* Felhasználónév módosítása
+* Kijelentkezés
+* Felhasználói fiók törlése
 
 ### 6. Fizikai környezet
 ##### 6.1 Választott programozási nyelv
