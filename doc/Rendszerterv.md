@@ -105,6 +105,23 @@ Elérhető továbbá innen:
 * Beállítások
 
 ##### 5.5 Statisztikák
+Itt jelenítjük meg a felhasználó játékadatait:
+
+|   | Típusokra lebontott | Összesített |
+|---|---|---|
+| Játékidő: | xx:xx:xx | xx:xx:xx |
+| Játékok száma: | x | x |
+| Ebből sikeres: | x | x |
+
+Illetve az online ranglétra, mely a megnyert játékok és ezek ideje alapján kerül kiszámításra.
+Elérhető kölön táblázat sudoku típusonként és időintervallumonként:
+* napi
+* heti
+* havi
+* éves
+* összesített
+
+
 
 ##### 5.6 Beállítások
 
