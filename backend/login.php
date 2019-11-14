@@ -48,6 +48,8 @@
 
 	// at this point, the token has been successully written to the database
 	// send the token out to the client
-	$result = array("token" => $token);
+	$result = array(
+		"success" => true,
+		"token" => $token);
 	echo json_encode($result);
 ?>
