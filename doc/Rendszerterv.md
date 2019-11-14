@@ -89,8 +89,24 @@ kerülnek kifejtésre.
 Továbbá itt találkató a kilépés gomb is.
 
 ##### 5.3 Új játék
-##### 5.4 Statisztikák
-##### 5.5 Beállítások
+Ezen az oldalon állítja be a felhasználó
+ * a játék típusát ( hogy melyik algoritmus alapján generáljuk a táblát )
+ * a játék nehézségét ( hogy hány szám legyen kihagyva )
+ * egy / többjátékos mód
+ 
+ Az oldalról tovább navigálhat a játék megkezdéséhez, abban az esetben ha fent felsorolt beállításokat kiválasztotta.
+ Egyébként a gomb inaktív. A főmenübe visszalépéshez mindig joga van, megerősítésre nincs szükség.
+##### 5.4 Játék
+Ezen az oldalon jelenik meg a legenerált sudoku tábla. A felhasználó itt a nyilakkal vagy kattintással választhat kitöltendő
+cellát, illetve ezekbe a cellákba számot írhat csak be ( 1-9 között ).
+
+Elérhető továbbá innen:
+* Főmenü ( megerősítés szükséges, hiszen a játékmenet elvész )
+* Beállítások
+
+##### 5.5 Statisztikák
+
+##### 5.6 Beállítások
 
 ### 6. Fizikai környezet
 ##### 6.1 Választott programozási nyelv
