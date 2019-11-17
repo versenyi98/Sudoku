@@ -26,6 +26,41 @@
     -fx-background-color: -base1;
 }
 
+.TableCell_id2 {
+    -bgColor: #deb387;
+    -fx-background-color: #deb387;
+}
+
+.TableCell_id3 {
+    -bgColor: #d0b4db;
+    -fx-background-color: #d0b4db;
+}
+
+.TableCell_id4 {
+    -bgColor: #c9c28d;
+    -fx-background-color: #c9c28d;
+}
+
+.TableCell_id5 {
+    -bgColor: #8dc9bf;
+    -fx-background-color: #8dc9bf;
+}
+
+.TableCell_id6 {
+    -bgColor: #c98d8d;
+    -fx-background-color: #c98d8d;
+}
+
+.TableCell_id7 {
+    -bgColor: #8dc991;
+    -fx-background-color: #8dc991;
+}
+
+.TableCell_id8 {
+    -bgColor: #828282;
+    -fx-background-color: #828282;
+}
+
 .TableCell:focused {
      -fx-background-color: derive(-bgColor, -18%);
  }

@@ -1,5 +1,7 @@
 package sample;
 
+import controllers.IrregularSudokuGenerator;
+import controllers.XSudokuGenerator;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;

@@ -81,7 +81,7 @@ public class IrregularSudokuGenerator extends BaseSudokuGenerator {
 
         for (int i = 0; i < height; i++) {
             for (int j = 0; j < width; j++) {
-                System.out.print(pattern[i][j]);
+                System.out.print(pattern[i][j] + " ");
             }
             System.out.println();
         }
