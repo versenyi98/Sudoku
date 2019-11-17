@@ -175,6 +175,16 @@ fog létezni a megoldás vagy sem?
 7. Ha nem, akkor új állapot létrehozása, és az 1. lépés elvégzése újra.
 8. Ha igen, akkor végeztünk
 ### 11. Tesztterv
+| A teszt tárgya | Tesztadat | elvárt visszatérési érték illetve viselkedés | Kilépési feltétel |
+|----------|:-------------:|------:| ------: |
+| A játékos név adása | Üres string | Üzenet a felhasználónak, hogy szükséges nevet adni | Sikeres teszt |
+| A játék indítása | Kattintás | A játék elindul | Elindul a játek|
+| A játék ablak | Ablak fókusz elvesztése | A játék folytatódik a háttérben | A játék nem áll meg |
+| A játék bezárása | Applikációból való kilépés bármilyen módon | A játék vége, foglalt erőforrások visszaszolgáltatása | Az applikáció leáll |
+| Pontrendszer | A játékos sikeresen befejezi a játékot | Az eltöltött idő alapján pontok számítása | Sikeres teszt |
+| A cella kitöltése | (<kbd>1</kbd> - <kbd>9</kbd>)(<kbd>1</kbd> - <kbd>9</kbd>) | A cella kitöltésre kerül, a játékos által megadott számmal (<kbd>1</kbd> - <kbd>9</kbd>), amennyiben lehetséges | Sikeres teszt |
+| Érvénytelen input | Bármilyen billentyű vagy egér input aminek nincs beállított funkcionalitása | Semmi | Sikeres teszt |
+| A játék vége | Nincs üres cella | A játék befekeződik | Sikeres teszt |
 ### 12. Telepítési terv
 ### 13. Karbantartási  terv
 ##### 13.1 Verziók és Frissítés
