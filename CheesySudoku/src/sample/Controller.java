@@ -21,6 +21,22 @@ public class Controller {
     private void initialize() {
         prepareGenerator();
 
+        generateNew();
+    }
+
+    @FXML
+    private void closeGame() {
+        Main.mainStage.close();
+    }
+
+    @FXML
+    private void newGame() {
+        generateNew();
+    }
+
+    private void generateNew() {
+        tableHolder.getChildren().clear();
+        bsg.generate(30);
         TableCell temp;
         for (int col = 0; col < HEIGHT; col++) {
             for (int row = 0; row < WIDTH; row++) {
@@ -30,11 +46,6 @@ public class Controller {
                 tableHolder.getChildren().add(temp);
             }
         }
-    }
-
-    @FXML
-    private void closeGame() {
-        Main.mainStage.close();
     }
 
     private int getGroupId(int col, int row) {
@@ -48,6 +59,5 @@ public class Controller {
         bsg.setCellHeight(CELL_HEIGHT);
         bsg.setCellNumbersHorizontal(CELL_NUMBERS_HORIZONTAL);
         bsg.setCellNumbersVertical(CELL_NUMBERS_VERTICAL);
-        bsg.generate(30);
     }
 }

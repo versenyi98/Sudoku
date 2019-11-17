@@ -5,6 +5,10 @@
     -base1: #a7ccc3;
 }
 
+.mainPane {
+    -fx-background-color: #d1ede4;
+}
+
 .TableCell {
     -fx-pref-width: -fx-cellSize;
     -fx-pref-height: -fx-cellSize;

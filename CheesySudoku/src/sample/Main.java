@@ -16,9 +16,9 @@ public class Main extends Application {
         mainStage = primaryStage;
         MAIN_LOADER.setLocation(getClass().getResource("game.fxml"));
         Parent root = MAIN_LOADER.load();
-        Scene scene = new Scene(root, 300, 320);
+        Scene scene = new Scene(root, 300, 310);
         scene.getStylesheets().add("sample/mainStyle.css");
-
+        mainStage.setResizable(false);
         mainStage.setTitle("CheesySudoku");
         mainStage.setScene(scene);
         mainStage.show();
