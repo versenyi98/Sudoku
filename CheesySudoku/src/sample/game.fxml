@@ -36,6 +36,12 @@
                         <RadioMenuItem mnemonicParsing="false" text="Ellenőrzés" />
                      </items>
                   </Menu>
+                  <Menu mnemonicParsing="false" text="Típus">
+                     <items>
+                        <MenuItem mnemonicParsing="false" onAction="#switchBase" text="Hagyományos" />
+                        <MenuItem mnemonicParsing="false" onAction="#switchIrregular" text="Szabálytalan" />
+                     </items>
+                  </Menu>
                   <MenuItem mnemonicParsing="false" onAction="#newGame" text="Új rejtvény" />
                   <MenuItem mnemonicParsing="false" onAction="#closeGame" text="Kilépés" />
             </items>

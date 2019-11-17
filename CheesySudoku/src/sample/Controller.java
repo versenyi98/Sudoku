@@ -18,7 +18,7 @@ public class Controller {
     private final int CELL_NUMBERS_VERTICAL = 3;
     private final int WIDTH = CELL_WIDTH * CELL_NUMBERS_HORIZONTAL;
     private final int HEIGHT = CELL_HEIGHT * CELL_NUMBERS_VERTICAL;
-    private final int game_type = 0;
+    private int game_type = 0;
 
     @FXML
     private void initialize() {
@@ -38,6 +38,18 @@ public class Controller {
         } else {
             generateNewIrregularSudoku();
         }
+    }
+
+    @FXML
+    private void switchBase() {
+        game_type = 0;
+        newGame();
+    }
+
+    @FXML
+    private void switchIrregular() {
+        game_type = 1;
+        newGame();
     }
 
     private void generateNewBaseSudoku() {
