@@ -1,0 +1,31 @@
+* {
+    -fx-cellSize: 30px;
+    -bgColor: #000000;
+    -base0: #d4cab2;
+    -base1: #a7ccc3;
+}
+
+.TableCell {
+    -fx-pref-width: -fx-cellSize;
+    -fx-pref-height: -fx-cellSize;
+    -fx-background-insets: 0;
+    -fx-background-radius: 0;
+}
+
+.TableCell_id0 {
+    -bgColor: -base0;
+    -fx-background-color: -base0;
+}
+
+.TableCell_id1 {
+    -bgColor: -base1;
+    -fx-background-color: -base1;
+}
+
+.TableCell:focused {
+     -fx-background-color: derive(-bgColor, -18%);
+ }
+
+.ModifiableCell {
+    -fx-background-color: derive(-bgColor, +18%);
+}
