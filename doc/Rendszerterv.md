@@ -176,6 +176,9 @@ fog létezni a megoldás vagy sem?
 8. Ha igen, akkor végeztünk
 ### 11. Tesztterv
 ### 12. Telepítési terv
+A játékhoz csupán Java telepítésére van szükség, ez több helyről is letölthető (pl.: AdoptOpenJDK: https://adoptopenjdk.net/releases.html), 
+itt kiválaszthatod a Java verziót illetve a platformot. A telepítés során ajánlott a 'JAVA_HOME' automatikus beállítását 
+engedélyezni, így nem kell manuálisan a környezeti változókhoz hozzáadni. Ezek után már lehet is indítani a letöltött játékot.
 ### 13. Karbantartási  terv
 ##### 13.1 Verziók és Frissítés
 A program befejezése után annak frissítése két menetrend szerint történik.
