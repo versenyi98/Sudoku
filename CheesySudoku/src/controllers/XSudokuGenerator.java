@@ -1,6 +1,20 @@
 package controllers;
 
+/**
+ * This class is the generator class for X sudokus
+ * (sudokus that require unique numbers in the main and subsidiary diagonals).
+ */
 public class XSudokuGenerator extends BaseSudokuGenerator {
+    /**
+     * This parameterless constructor creates a new instance of the {@link XSudokuGenerator} class.
+     * Using this constructor leaves the generator uninitialized. Set dimensions via:
+     * <ul>
+     *     <li>{@link XSudokuGenerator#setCellWidth(int)}</li>
+     *     <li>{@link XSudokuGenerator#setCellHeight(int)}</li>
+     *     <li>{@link XSudokuGenerator#setCellNumbersHorizontal(int)}</li>
+     *     <li>{@link XSudokuGenerator#setCellNumbersVertical(int)}</li>
+     * </ul>
+     */
     public XSudokuGenerator() {}
 
     /**
@@ -38,6 +52,11 @@ public class XSudokuGenerator extends BaseSudokuGenerator {
         return true;
     }
 
+    /**
+     * This method checks if a sudoku X table fulfills the uniqueness constraint.
+     * @param table The sudoku table to check.
+     * @return The boolean value true if the given table fulfills the uniqueness constraint, false otherwise.
+     */
     @Override
     protected boolean isValid(int[][] table) {
         if(!super.isValid(table))
