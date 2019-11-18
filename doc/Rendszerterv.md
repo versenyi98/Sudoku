@@ -182,7 +182,16 @@ fog létezni a megoldás vagy sem?
 | A játék ablak | Ablak fókusz elvesztése | A játék folytatódik a háttérben | A játék nem áll meg |
 | A játék bezárása | Applikációból való kilépés bármilyen módon | A játék vége, foglalt erőforrások visszaszolgáltatása | Az applikáció leáll |
 | Pontrendszer | A játékos sikeresen befejezi a játékot | Az eltöltött idő alapján pontok számítása | Sikeres teszt |
-| A cella kitöltése | (<kbd>1</kbd> - <kbd>9</kbd>)(<kbd>1</kbd> - <kbd>9</kbd>) | A cella kitöltésre kerül, a játékos által megadott számmal (<kbd>1</kbd> - <kbd>9</kbd>), amennyiben lehetséges | Sikeres teszt |
+| A cella kijelölése | &#x1F5B1; | Az egér pozíciójánál lévő cella megnyitásra kerül, amennyiben üres vagy rossz értéket tartalmaz | Sikeres teszt |
+| A cella kitöltése | <kbd>1</kbd> | A cella kitöltésre kerül, a játékos által megadott számmal, amennyiben lehetséges | Sikeres teszt |
+| A cella kitöltése | <kbd>2</kbd> | A cella kitöltésre kerül, a játékos által megadott számmal, amennyiben lehetséges | Sikeres teszt |
+| A cella kitöltése | <kbd>3</kbd> | A cella kitöltésre kerül, a játékos által megadott számmal, amennyiben lehetséges | Sikeres teszt |
+| A cella kitöltése | <kbd>4</kbd> | A cella kitöltésre kerül, a játékos által megadott számmal, amennyiben lehetséges | Sikeres teszt |
+| A cella kitöltése | <kbd>5</kbd> | A cella kitöltésre kerül, a játékos által megadott számmal, amennyiben lehetséges | Sikeres teszt |
+| A cella kitöltése | <kbd>6</kbd> | A cella kitöltésre kerül, a játékos által megadott számmal, amennyiben lehetséges | Sikeres teszt |
+| A cella kitöltése | <kbd>7</kbd> | A cella kitöltésre kerül, a játékos által megadott számmal, amennyiben lehetséges | Sikeres teszt |
+| A cella kitöltése | <kbd>8</kbd> | A cella kitöltésre kerül, a játékos által megadott számmal, amennyiben lehetséges | Sikeres teszt |
+| A cella kitöltése | <kbd>9</kbd> | A cella kitöltésre kerül, a játékos által megadott számmal, amennyiben lehetséges | Sikeres teszt |
 | Érvénytelen input | Bármilyen billentyű vagy egér input aminek nincs beállított funkcionalitása | Semmi | Sikeres teszt |
 | A játék vége | Nincs üres cella | A játék befekeződik | Sikeres teszt |
 ### 12. Telepítési terv
