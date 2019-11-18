@@ -10,11 +10,4 @@ public class Controller {
     public GridPane main_menu_grid;
     public Button new_game_button;
     public Button exit_button;
-
-    public void setMenuClicks()
-    {
-        exit_button.setOnMouseClicked((MouseEvent e) -> {
-            Platform.exit();
-        });
-    }
 }
