@@ -1,4 +1,4 @@
-package sample;
+package sample.model;
 
 import javafx.scene.control.Button;
 import javafx.scene.input.KeyCode;

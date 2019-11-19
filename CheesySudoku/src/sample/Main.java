@@ -1,7 +1,5 @@
 package sample;
 
-import controllers.IrregularSudokuGenerator;
-import controllers.XSudokuGenerator;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
@@ -16,10 +14,10 @@ public class Main extends Application {
     @Override
     public void start(Stage primaryStage) throws Exception {
         mainStage = primaryStage;
-        MAIN_LOADER.setLocation(getClass().getResource("game.fxml"));
+        MAIN_LOADER.setLocation(getClass().getResource("fxml/game.fxml"));
         Parent root = MAIN_LOADER.load();
         Scene scene = new Scene(root, 300, 310);
-        scene.getStylesheets().add("sample/mainStyle.css");
+        scene.getStylesheets().add("sample/css/gameStyle.css");
         mainStage.setResizable(false);
         mainStage.setTitle("CheesySudoku");
         mainStage.setScene(scene);

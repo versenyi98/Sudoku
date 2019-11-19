@@ -1,11 +1,14 @@
-package sample;
+package sample.controllers;
 
 import controllers.BaseSudokuGenerator;
 import controllers.IrregularSudokuGenerator;
 import javafx.fxml.FXML;
 import javafx.scene.layout.AnchorPane;
+import sample.model.Difficulty;
+import sample.Main;
+import sample.model.TableCell;
 
-public class Controller {
+public class GameController {
 
     @FXML
     private AnchorPane tableHolder;
@@ -18,6 +21,7 @@ public class Controller {
     private final int CELL_NUMBERS_VERTICAL = 3;
     private final int WIDTH = CELL_WIDTH * CELL_NUMBERS_HORIZONTAL;
     private final int HEIGHT = CELL_HEIGHT * CELL_NUMBERS_VERTICAL;
+    private Difficulty.value difficulty = Difficulty.value.MEDIUM;
     private int game_type = 0;
 
     @FXML
@@ -34,9 +38,9 @@ public class Controller {
     @FXML
     private void newGame() {
         if (game_type == 0) {
-            generateNewBaseSudoku();
+            generateNewBaseSudoku(difficulty);
         } else {
-            generateNewIrregularSudoku();
+            generateNewIrregularSudoku(difficulty);
         }
     }
 
@@ -52,9 +56,33 @@ public class Controller {
         newGame();
     }
 
-    private void generateNewBaseSudoku() {
+    @FXML
+    private void switchEasy() {
+        difficulty = Difficulty.value.EASY;
+        newGame();
+    }
+
+    @FXML
+    private void switchMedium() {
+        difficulty = Difficulty.value.MEDIUM;
+        newGame();
+    }
+
+    @FXML
+    private void switchHard() {
+        difficulty = Difficulty.value.HARD;
+        newGame();
+    }
+
+    @FXML
+    private void switchExtreme() {
+        difficulty = Difficulty.value.EXTREME;
+        newGame();
+    }
+
+    private void generateNewBaseSudoku(Difficulty.value d) {
         tableHolder.getChildren().clear();
-        bsg.generate(30);
+        bsg.generate(Difficulty.Convert.toInt(d));
         TableCell temp;
         for (int col = 0; col < HEIGHT; col++) {
             for (int row = 0; row < WIDTH; row++) {
@@ -66,9 +94,9 @@ public class Controller {
         }
     }
 
-    private void generateNewIrregularSudoku() {
+    private void generateNewIrregularSudoku(Difficulty.value d) {
         tableHolder.getChildren().clear();
-        isg.generate(30);
+        isg.generate(Difficulty.Convert.toInt(d));
         TableCell temp;
         for (int col = 0; col < HEIGHT; col++) {
             for (int row = 0; row < WIDTH; row++) {

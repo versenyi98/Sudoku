@@ -9,7 +9,7 @@
 <?import javafx.scene.layout.BorderPane?>
 <?import javafx.scene.layout.VBox?>
 
-<BorderPane id="mainPane" prefHeight="200.0" prefWidth="200.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.Controller">
+<BorderPane id="mainPane" prefHeight="200.0" prefWidth="200.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.controllers.GameController">
    <center>
       <VBox alignment="TOP_CENTER" BorderPane.alignment="CENTER">
          <children>
@@ -34,12 +34,21 @@
                      <items>
                         <RadioMenuItem mnemonicParsing="false" selected="true" text="Hang" />
                         <RadioMenuItem mnemonicParsing="false" text="Ellenőrzés" />
+                        <MenuItem mnemonicParsing="false" text="Nyelv" />
                      </items>
                   </Menu>
                   <Menu mnemonicParsing="false" text="Típus">
                      <items>
                         <MenuItem mnemonicParsing="false" onAction="#switchBase" text="Hagyományos" />
                         <MenuItem mnemonicParsing="false" onAction="#switchIrregular" text="Szabálytalan" />
+                     </items>
+                  </Menu>
+                  <Menu mnemonicParsing="false" text="Nehézség">
+                     <items>
+                        <MenuItem mnemonicParsing="false" onAction="#switchEasy" text="Könnyű" />
+                        <MenuItem mnemonicParsing="false" onAction="#switchMedium" text="Normál" />
+                        <MenuItem mnemonicParsing="false" onAction="#switchHard" text="Nehéz" />
+                        <MenuItem mnemonicParsing="false" onAction="#switchExtreme" text="Bikabaszó" />
                      </items>
                   </Menu>
                   <MenuItem mnemonicParsing="false" onAction="#newGame" text="Új rejtvény" />
