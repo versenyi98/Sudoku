@@ -1,8 +1,8 @@
 * {
     -fx-cellSize: 30px;
     -bgColor: #000000;
-    -base0: #d4cab2;
-    -base1: #a7ccc3;
+    -base0: #dbd5c8;
+    -base1: #b3c4c1;
 }
 
 .mainPane {
@@ -10,6 +10,7 @@
 }
 
 .TableCell {
+    -fx-font-weight: bold;
     -fx-pref-width: -fx-cellSize;
     -fx-pref-height: -fx-cellSize;
     -fx-background-insets: 0;
@@ -57,14 +58,15 @@
 }
 
 .TableCell_id8 {
-    -bgColor: #828282;
-    -fx-background-color: #828282;
+    -bgColor: #9c9898;
+    -fx-background-color: #9c9898;
 }
 
 .TableCell:focused {
-     -fx-background-color: derive(-bgColor, -18%);
+     -fx-background-color: derive(-bgColor, -12%);
  }
 
 .ModifiableCell {
-    -fx-background-color: derive(-bgColor, +18%);
+    -fx-text-fill: #007cad;
+    -fx-font-style: italic;
 }
