@@ -2,12 +2,12 @@ Sudoku API specifikáció
 =======================
 
 ### 1. Általános
-- az alábbi dokumentum a "`Cheesy Sudoku`" játékprogram webes API-jának a specifikációja 2019.11.25-ei állapota szerint
-- minden API végpont egy JSON objektum formájában adja meg a kimenetét
+- Az alábbi dokumentum a "`Cheesy Sudoku`" játékprogram webes API-jának a specifikációja 2019.11.25-ei állapota szerint
+- Minden API végpont egy JSON objektum formájában adja meg a kimenetét
   - a sikerességet a `success` kulcsú boolean tartalmazza
   - sikertelenség esetén a `errorCode` (szám) és `errorMessage` (szöveg) tartalmazza a részleteket
-- hiba esetén minden API végpont saját hibakódolással és -üzenettel, és HTTP status code-al is jelzi, mi történt
-- saját hibakódolás felépítése
+- Hiba esetén minden API végpont saját hibakódolással és -üzenettel, és HTTP status code-al is jelzi, mi történt
+- Saját hibakódolás felépítése
   - kód 1: adatbázishiba
   - kód 2: autentikáció hiánya
   - kód 3: hibás autentikáció
@@ -43,7 +43,7 @@ Minden toplista azonos be- és kimenettel tartozik, melyeknek a felépítése a 
   - `mode`: játékmódra szűrés
   - `difficulty`: nehézségre való szűrés
   - `topnum`: maximum hány felhasználót jelenítsen meg a listában. Amennyiben nincs megadva, az alapértelmezett érték 10.
-- kimenet:
+- Kimenet:
   - `list`: egy JSON array, melynek minden i. eleme egy JSON objektum, a toplista (i+1). helyezettje. Az egyes objektumok két kulccsal rendelkeznek:
     - `name`: a felhasználó neve
     - `value`: az érték, ami alapján elérte a felhasználó a helyezését. Ennek típusa toplistánként változik, azonban mindig olvasható szöveges reprezentáció.
