@@ -1,0 +1,80 @@
+* {
+    -fx-cellSize: 30px;
+    -bgColor: #000000;
+
+    -base0: #dadada;
+    -base1: #a4a2a2;
+    -base2: #e5a7a7;
+    -base3: #b4afcd;
+    -base4: #aeddba;
+    -base5: #ca90c6;
+    -base6: #ecea9e;
+    -base7: #b69e89;
+    -base8: #a9cfd6;
+}
+
+.mainPane {
+    -fx-background-color: #d1ede4;
+}
+
+.TableCell {
+    -fx-font-weight: bold;
+    -fx-pref-width: -fx-cellSize;
+    -fx-pref-height: -fx-cellSize;
+    -fx-background-insets: 0;
+    -fx-background-radius: 0;
+}
+
+.TableCell_id0 {
+    -bgColor: -base0;
+    -fx-background-color: -base0;
+}
+
+.TableCell_id1 {
+    -bgColor: -base1;
+    -fx-background-color: -base1;
+}
+
+.TableCell_id2 {
+    -bgColor: -base2;
+    -fx-background-color: -base2;
+}
+
+.TableCell_id3 {
+    -bgColor: -base3;
+    -fx-background-color: -base3;
+}
+
+.TableCell_id4 {
+    -bgColor: -base4;
+    -fx-background-color: -base4;
+}
+
+.TableCell_id5 {
+    -bgColor: -base5;
+    -fx-background-color: -base5;
+}
+
+.TableCell_id6 {
+    -bgColor: -base6;
+    -fx-background-color: -base6;
+}
+
+.TableCell_id7 {
+    -bgColor: -base7;
+    -fx-background-color: -base7;
+}
+
+.TableCell_id8 {
+    -bgColor: -base8;
+    -fx-background-color: -base8;
+}
+
+.TableCell:focused {
+     -fx-background-color: derive(-bgColor, -12%);
+ }
+
+.ModifiableCell {
+    -fx-text-fill: #007cad;
+    -fx-font-style: italic;
+}
