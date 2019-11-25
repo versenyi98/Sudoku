@@ -64,9 +64,10 @@ A játékkezelés egyetlen API végponton keresztül történik, amivel egy lej�
 - Elérés: `sudoku/addgame.php`, `POST` kérés
 - Bemenet: minden bemenet kötelező
   - `username`: a játékot játszó felhasználó neve
+  - `token`: a játékot játszó felhasználó session tokenje
   - `type`: a játéktípus neve
   - `mode`: a játékmód neve
   - `difficulty`: a nehézség neve
   - `length`: a játék hossza másodpercekben
-  - `Won`: egy boolean érték, mely jelzi, hogy a megadott felhasználó megnyerte-e a játékot
+  - `won`: egy boolean érték ([Tt]rue/[Ff]alse, 1/0), mely jelzi, hogy a megadott felhasználó megnyerte-e a játékot
 - Kimenet: a sikerességen kívül nem tartalmaz extra információt
