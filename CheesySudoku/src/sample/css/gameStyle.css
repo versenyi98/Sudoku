@@ -1,8 +1,16 @@
 * {
     -fx-cellSize: 30px;
     -bgColor: #000000;
-    -base0: #dbd5c8;
-    -base1: #b3c4c1;
+
+    -base0: #dadada;
+    -base1: #a4a2a2;
+    -base2: #e5a7a7;
+    -base3: #b4afcd;
+    -base4: #aeddba;
+    -base5: #ca90c6;
+    -base6: #ecea9e;
+    -base7: #b69e89;
+    -base8: #a9cfd6;
 }
 
 .mainPane {
@@ -28,38 +36,38 @@
 }
 
 .TableCell_id2 {
-    -bgColor: #deb387;
-    -fx-background-color: #deb387;
+    -bgColor: -base2;
+    -fx-background-color: -base2;
 }
 
 .TableCell_id3 {
-    -bgColor: #d0b4db;
-    -fx-background-color: #d0b4db;
+    -bgColor: -base3;
+    -fx-background-color: -base3;
 }
 
 .TableCell_id4 {
-    -bgColor: #c9c28d;
-    -fx-background-color: #c9c28d;
+    -bgColor: -base4;
+    -fx-background-color: -base4;
 }
 
 .TableCell_id5 {
-    -bgColor: #8dc9bf;
-    -fx-background-color: #8dc9bf;
+    -bgColor: -base5;
+    -fx-background-color: -base5;
 }
 
 .TableCell_id6 {
-    -bgColor: #c98d8d;
-    -fx-background-color: #c98d8d;
+    -bgColor: -base6;
+    -fx-background-color: -base6;
 }
 
 .TableCell_id7 {
-    -bgColor: #8dc991;
-    -fx-background-color: #8dc991;
+    -bgColor: -base7;
+    -fx-background-color: -base7;
 }
 
 .TableCell_id8 {
-    -bgColor: #9c9898;
-    -fx-background-color: #9c9898;
+    -bgColor: -base8;
+    -fx-background-color: -base8;
 }
 
 .TableCell:focused {
