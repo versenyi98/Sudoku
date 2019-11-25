@@ -2,6 +2,7 @@ Sudoku API specifikáció
 =======================
 
 ### 1. Általános
+- az alábbi dokumentum a "`Cheesy Sudoku`" játékprogram webes API-jának a specifikációja 2019.11.25-ei állapota szerint
 - minden API végpont egy JSON objektum formájában adja meg a kimenetét
   - a sikerességet a `success` kulcsú boolean tartalmazza
   - sikertelenség esetén a `errorCode` (szám) és `errorMessage` (szöveg) tartalmazza a részleteket
@@ -15,14 +16,14 @@ Sudoku API specifikáció
 ### 2. Felhasználókezelés
 ##### 2.1 Regisztráció
 - Elérés: a `sudoku/register.php` útvonalon `POST` kéréssel
-- Bemenet:
+- Bemenet: minden bemenet kötelező
   - `username` kulcs: a regisztrálandó felhasználó neve
   - `password` elem: a regisztrálandó felhasználó jelszava
 - Kimenet: nem tartalmaz extra információt a sikerességen kívül.
   
 ##### 2.2 Bejelentkezés
 - Elérés: a `sudoku/login.php` útvonalon `POST` kéréssel
-- Bemenet:
+- Bemenet: minden bemenet kötelező
   - `username` kulcs: felhaszálónév
   - `password` kulcs: jelszó
 - Kimenet:
@@ -30,14 +31,14 @@ Sudoku API specifikáció
 
 ##### 2.3 Kijelentkezés
 - Elérés: a `sudoku/logout.php` útvonalon `POST` kéréssel
-- Bemenet:
+- Bemenet: minden bemenet kötelező
   - `token` kulcs: a bejelentkezéskor kapott token
 - Kimenet: a sikerességen kívül nem tartalmaz extra információt
 
 ### 3. Toplisták
 ##### 3.1 Általános be- és kimenet
 Minden toplista azonos be- és kimenettel tartozik, melyeknek a felépítése a lentiekben következő.
-- Bemenet: minden szűrés opcionális
+- Bemenet: minden bemenet opcionális
   - `type`: játéktípusra szűrés
   - `mode`: játékmódra szűrés
   - `difficulty`: nehézségre való szűrés
@@ -47,8 +48,25 @@ Minden toplista azonos be- és kimenettel tartozik, melyeknek a felépítése a 
     - `name`: a felhasználó neve
     - `value`: az érték, ami alapján elérte a felhasználó a helyezését. Ennek típusa toplistánként változik, azonban mindig olvasható szöveges reprezentáció.
 
-##### 3.1 Megnyert játékok száma szerint
+##### 3.2 Megnyert játékok száma szerint
 - Elérés: a `sudoku/topveteran.php` útvonalon `GET` kéréssel
 
-##### 3.2 A játékok átlagideje szerint
+##### 3.3 A játékok átlagideje szerint
 - Elérés: a `sudoku/toptime.php` útvonalon `GET` kéréssel
+
+##### 3.4 A megnyert játékok és lejátszott játékok aránya szerint
+- Elérés: a `sudoku/topwinner.php` útvonalon `GET` kéréssel
+
+### 4. Játékkezelés
+A játékkezelés egyetlen API végponton keresztül történik, amivel egy lejátszott játék eredményét adhatjuk hozzá az adatbázishoz.  
+*Megjegyzés: többjátékos játék esetén minden résztvevőnek regisztrálnia kell a játékot a saját nevével.*
+
+- Elérés: `sudoku/addgame.php`, `POST` kérés
+- Bemenet: minden bemenet kötelező
+  - `username`: a játékot játszó felhasználó neve
+  - `type`: a játéktípus neve
+  - `mode`: a játékmód neve
+  - `difficulty`: a nehézség neve
+  - `length`: a játék hossza másodpercekben
+  - `Won`: egy boolean érték, mely jelzi, hogy a megadott felhasználó megnyerte-e a játékot
+- Kimenet: a sikerességen kívül nem tartalmaz extra információt
