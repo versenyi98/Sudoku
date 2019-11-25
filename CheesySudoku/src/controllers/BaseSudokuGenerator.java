@@ -3,17 +3,91 @@ package controllers;
 import java.util.*;
 import javafx.util.*;
 
+/**
+ * This class is the generator class for Regular Sudoku
+ *
+ * In Regular Sudoku every element of a row / column / cell
+ * is unique in that row / column / cell, or empty.
+ *
+ * @author Péter Versényi
+ */
 public class BaseSudokuGenerator {
 
+    /**
+     * This parameterless constructor creates a new instance of the {@link BaseSudokuGenerator} class.
+     * Using this constructor leaves the generator uninitialized. Set dimensions via:
+     * <ul>
+     *     <li>{@link BaseSudokuGenerator#setCellWidth(int)}</li>
+     *     <li>{@link BaseSudokuGenerator#setCellHeight(int)}</li>
+     *     <li>{@link BaseSudokuGenerator#setCellNumbersHorizontal(int)}</li>
+     *     <li>{@link BaseSudokuGenerator#setCellNumbersVertical(int)}</li>
+     * </ul>
+     *
+     * @author Szilárd Ádám
+     */
     public BaseSudokuGenerator() {}
 
+    /**
+     * The result of the generation
+     *
+     * @author Péter Versényi
+     */
     protected int table[][];
 
+    /**
+     * The width of the cell
+     *
+     * <p>
+     *     Note: Most Regular Sudokus are 9x9. This 9x9 board contains
+     *     9 3x3 areas. This 3x3 areas are referenced as Cells in
+     *     this project.
+     * </p>
+     *
+     * @author Péter Versényi
+     */
     protected int cellWidth = -1;
+
+    /**
+     * The height of the cell
+     *
+     * @author Péter Versényi
+     */
     protected int cellHeight = -1;
+
+    /**
+     * The number of cells horizontally
+     *
+     * @author Péter Versényi
+     */
     protected int cellNumbersHorizontal = -1;
+
+    /**
+     * The number of cells vertically
+     *
+     * @author Péter Versényi
+     */
     protected int cellNumbersVertical = -1;
+
+    /**
+     * The width of the generated sudoku
+     *
+     * <p>
+     *     Note: the value of width is equal to {@link cellWidth} * {@link cellNumbersHorizontal}
+     * </p>
+     *
+     * @author Péter Versényi
+     */
     protected int width = -1;
+
+    /**
+     * The height of the generated sudoku
+     *
+     * <p>
+     *     Note: the value of height is equal to {@link cellHeight} * {@link cellNumbersVertical}
+     * </p>
+     *
+     * @author Péter Versényi
+     */
     protected int height = -1;
 
     public int getCellWidth() { return cellWidth; }
@@ -41,10 +115,24 @@ public class BaseSudokuGenerator {
         this.height = cellHeight * cellNumbersVertical;
     }
 
+    /**
+     * Checks whether {@link cellHeight}, {@link cellWidth}, {@link cellNumbersHorizontal} and {@link cellNumbersVertical} are set
+     * @return true, if {@link cellHeight}, {@link cellWidth}, {@link cellNumbersHorizontal} and {@link cellNumbersVertical} are set
+     *         false, otherwise
+     *
+     * @author Péter Versényi
+     */
     protected boolean isPropertiesSet() {
         return (cellHeight > 0 && cellWidth > 0 && cellNumbersHorizontal > 0 && cellNumbersVertical > 0);
     }
 
+    /**
+     * Initializes the {@link table}
+     *
+     * Set every value to -1.
+     *
+     * @author Péter Versényi
+     */
     protected void fillBlankTable() {
 
         table = new int[height][width];
@@ -56,10 +144,31 @@ public class BaseSudokuGenerator {
         }
     }
 
+    /**
+     * Decides whether the {@link table} has such an element with the given position or not
+     *
+     * @param x the x coordinate of the position
+     * @param y the y coordinate of the position
+     * @return true if the {@link table} has such an element with the given position,
+     *         false otherwise
+     *
+     * @author Péter Versényi
+     */
     protected boolean inBounds(int x, int y) {
         return  (x >= 0 && x < width && y >= 0 && y < height);
     }
 
+    /**
+     * Decides whether the given value can be written in the given position or not
+     *
+     * @param posX the x coordinate of the position
+     * @param posY the y coordinate of the position
+     * @param value the desired value to the given position
+     * @return true if the given value can be written in the given position,
+     *         false otherwise
+     *
+     * @author Péter Versényi
+     */
     protected boolean operatorRequirement(int posX, int posY, int value) {
 
         for (int i = 0; i < width; i++) {
@@ -79,6 +188,12 @@ public class BaseSudokuGenerator {
         return true;
     }
 
+    /**
+     * Prints the Sudoku to terminal
+     *
+     * @deprecated
+     */
+
     public void printSudoku() {
         for (int i = 0; i < cellNumbersVertical; i++) {
             for (int j = 0; j < cellHeight; j++) {
@@ -94,6 +209,13 @@ public class BaseSudokuGenerator {
         }
     }
 
+    /**
+     * Generates the sudoku
+     *
+     * @param cellsToRemove the nuber of cells desired to remove
+     *
+     * @author Péter Versényi
+     */
     public void generate(int cellsToRemove) {
         if (isPropertiesSet()) {
             fillBlankTable();
@@ -102,6 +224,20 @@ public class BaseSudokuGenerator {
         }
     }
 
+    /**
+     * Generates the solved sudoku
+     *
+     * This recursive function fills every position
+     * one by one.
+     * <p>
+     *     Note: Solved sudoku means sudoku with
+     *     no elements missing.
+     * </p>
+     * @param x the x coordinate of the position
+     * @param y the y coordinate of the position
+     *
+     * @author Péter Versényi
+     */
     protected void generateSolved(int x, int y) {
 
         List<Integer> numbers = new ArrayList<Integer>();
@@ -126,6 +262,14 @@ public class BaseSudokuGenerator {
         table[y][x] = -1;
     }
 
+    /**
+     * Checks whether the given sudoku satisfies the rules or not
+     * @param table sudoku to check
+     * @return true if the given sudoku satisfies the rules,
+     *         false otherwise
+     *
+     * @author Péter Versényi
+     */
     protected boolean isValid(int table[][]) {
 
         boolean[][] row = new boolean[height][width];
@@ -150,6 +294,16 @@ public class BaseSudokuGenerator {
         return true;
     }
 
+    /**
+     * This recursive function removes some elements to create an unsolved Sudoku
+     *
+     * @param cellsLeft number of cells to remove from now on
+     * @return true if cellsLeft is 0,
+     *         false if the element cannot be removed,
+     *         {@link generateUnsolved(cellsLeft - 1)} otherwise
+     *
+     * @author Péter Versényi
+     */
     private boolean generateUnsolved(int cellsLeft) {
         if (cellsLeft == 0) return true;
 
@@ -179,6 +333,12 @@ public class BaseSudokuGenerator {
         return false;
     }
 
+    /**
+     * Counts the number of possible solutions with the current state of the {@link table}
+     * @return the number of possible solutions
+     *
+     * @author Péter Versényi
+     */
     private int countSolutions() {
 
         int returnValue = 0;
