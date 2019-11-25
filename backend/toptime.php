@@ -29,7 +29,7 @@
     $topnum = isset($_GET["topnum"]) ? $_GET["topnum"] : 10;
 
     $conn = getDBConnection();
-    $query = "SELECT User.Name, AVG(Length) FROM Game INNER JOIN User ON Game.UserId = User.Id $WHERE GROUP BY UserId ORDER BY 2 DESC LIMIT $topnum;";
+    $query = "SELECT User.Name, AVG(TIME_TO_SEC(Length)) FROM Game INNER JOIN User ON Game.UserId = User.Id $WHERE GROUP BY UserId ORDER BY 2 DESC LIMIT $topnum;";
     $result = $conn->query($query);
 
     if(mysqli_errno($conn) != 0)
