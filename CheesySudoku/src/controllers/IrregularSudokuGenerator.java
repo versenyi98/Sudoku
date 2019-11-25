@@ -78,13 +78,6 @@ public class IrregularSudokuGenerator extends BaseSudokuGenerator {
             }
             generatePattern(i, currentCoord, 1, new ArrayList<Pair<Integer, Integer>>());
         }
-
-        for (int i = 0; i < height; i++) {
-            for (int j = 0; j < width; j++) {
-                System.out.print(pattern[i][j] + " ");
-            }
-            System.out.println();
-        }
     }
 
     private boolean generatePattern(int currentPattern, Pair<Integer, Integer> currentCoord, int count, List<Pair<Integer, Integer>> neighbours) {
@@ -185,6 +178,74 @@ public class IrregularSudokuGenerator extends BaseSudokuGenerator {
             }
         }
         return false;
+    }
+
+    @Override
+    protected boolean operatorRequirement(int posX, int posY, int value) {
+        for (int i = 0; i < width; i++) {
+            if (table[posY][i] == value) return false;
+        }
+
+        for (int i = 0; i < height; i++) {
+            if (table[i][posX] == value) return false;
+        }
+
+        for (int i = 0; i < height; i++) {
+            for (int j = 0; j < width; j++) {
+
+                if (pattern[i][j] == pattern[posY][posX]) {
+                    if (table[i][j] == value) {
+                        return false;
+                    }
+                }
+            }
+        }
+        return true;
+    }
+
+    @Override
+    protected boolean isValid(int table[][]) {
+
+        boolean[][] row = new boolean[height][width];
+        boolean[][] column = new boolean[width][height];
+        boolean[][] cells = new boolean[cellNumbersHorizontal * cellNumbersVertical][cellHeight * cellWidth];
+
+        for (int i = 0; i < width; i++) {
+            for (int j = 0; j < height; j++) {
+                if (table[j][i] == 0) continue;
+
+                if (row[j][table[j][i] - 1] || column[i][table[j][i] - 1] || cells[pattern[j][i]][table[j][i] - 1]) {
+                    return false;
+                }
+
+                row[j][table[j][i] - 1] = true;
+                column[i][table[j][i] - 1] = true;
+                cells[pattern[j][i]][table[j][i] - 1] = true;
+            }
+        }
+
+        return true;
+    }
+
+    @Override
+    public void generate(int cellsToRemove) {
+        super.generate(cellsToRemove);
+        printPattern();
+    }
+
+    public void printPattern() {
+        for (int i = 0; i < cellNumbersVertical; i++) {
+            for (int j = 0; j < cellHeight; j++) {
+                for (int k = 0; k < cellNumbersHorizontal; k++) {
+                    for (int l = 0; l < cellWidth; l++) {
+                        System.out.print(pattern[i * cellHeight + j][k * cellWidth + l] + " ");
+                    }
+                    System.out.print(" ");
+                }
+                System.out.println();
+            }
+            System.out.println();
+        }
     }
 
     public int[][] getPattern() {

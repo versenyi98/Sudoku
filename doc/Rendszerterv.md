@@ -72,6 +72,68 @@ A fejlesztők fő feladatkörei jól elválaszthatóak:
 |                   |Többszemélyes játék          |A felsorolt nehézségű és módú feladványok megoldása barátok ellen|
 
 ### 5. Funkcionális  terv
+![A sudoku program adatbázisának szerkezete](./resource/rendszerterv_funk_terv.svg)
+
+A játék elindításakor ellenőrizzük, hogy van-e bejelentkezett felhasználó. Ha nincs, akkor a bejelentkező oldalra továbbítuk,
+ellenkező esetben a főmenüre.
+##### 5.1 Bejelentkező oldal
+Itt a felhaszáló kiválaszthatja, hogy szeretne bejelentkezni vagy guest -ként egyedül játszani. Amennyiben bejelentkezik
+lehetősége van a felhasználói adatok mentésére.
+##### 5.2 Főmenü
+A felhasznáó itt a kattintással vagy a gombok segítségével navigálhat tovább az alábbi oldalakra, melyek az alpontokban
+kerülnek kifejtésre.
+* Új játék
+* Statisztikák
+* Beállítások
+
+Továbbá itt találkató a kilépés gomb is.
+
+##### 5.3 Új játék
+Ezen az oldalon állítja be a felhasználó
+ * a játék típusát ( hogy melyik algoritmus alapján generáljuk a táblát )
+ * a játék nehézségét ( hogy hány szám legyen kihagyva )
+ * egy / többjátékos mód
+ 
+ Az oldalról tovább navigálhat a játék megkezdéséhez, abban az esetben ha fent felsorolt beállításokat kiválasztotta.
+ Egyébként a gomb inaktív. A főmenübe visszalépéshez mindig joga van, megerősítésre nincs szükség.
+##### 5.4 Játék
+Ezen az oldalon jelenik meg a legenerált sudoku tábla. A felhasználó itt a nyilakkal vagy kattintással választhat kitöltendő
+cellát, illetve ezekbe a cellákba számot írhat csak be ( 1-9 között ).
+
+Elérhető továbbá innen:
+* Főmenü ( megerősítés szükséges, hiszen a játékmenet elvész )
+* Beállítások
+
+##### 5.5 Statisztikák
+Itt jelenítjük meg a felhasználó játékadatait:
+
+|   | Típusokra lebontott | Összesített |
+|---|---|---|
+| Játékidő: | xx:xx:xx | xx:xx:xx |
+| Játékok száma: | x | x |
+| Ebből sikeres: | x | x |
+
+Illetve az online ranglétra, mely a megnyert játékok és ezek ideje alapján kerül kiszámításra.
+Elérhető kölön táblázat sudoku típusonként és időintervallumonként:
+* napi
+* heti
+* havi
+* éves
+* összesített
+
+##### 5.6 Beállítások
+A felhasználó itt módosíthatja a program beállításait, kezelheti felhasználói fiókját. Ezt az oldalt éri el a főmenüből és a játékból egyaránt.
+
+Program beállítások:
+* Ellenőrzés (ki/be)
+* Hang (ki/be)
+* Navigálás (a táblán üres cellára navigálás esetén ugorjon-e a túloldalra)
+
+Fiók kezelés:
+* Felhasználónév módosítása
+* Kijelentkezés
+* Felhasználói fiók törlése
+
 ### 6. Fizikai környezet
 ##### 6.1 Választott programozási nyelv
 A játékrendszer fejlesztése Java programozási nyelven for történni.
@@ -175,7 +237,29 @@ fog létezni a megoldás vagy sem?
 7. Ha nem, akkor új állapot létrehozása, és az 1. lépés elvégzése újra.
 8. Ha igen, akkor végeztünk
 ### 11. Tesztterv
+| A teszt tárgya | Tesztadat | elvárt visszatérési érték illetve viselkedés | Kilépési feltétel |
+|----------|:-------------:|------:| ------: |
+| A játékos név adása | Üres string | Üzenet a felhasználónak, hogy szükséges nevet adni | Sikeres teszt |
+| A játék indítása | Kattintás | A játék elindul | Elindul a játek|
+| A játék ablak | Ablak fókusz elvesztése | A játék folytatódik a háttérben | A játék nem áll meg |
+| A játék bezárása | Applikációból való kilépés bármilyen módon | A játék vége, foglalt erőforrások visszaszolgáltatása | Az applikáció leáll |
+| Pontrendszer | A játékos sikeresen befejezi a játékot | Az eltöltött idő alapján pontok számítása | Sikeres teszt |
+| A cella kijelölése | &#x1F5B1; | Az egér pozíciójánál lévő cella megnyitásra kerül, amennyiben üres vagy rossz értéket tartalmaz | Sikeres teszt |
+| A cella kitöltése | <kbd>1</kbd> | A cella kitöltésre kerül, a játékos által megadott számmal, amennyiben lehetséges | Sikeres teszt |
+| A cella kitöltése | <kbd>2</kbd> | A cella kitöltésre kerül, a játékos által megadott számmal, amennyiben lehetséges | Sikeres teszt |
+| A cella kitöltése | <kbd>3</kbd> | A cella kitöltésre kerül, a játékos által megadott számmal, amennyiben lehetséges | Sikeres teszt |
+| A cella kitöltése | <kbd>4</kbd> | A cella kitöltésre kerül, a játékos által megadott számmal, amennyiben lehetséges | Sikeres teszt |
+| A cella kitöltése | <kbd>5</kbd> | A cella kitöltésre kerül, a játékos által megadott számmal, amennyiben lehetséges | Sikeres teszt |
+| A cella kitöltése | <kbd>6</kbd> | A cella kitöltésre kerül, a játékos által megadott számmal, amennyiben lehetséges | Sikeres teszt |
+| A cella kitöltése | <kbd>7</kbd> | A cella kitöltésre kerül, a játékos által megadott számmal, amennyiben lehetséges | Sikeres teszt |
+| A cella kitöltése | <kbd>8</kbd> | A cella kitöltésre kerül, a játékos által megadott számmal, amennyiben lehetséges | Sikeres teszt |
+| A cella kitöltése | <kbd>9</kbd> | A cella kitöltésre kerül, a játékos által megadott számmal, amennyiben lehetséges | Sikeres teszt |
+| Érvénytelen input | Bármilyen billentyű vagy egér input aminek nincs beállított funkcionalitása | Semmi | Sikeres teszt |
+| A játék vége | Nincs üres cella | A játék befekeződik | Sikeres teszt |
 ### 12. Telepítési terv
+A játékhoz csupán Java telepítésére van szükség, ez több helyről is letölthető (pl.: AdoptOpenJDK: https://adoptopenjdk.net/releases.html), 
+itt kiválaszthatod a Java verziót illetve a platformot. A telepítés során ajánlott a 'JAVA_HOME' automatikus beállítását 
+engedélyezni, így nem kell manuálisan a környezeti változókhoz hozzáadni. Ezek után már lehet is indítani a letöltött játékot.
 ### 13. Karbantartási  terv
 ##### 13.1 Verziók és Frissítés
 A program befejezése után annak frissítése két menetrend szerint történik.
