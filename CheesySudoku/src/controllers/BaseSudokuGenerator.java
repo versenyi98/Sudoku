@@ -122,7 +122,7 @@ public class BaseSudokuGenerator {
      *
      * @author Péter Versényi
      */
-    protected boolean isPropertiesSet() {
+    public boolean isPropertiesSet() {
         return (cellHeight > 0 && cellWidth > 0 && cellNumbersHorizontal > 0 && cellNumbersVertical > 0);
     }
 
@@ -154,7 +154,7 @@ public class BaseSudokuGenerator {
      *
      * @author Péter Versényi
      */
-    protected boolean inBounds(int x, int y) {
+    public boolean inBounds(int x, int y) {
         return  (x >= 0 && x < width && y >= 0 && y < height);
     }
 
@@ -271,7 +271,7 @@ public class BaseSudokuGenerator {
      *
      * @author Péter Versényi
      */
-    protected boolean isValid(int table[][]) {
+    public boolean isValid(int table[][]) {
 
         boolean[][] row = new boolean[height][width];
         boolean[][] column = new boolean[width][height];
