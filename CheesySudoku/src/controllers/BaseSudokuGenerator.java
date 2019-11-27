@@ -192,6 +192,7 @@ public class BaseSudokuGenerator {
      * Prints the Sudoku to terminal
      *
      * @deprecated
+     * @author Péter Versényi
      */
 
     public void printSudoku() {

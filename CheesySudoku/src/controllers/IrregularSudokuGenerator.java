@@ -6,6 +6,12 @@ import javafx.util.*;
 public class IrregularSudokuGenerator extends BaseSudokuGenerator {
     public IrregularSudokuGenerator() {}
 
+    /**
+     * Generates an irregular sudoku pattern after calling base class's fillBlankTable() method
+     *
+     * @see controllers.BaseSudokuGenerator#fillBlankTable()
+     * @author Péter Versényi
+     */
     @Override
     protected void fillBlankTable() {
         super.fillBlankTable();
@@ -22,6 +28,16 @@ public class IrregularSudokuGenerator extends BaseSudokuGenerator {
         generatePattern();
     }
 
+    /**
+     * For each empty position calculates how many other empty positions can be reached
+     * without touching a non-empty position
+     *
+     * This is an important part of the {@generatePattern()} method.
+     * @param x the x coordinate of the position
+     * @param y the y coordinate of the position
+     *
+     * @author Péter Versényi
+     */
     private void calculateConnecting(int x, int y) {
 
         List<Pair<Integer, Integer>> coords = new ArrayList<Pair<Integer, Integer>>();
@@ -61,12 +77,19 @@ public class IrregularSudokuGenerator extends BaseSudokuGenerator {
         }
     }
 
+    /**
+     * Calls {@link generatePattern(int, Pair<Integer, Integer>, int, List<Pair<Integer, Integer>>)} method
+     * for each distinct cell
+     *
+     * @author Péter Versényi
+     */
     private void generatePattern() {
         Pair<Integer, Integer> currentCoord = new Pair<Integer, Integer>(-1, -1);
 
         for (int i = 0; i < cellWidth * cellHeight; i++) {
             for (int j = 0; j < height; j++) {
                 boolean br = false;
+                // finds the next empty position
                 for (int k = 0; k < width; k++) {
                     if (pattern[j][k] == -1) {
                         currentCoord = new Pair<Integer, Integer>(k, j);
@@ -80,6 +103,18 @@ public class IrregularSudokuGenerator extends BaseSudokuGenerator {
         }
     }
 
+    /**
+     * Generates the rest of the given patter
+     *
+     * @param currentPattern the pattern which will be generated
+     * @param currentCoord current position
+     * @param count represents how big is the current pattern currently
+     * @param neighbours members of the current pattern
+     * @return true, if the generation is successful
+     *         false, if otherwise, it will cause a backtrack
+     *
+     * @author Péter Versényi
+     */
     private boolean generatePattern(int currentPattern, Pair<Integer, Integer> currentCoord, int count, List<Pair<Integer, Integer>> neighbours) {
 
         int y = currentCoord.getValue();
@@ -98,19 +133,27 @@ public class IrregularSudokuGenerator extends BaseSudokuGenerator {
 
         for (int i = 0; i < height; i++) {
             for (int j = 0; j < width; j++) {
+                // calculate connecting value for each empty position
+                // if it's not calculated yet
                 if (pattern[i][j] == -1 && connecting[i][j] == 0) {
                     calculateConnecting(j, i);
                 }
+
+                // search for the group with the least empty neighbours
                 if (pattern[i][j] == -1 && minimumConnection > connecting[i][j]) {
                     stuck.clear();
                     minimumConnection = connecting[i][j];
                 }
+
+                // collect the positions with the least empty neighbours
                 if (pattern[i][j] == -1 && minimumConnection == connecting[i][j]) {
                     stuck.add(new Pair<Integer, Integer>(j, i));
                 }
             }
         }
 
+        // if the stucked elements can be added to the current pattern
+        // add them to it, and increase the value of count
         boolean stuckSolved = false;
         if (minimumConnection + count <= cellWidth * cellHeight) {
             for (int i = 0; i < stuck.size(); i++) {
@@ -126,6 +169,9 @@ public class IrregularSudokuGenerator extends BaseSudokuGenerator {
                     calculateConnecting(j, i);
                 }
 
+                // after solving the stucked elements
+                // connection empty cells + the size of the current pattern
+                // should give 0 remainder after division with (cellWidth * cellHeight)
                 if (pattern[i][j] == -1 && (connecting[i][j] + count ) % (cellWidth * cellHeight) != 0) {
                     pattern[y][x] = -1;
 
@@ -180,6 +226,19 @@ public class IrregularSudokuGenerator extends BaseSudokuGenerator {
         return false;
     }
 
+    /**
+     * Decides whether the given value can be written in the given position or not
+     *
+     * Uses the pattern to calculate the result.
+     *
+     * @param posX the x coordinate of the position
+     * @param posY the y coordinate of the position
+     * @param value the desired value to the given position
+     * @return true if the given value can be written in the given position,
+     *         false otherwise
+     *
+     * @author Péter Versényi
+     */
     @Override
     protected boolean operatorRequirement(int posX, int posY, int value) {
         for (int i = 0; i < width; i++) {
@@ -203,6 +262,14 @@ public class IrregularSudokuGenerator extends BaseSudokuGenerator {
         return true;
     }
 
+    /**
+     * Checks whether the given sudoku satisfies the rules or not
+     * @param table sudoku to check
+     * @return true if the given sudoku satisfies the rules,
+     *         false otherwise
+     *
+     * @author Péter Versényi
+     */
     @Override
     protected boolean isValid(int table[][]) {
 
@@ -227,12 +294,12 @@ public class IrregularSudokuGenerator extends BaseSudokuGenerator {
         return true;
     }
 
-    @Override
-    public void generate(int cellsToRemove) {
-        super.generate(cellsToRemove);
-        printPattern();
-    }
-
+    /**
+     * Prints the Sudoku to terminal
+     *
+     * @deprecated
+     * @author Péter Versényi
+     */
     public void printPattern() {
         for (int i = 0; i < cellNumbersVertical; i++) {
             for (int j = 0; j < cellHeight; j++) {
@@ -252,6 +319,14 @@ public class IrregularSudokuGenerator extends BaseSudokuGenerator {
         return pattern;
     }
 
+    /**
+     * For each empty positions, it contains how many empty
+     * positions can be reached without touching a non-empty position
+     */
     private int connecting[][];
+
+    /**
+     * The irregular pattern
+     */
     private int pattern[][];
 }
