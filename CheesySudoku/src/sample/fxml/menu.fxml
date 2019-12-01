@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<GridPane
+        xmlns="http://javafx.com/javafx"
+        xmlns:fx="http://javafx.com/fxml"
+        fx:controller="sample.controllers.MenuController"
+        prefHeight="400.0"
+        prefWidth="600.0"
+        alignment="CENTER">
+
+    <Button
+        text="Új játék"
+        GridPane.rowIndex="0" />
+    <Button
+        text="Statisztikák/Ranglétra" />
+    <Button
+        text="Beállítások"
+        GridPane.rowIndex="2" />
+    <Button
+        text="Kilépés"
+        GridPane.rowIndex="3" />
+</GridPane>
