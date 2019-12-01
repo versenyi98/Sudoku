@@ -8,7 +8,7 @@ import controllers.*;
 public class BaseSudokuGeneratorTest {
 
     @Test
-    public void isProperiesSetTest() {
+    public void isPropertiesSetTest() {
         BaseSudokuGenerator generator = new BaseSudokuGenerator();
 
         assertFalse(generator.isPropertiesSet());
