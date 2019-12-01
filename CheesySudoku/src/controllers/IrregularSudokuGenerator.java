@@ -271,7 +271,7 @@ public class IrregularSudokuGenerator extends BaseSudokuGenerator {
      * @author Péter Versényi
      */
     @Override
-    protected boolean isValid(int table[][]) {
+    public boolean isValid(int table[][]) {
 
         boolean[][] row = new boolean[height][width];
         boolean[][] column = new boolean[width][height];
