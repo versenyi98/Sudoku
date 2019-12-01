@@ -58,7 +58,7 @@ public class XSudokuGenerator extends BaseSudokuGenerator {
      * @return The boolean value true if the given table fulfills the uniqueness constraint, false otherwise.
      */
     @Override
-    protected boolean isValid(int[][] table) {
+    public boolean isValid(int[][] table) {
         if(!super.isValid(table))
             return false;
 
