@@ -6,7 +6,15 @@ import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.ColumnConstraints;
 import javafx.scene.layout.GridPane;
 
+import java.io.*;
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+
 public class SettingsController {
+    private static HashMap<Button, String> settingNames = new HashMap<>();
+
     @FXML
     private GridPane mainGrid;
 
@@ -17,6 +25,9 @@ public class SettingsController {
 
     @FXML
     public void initialize() {
+        settingNames.put(soundButton, "sound");
+        settingNames.put(checkButton, "check");
+
         ColumnConstraints c1 = new ColumnConstraints();
         c1.setPercentWidth(50);
         ColumnConstraints c2 = new ColumnConstraints();
@@ -40,11 +51,55 @@ public class SettingsController {
             b.getStyleClass().removeAll("settingEnabled");
             b.getStyleClass().add("settingDisabled");
             b.setText("Kikapcsolva");
+            writeSetting(settingNames.get(b), false);
         }
         else {
             b.getStyleClass().removeAll("settingDisabled");
             b.getStyleClass().add("settingEnabled");
             b.setText("Bekapcsolva");
+            writeSetting(settingNames.get(b), true);
+        }
+    }
+
+    private void writeSetting(String setting, boolean value)
+    {
+        try {
+            ArrayList<String> lines = new ArrayList<>();
+            int neededLine = -1;
+            if(new File("settings.txt").exists()) {
+                FileReader reader = new FileReader("settings.txt");
+                BufferedReader breader = new BufferedReader(reader);
+                int lineNum = 0;
+                String line;
+
+                while ((line = breader.readLine()) != null) {
+                    lines.add(line);
+                    if(line.split("=")[0].equals(setting)) {
+                        neededLine = lineNum;
+                    }
+                    lineNum ++;
+                }
+
+                breader.close();
+            }
+
+
+            FileWriter writer = new FileWriter("settings.txt", false);
+            for (int i = 0; i < lines.size(); i ++) {
+                if(i != neededLine) {
+                    writer.write(lines.get(i) + "\n");
+                }
+                else {
+                    writer.write(lines.get(i).split("=")[0] + "=" + (value ? "true" : "false") + "\n");
+                }
+            }
+            if(neededLine == -1) {
+                writer.write(setting + "=" + (value ? "true" : "false"));
+            }
+            writer.close();
+        }
+        catch (IOException ex) {
+            Logger.getGlobal().log(Level.SEVERE, "Cannot save settings.");
         }
     }
 }
