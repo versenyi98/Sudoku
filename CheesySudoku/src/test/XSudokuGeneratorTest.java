@@ -56,12 +56,12 @@ public class XSudokuGeneratorTest {
         generator.setCellNumbersHorizontal(2);
         generator.setCellNumbersVertical(3);
 
-        //assertThrows("Width-height equals test fails when w < h.", IndexOutOfBoundsException.class, () -> generator.generate(10));
+        assertThrows(IndexOutOfBoundsException.class, () -> generator.generate(10), "Width-height equals test fails when w < h.");
 
         generator.setCellNumbersHorizontal(3);
         generator.setCellNumbersVertical(2);
 
-        //assertThrows("Width-height equals test fails when w > h.", IndexOutOfBoundsException.class, () -> generator.generate(10));
+        assertThrows(IndexOutOfBoundsException.class, () -> generator.generate(10), "Width-height equals test fails when w > h.");
 
         generator.setCellNumbersHorizontal(3);
         generator.setCellNumbersVertical(3);
