@@ -75,17 +75,15 @@ public class SamuraiSudokuGenerator extends BaseSudokuGenerator {
     private void printTablesTop(int tableIndex, int tableIndex2) {
         for (int j = 0; j < cellHeight; j++) {
             for (int l = 0; l < cellWidth; l++) {
-                System.out.printf("%3d ",tables[tableIndex][j][l]);
+                System.out.printf("%3d ", tables[tableIndex][j][l]);
                 if (l == cellWidth - 1)
-                    System.out.printf("%3s", (j == cellHeight - 1) ? tables[2][0][1] + " ": " ");
+                    System.out.printf("%3s", (j == cellHeight - 1) ? tables[2][0][1] + " " : " ");
             }
             for (int k = 0; k < cellWidth; k++) {
                 System.out.printf("%3d ", tables[tableIndex2][j][k]);
             }
-            System.out.println();
         }
     }
-
     /**
      * Helper function which prints 2 tables which are below the middle one, in the same row.
      * @param tableIndex the first table to be printed.
@@ -210,12 +208,13 @@ public class SamuraiSudokuGenerator extends BaseSudokuGenerator {
                     }
 
                     generateSolved((x + 1) % cellWidth, y + ((x + 1) / cellHeight));
-                    if (table[y + (x + 1) / cellHeight][(x + 1) % cellWidth] != -1) {
+                    if (tables[k][y + (x + 1) / cellHeight][(x + 1) % cellWidth] != -1) {
                         return;
                     }
                 }
             }
             tables[k][y][x] = -1;
+
         }
     }
 
@@ -243,7 +242,7 @@ public class SamuraiSudokuGenerator extends BaseSudokuGenerator {
                     if (next) return true;
                 }
 
-                table[cells.get(i) / width][cells.get(i) % width] = save;
+                tables[k][cells.get(i) / width][cells.get(i) % width] = save;
             }
         }
         return false;
@@ -257,7 +256,7 @@ public class SamuraiSudokuGenerator extends BaseSudokuGenerator {
         return 1;
     }
 
-    /*
+/*
     public static void main(String[] args) {
         SamuraiSudokuGenerator gen = new SamuraiSudokuGenerator();
         gen.setCellHeight(3);
@@ -268,6 +267,6 @@ public class SamuraiSudokuGenerator extends BaseSudokuGenerator {
         gen.generate(0);
         gen.printSudoku();
     }
-     */
+ */
 
 }
