@@ -40,7 +40,8 @@
                   <Menu mnemonicParsing="false" text="Típus">
                      <items>
                         <MenuItem mnemonicParsing="false" onAction="#switchBase" text="Hagyományos" />
-                        <MenuItem mnemonicParsing="false" onAction="#switchIrregular" text="Szabálytalan" />
+                         <MenuItem mnemonicParsing="false" onAction="#switchIrregular" text="Szabálytalan" />
+                         <MenuItem mnemonicParsing="false" onAction="#switchX" text="X sudoku" />
                      </items>
                   </Menu>
                   <Menu mnemonicParsing="false" text="Nehézség">
@@ -48,7 +49,7 @@
                         <MenuItem mnemonicParsing="false" onAction="#switchEasy" text="Könnyű" />
                         <MenuItem mnemonicParsing="false" onAction="#switchMedium" text="Normál" />
                         <MenuItem mnemonicParsing="false" onAction="#switchHard" text="Nehéz" />
-                        <MenuItem mnemonicParsing="false" onAction="#switchExtreme" text="Bikabaszó" />
+                        <MenuItem mnemonicParsing="false" onAction="#switchExtreme" text="Extrém" />
                      </items>
                   </Menu>
                   <MenuItem mnemonicParsing="false" onAction="#newGame" text="Új rejtvény" />

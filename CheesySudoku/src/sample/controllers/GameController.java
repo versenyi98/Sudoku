@@ -2,9 +2,11 @@ package sample.controllers;
 
 import controllers.BaseSudokuGenerator;
 import controllers.IrregularSudokuGenerator;
+import controllers.XSudokuGenerator;
 import javafx.fxml.FXML;
 import javafx.scene.control.RadioMenuItem;
 import javafx.scene.layout.AnchorPane;
+import javafx.scene.shape.Line;
 import sample.model.Difficulty;
 import sample.Main;
 import sample.model.TableCell;
@@ -19,6 +21,7 @@ public class GameController {
 
     public final BaseSudokuGenerator bsg = new BaseSudokuGenerator();
     public final IrregularSudokuGenerator isg = new IrregularSudokuGenerator();
+    public final XSudokuGenerator xsg = new XSudokuGenerator();
     private final int CELL_WIDTH = 3;
     private final int CELL_HEIGHT = 3;
     private final int CELL_NUMBERS_HORIZONTAL = 3;
@@ -43,8 +46,10 @@ public class GameController {
     private void newGame() {
         if (game_type == 0) {
             generateNewBaseSudoku(difficulty);
-        } else {
+        } else if (game_type == 1) {
             generateNewIrregularSudoku(difficulty);
+        } else {
+            generateXSudoku(difficulty);
         }
     }
 
@@ -57,6 +62,12 @@ public class GameController {
     @FXML
     private void switchIrregular() {
         game_type = 1;
+        newGame();
+    }
+
+    @FXML
+    private void switchX() {
+        game_type = 2;
         newGame();
     }
 
@@ -118,6 +129,28 @@ public class GameController {
         }
     }
 
+    private void generateXSudoku(Difficulty.value d) {
+        tableHolder.getChildren().clear();
+        xsg.generate(Difficulty.Convert.toInt(d));
+        TableCell temp;
+        for (int col = 0; col < HEIGHT; col++) {
+            for (int row = 0; row < WIDTH; row++) {
+                final int r = row;
+                final int c = col;
+                temp = new TableCell(xsg.getTableParam(row,col), getGroupId(row, col),
+                        e -> xsg.setTableParam(r, c, e));
+                AnchorPane.setTopAnchor(temp, (double)col*30);
+                AnchorPane.setLeftAnchor(temp, (double)row*30);
+                tableHolder.getChildren().add(temp);
+            }
+        }
+        Line l1 = new Line(4,4,268,268);
+        Line l2 = new Line(268,5, 4,269);
+        l1.setStyle("-fx-stroke: #45454515");
+        l2.setStyle("-fx-stroke: #45454515");
+        tableHolder.getChildren().addAll(l1, l2);
+    }
+
     private int getGroupId(int row, int col) {
         int x = col / 3;
         int y = row / 3;
@@ -134,13 +167,20 @@ public class GameController {
         isg.setCellHeight(CELL_HEIGHT);
         isg.setCellNumbersHorizontal(CELL_NUMBERS_HORIZONTAL);
         isg.setCellNumbersVertical(CELL_NUMBERS_VERTICAL);
+
+        xsg.setCellWidth(CELL_WIDTH);
+        xsg.setCellHeight(CELL_HEIGHT);
+        xsg.setCellNumbersHorizontal(CELL_NUMBERS_HORIZONTAL);
+        xsg.setCellNumbersVertical(CELL_NUMBERS_VERTICAL);
     }
 
     public boolean validate() {
         if (game_type == 0) {
             return bsg.isValid(bsg.getTable());
-        } else {
+        } else if (game_type == 1) {
             return isg.isValid((isg.getTable()));
+        } else {
+            return xsg.isValid((xsg.getTable()));
         }
     }
 }
