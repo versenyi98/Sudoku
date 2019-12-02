@@ -1,0 +1,11 @@
+* {
+    -fx-background-color: #d1ede4;
+}
+
+.settingTitle {
+    -fx-font-size: 2em;
+}
+
+.singleSettingLabel {
+    -fx-font-size: 0.8em;
+}
