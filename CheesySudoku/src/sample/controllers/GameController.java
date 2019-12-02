@@ -86,7 +86,7 @@ public class GameController {
         TableCell temp;
         for (int col = 0; col < HEIGHT; col++) {
             for (int row = 0; row < WIDTH; row++) {
-                temp = new TableCell(bsg.getTableParam(row,col), getGroupId(col, row));
+                temp = new TableCell(bsg.getTableParam(row, col), getGroupId(row, col));
                 AnchorPane.setTopAnchor(temp, (double)col*30);
                 AnchorPane.setLeftAnchor(temp, (double)row*30);
                 tableHolder.getChildren().add(temp);
@@ -100,7 +100,7 @@ public class GameController {
         TableCell temp;
         for (int col = 0; col < HEIGHT; col++) {
             for (int row = 0; row < WIDTH; row++) {
-                temp = new TableCell(isg.getTableParam(row,col), isg.getPattern()[col][row]);
+                temp = new TableCell(isg.getTableParam(row,col), isg.getPattern()[row][col]);
                 AnchorPane.setTopAnchor(temp, (double)col*30);
                 AnchorPane.setLeftAnchor(temp, (double)row*30);
                 tableHolder.getChildren().add(temp);
@@ -108,7 +108,7 @@ public class GameController {
         }
     }
 
-    private int getGroupId(int col, int row) {
+    private int getGroupId(int row, int col) {
         int x = col / 3;
         int y = row / 3;
         return (x+y)%2;
