@@ -9,3 +9,12 @@
 .singleSettingLabel {
     -fx-font-size: 0.8em;
 }
+
+.settingEnabled {
+    -fx-background-color: #00ff00;
+}
+
+.settingDisabled {
+    -fx-background-color: #DF0101;
+    -fx-text-fill: white;
+}
