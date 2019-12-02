@@ -32,8 +32,8 @@
               <MenuItem mnemonicParsing="false" text="Menü" />
                   <Menu mnemonicParsing="false" text="Beállítások">
                      <items>
-                        <RadioMenuItem mnemonicParsing="false" selected="true" text="Hang" />
-                        <RadioMenuItem mnemonicParsing="false" text="Ellenőrzés" />
+                        <RadioMenuItem fx:id="soundSetting" mnemonicParsing="false" selected="true" text="Hang" />
+                        <RadioMenuItem fx:id="checkSetting" mnemonicParsing="false" text="Ellenőrzés" />
                         <MenuItem mnemonicParsing="false" text="Nyelv" />
                      </items>
                   </Menu>

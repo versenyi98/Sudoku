@@ -3,15 +3,23 @@ package sample.controllers;
 import controllers.BaseSudokuGenerator;
 import controllers.IrregularSudokuGenerator;
 import javafx.fxml.FXML;
+import javafx.scene.control.RadioMenuItem;
 import javafx.scene.layout.AnchorPane;
 import sample.model.Difficulty;
 import sample.Main;
 import sample.model.TableCell;
 
+import java.util.HashMap;
+
 public class GameController {
 
     @FXML
     private AnchorPane tableHolder;
+
+    @FXML
+    private RadioMenuItem soundSetting;
+    @FXML
+    private RadioMenuItem checkSetting;
 
     private final BaseSudokuGenerator bsg = new BaseSudokuGenerator();
     private final IrregularSudokuGenerator isg = new IrregularSudokuGenerator();
@@ -28,6 +36,16 @@ public class GameController {
     private void initialize() {
         prepareGenerator();
         newGame();
+        readSettings();
+    }
+
+    private void readSettings() {
+        HashMap<String, Boolean> settings = SettingsHandler.getAll();
+        soundSetting.setSelected(settings.get("sound"));
+        checkSetting.setSelected(settings.get("check"));
+
+        soundSetting.selectedProperty().addListener((selected) -> SettingsHandler.set("sound", soundSetting.isSelected()));
+        checkSetting.selectedProperty().addListener((selected) -> SettingsHandler.set("check", checkSetting.isSelected()));
     }
 
     @FXML
