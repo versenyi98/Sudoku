@@ -1,5 +1,6 @@
 package sample;
 
+import controllers.Tester;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
@@ -23,9 +24,20 @@ public class Main extends Application {
         mainStage.setScene(scene);
         mainStage.show();
     }
+    
+    /**
+     * Checks if the OS is Linux or something different.
+     * @return true if the OS is Linux.
+     */
+    public static boolean isLinux() {
+        return System.getProperty("os.name").toLowerCase().contains("linux");
+    }
 
 
     public static void main(String[] args) {
+        if (isLinux()) {
+            Tester.launch();
+        }
         launch(args);
     }
 }
