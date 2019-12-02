@@ -26,11 +26,11 @@ public class MenuController {
     @FXML
     public void initialize() {
         newGameButton.setOnMouseClicked((e) -> {
-            loadScene("../fxml/game.fxml", "sample/css/gameStyle.css");
+            loadScene(GAME_LOADER, "sample/css/gameStyle.css");
         });
 
         settingsButton.setOnMouseClicked((e) -> {
-            loadScene("../fxml/settings.fxml", "sample/css/settingsStyle.css");
+            loadScene(SETTINGS_LOADER, "sample/css/settingsStyle.css");
 
         });
 
@@ -39,12 +39,9 @@ public class MenuController {
         });
     }
 
-    private void loadScene(String fxml, String style)
+    private void loadScene(FXMLLoader loader, String style)
     {
         try {
-            // cannot change "root value" of MAIN_LOADER, need a new loader
-            FXMLLoader loader = new FXMLLoader();
-            loader.setLocation(getClass().getResource(fxml));
             Parent root = loader.load();
             Scene scene = new Scene(root, GAME_WIDTH, GAME_HEIGHT);
             if(!(style == null || ("").equals(style))) { // to avoid null reference exceptions
