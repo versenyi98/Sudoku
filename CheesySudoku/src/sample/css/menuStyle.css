@@ -3,5 +3,5 @@
 }
 
 Button:hover {
-    -fx-background-color: derive(#d1ede4, 25%);
+    -fx-background-color: derive(#d1ede4, -30%);
 }

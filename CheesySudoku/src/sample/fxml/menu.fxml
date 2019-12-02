@@ -9,8 +9,7 @@
     fx:controller="sample.controllers.MenuController"
     prefHeight="400.0"
     prefWidth="600.0"
-    alignment="CENTER"
-    gridLinesVisible="true">
+    alignment="CENTER">
 
     <VBox
         alignment="CENTER"
