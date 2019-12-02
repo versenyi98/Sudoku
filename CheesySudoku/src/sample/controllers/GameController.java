@@ -104,7 +104,10 @@ public class GameController {
         TableCell temp;
         for (int col = 0; col < HEIGHT; col++) {
             for (int row = 0; row < WIDTH; row++) {
-                temp = new TableCell(bsg.getTableParam(row, col), getGroupId(row, col));
+                final int r = row;
+                final int c = col;
+                temp = new TableCell(bsg.getTableParam(row, col), getGroupId(row, col),
+                        e -> bsg.setTableParam(r, c, e));
                 AnchorPane.setTopAnchor(temp, (double)col*30);
                 AnchorPane.setLeftAnchor(temp, (double)row*30);
                 tableHolder.getChildren().add(temp);
@@ -118,7 +121,10 @@ public class GameController {
         TableCell temp;
         for (int col = 0; col < HEIGHT; col++) {
             for (int row = 0; row < WIDTH; row++) {
-                temp = new TableCell(isg.getTableParam(row,col), isg.getPattern()[row][col]);
+                final int r = row;
+                final int c = col;
+                temp = new TableCell(isg.getTableParam(row,col), isg.getPattern()[row][col],
+                        e -> isg.setTableParam(r, c, e));
                 AnchorPane.setTopAnchor(temp, (double)col*30);
                 AnchorPane.setLeftAnchor(temp, (double)row*30);
                 tableHolder.getChildren().add(temp);
@@ -142,5 +148,13 @@ public class GameController {
         isg.setCellHeight(CELL_HEIGHT);
         isg.setCellNumbersHorizontal(CELL_NUMBERS_HORIZONTAL);
         isg.setCellNumbersVertical(CELL_NUMBERS_VERTICAL);
+    }
+
+    public boolean validate() {
+        if (game_type == 0) {
+            return bsg.isValid(bsg.getTable());
+        } else {
+            return isg.isValid((isg.getTable()));
+        }
     }
 }

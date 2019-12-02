@@ -2,7 +2,6 @@ package sample.controllers;
 
 import javafx.application.Platform;
 import javafx.fxml.FXML;
-import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
@@ -31,7 +30,6 @@ public class MenuController {
 
         settingsButton.setOnMouseClicked((e) -> {
             loadScene(SETTINGS_LOADER, "sample/css/settingsStyle.css");
-
         });
 
         exitButton.setOnMouseClicked((e) -> {
