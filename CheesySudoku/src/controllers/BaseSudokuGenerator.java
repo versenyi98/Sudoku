@@ -96,6 +96,7 @@ public class BaseSudokuGenerator {
     public int getCellNumbersVertical() { return cellNumbersVertical; }
     public int getTableParam(int row, int col) { return table[row][col]; }
     public void setTableParam(int row, int col, int value) { table[row][col] = value; }
+    public int[][] getTable() { return table.clone(); }
 
     public void setCellWidth(int cellWidth) {
         this.cellWidth = cellWidth;

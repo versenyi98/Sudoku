@@ -2,7 +2,6 @@ package sample.controllers;
 
 import javafx.application.Platform;
 import javafx.fxml.FXML;
-import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
@@ -27,11 +26,9 @@ public class MenuController {
     public void initialize() {
         newGameButton.setOnMouseClicked((e) -> {
             try {
-                // cannot change "root value" of MAIN_LOADER, need a new loader
-                FXMLLoader loader = new FXMLLoader();
                 // we are in the sample/controllers directory, fxml file is in the sample/fxml directory
-                loader.setLocation(getClass().getResource("../fxml/game.fxml"));
-                Parent root = loader.load();
+                GAME_LOADER.setLocation(getClass().getResource("../fxml/game.fxml"));
+                Parent root = GAME_LOADER.load();
                 Scene scene = new Scene(root, GAME_WIDTH, GAME_HEIGHT);
                 scene.getStylesheets().add("sample/css/gameStyle.css");
                 mainStage.setResizable(false);
