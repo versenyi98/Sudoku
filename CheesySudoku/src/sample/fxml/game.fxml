@@ -33,7 +33,7 @@
                   <Menu mnemonicParsing="false" text="Beállítások">
                      <items>
                         <RadioMenuItem mnemonicParsing="false" selected="true" text="Hang" />
-                        <RadioMenuItem mnemonicParsing="false" text="Ellenőrzés" />
+                        <RadioMenuItem mnemonicParsing="false" text="Ellenőrzés" fx:id="validation"/>
                         <MenuItem mnemonicParsing="false" text="Nyelv" />
                      </items>
                   </Menu>

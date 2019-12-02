@@ -3,6 +3,7 @@ package sample.controllers;
 import controllers.BaseSudokuGenerator;
 import controllers.IrregularSudokuGenerator;
 import javafx.fxml.FXML;
+import javafx.scene.control.RadioMenuItem;
 import javafx.scene.layout.AnchorPane;
 import sample.model.Difficulty;
 import sample.Main;
@@ -13,8 +14,11 @@ public class GameController {
     @FXML
     private AnchorPane tableHolder;
 
-    private final BaseSudokuGenerator bsg = new BaseSudokuGenerator();
-    private final IrregularSudokuGenerator isg = new IrregularSudokuGenerator();
+    @FXML
+    public RadioMenuItem validation;
+
+    public final BaseSudokuGenerator bsg = new BaseSudokuGenerator();
+    public final IrregularSudokuGenerator isg = new IrregularSudokuGenerator();
     private final int CELL_WIDTH = 3;
     private final int CELL_HEIGHT = 3;
     private final int CELL_NUMBERS_HORIZONTAL = 3;
@@ -86,7 +90,10 @@ public class GameController {
         TableCell temp;
         for (int col = 0; col < HEIGHT; col++) {
             for (int row = 0; row < WIDTH; row++) {
-                temp = new TableCell(bsg.getTableParam(row,col), getGroupId(col, row));
+                final int r = row;
+                final int c = col;
+                temp = new TableCell(bsg.getTableParam(row, col), getGroupId(row, col),
+                        e -> bsg.setTableParam(r, c, e));
                 AnchorPane.setTopAnchor(temp, (double)col*30);
                 AnchorPane.setLeftAnchor(temp, (double)row*30);
                 tableHolder.getChildren().add(temp);
@@ -100,7 +107,10 @@ public class GameController {
         TableCell temp;
         for (int col = 0; col < HEIGHT; col++) {
             for (int row = 0; row < WIDTH; row++) {
-                temp = new TableCell(isg.getTableParam(row,col), isg.getPattern()[col][row]);
+                final int r = row;
+                final int c = col;
+                temp = new TableCell(isg.getTableParam(row,col), isg.getPattern()[row][col],
+                        e -> isg.setTableParam(r, c, e));
                 AnchorPane.setTopAnchor(temp, (double)col*30);
                 AnchorPane.setLeftAnchor(temp, (double)row*30);
                 tableHolder.getChildren().add(temp);
@@ -108,7 +118,7 @@ public class GameController {
         }
     }
 
-    private int getGroupId(int col, int row) {
+    private int getGroupId(int row, int col) {
         int x = col / 3;
         int y = row / 3;
         return (x+y)%2;
@@ -124,5 +134,13 @@ public class GameController {
         isg.setCellHeight(CELL_HEIGHT);
         isg.setCellNumbersHorizontal(CELL_NUMBERS_HORIZONTAL);
         isg.setCellNumbersVertical(CELL_NUMBERS_VERTICAL);
+    }
+
+    public boolean validate() {
+        if (game_type == 0) {
+            return bsg.isValid(bsg.getTable());
+        } else {
+            return isg.isValid((isg.getTable()));
+        }
     }
 }

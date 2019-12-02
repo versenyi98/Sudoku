@@ -1,7 +1,10 @@
 package test;
 
-import org.junit.Test;
-import static org.junit.Assert.*;
+import static org.junit.jupiter.api.Assertions.assertTrue;
+import static org.junit.jupiter.api.Assertions.assertFalse;
+import static org.junit.jupiter.api.Assertions.assertThrows;
+import static org.junit.jupiter.api.Assertions.fail;
+import org.junit.jupiter.api.Test;
 
 import controllers.XSudokuGenerator;
 
@@ -53,12 +56,12 @@ public class XSudokuGeneratorTest {
         generator.setCellNumbersHorizontal(2);
         generator.setCellNumbersVertical(3);
 
-        assertThrows("Width-height equals test fails when w < h.", IndexOutOfBoundsException.class, () -> generator.generate(10));
+        assertThrows(IndexOutOfBoundsException.class, () -> generator.generate(10), "Width-height equals test fails when w < h.");
 
         generator.setCellNumbersHorizontal(3);
         generator.setCellNumbersVertical(2);
 
-        assertThrows("Width-height equals test fails when w > h.", IndexOutOfBoundsException.class, () -> generator.generate(10));
+        assertThrows(IndexOutOfBoundsException.class, () -> generator.generate(10), "Width-height equals test fails when w > h.");
 
         generator.setCellNumbersHorizontal(3);
         generator.setCellNumbersVertical(3);
