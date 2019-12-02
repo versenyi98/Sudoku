@@ -10,6 +10,7 @@ import javafx.stage.Stage;
 public class Main extends Application {
 
     public static final FXMLLoader MAIN_LOADER = new FXMLLoader();
+    public static final FXMLLoader GAME_LOADER = new FXMLLoader();
     public static Stage mainStage = new Stage();
 
     public static int GAME_WIDTH    = 300,
