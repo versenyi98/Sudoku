@@ -256,6 +256,65 @@ fog létezni a megoldás vagy sem?
 | A cella kitöltése | <kbd>9</kbd> | A cella kitöltésre kerül, a játékos által megadott számmal, amennyiben lehetséges | Sikeres teszt |
 | Érvénytelen input | Bármilyen billentyű vagy egér input aminek nincs beállított funkcionalitása | Semmi | Sikeres teszt |
 | A játék vége | Nincs üres cella | A játék befekeződik | Sikeres teszt |
+ Néhány konkrét eset, ami manuális teszteléssel lesz megoldva:
+
+|         |         |         |         |         |         |         |         |         |
+| ------- |:-------:| -------:| ------- |:-------:| -------:| ------- |:-------:| -------:|
+|         |&#x1F5B1;| 3       | 6       | 7       |         |         |         |         |
+| 8       |         |         | 8       |         |         |         |         |         |
+|         |         |    7    |         |         |    2    |         |         |         |
+|         |         |         | 7       |         |         | 8       |         |         |
+|         |  4      |         | 2       |         |         |         | 7       |         |
+|         |         |         |         | 9       | 6       | 3       | 2       |         |
+| 3       |         |         |         |         |         | 1       |         | 9       |
+|         |   9     |         |         | 8       |         |         |         |         |
+| 5       |         |    6    |         |         |         |         | 4       |         |
+   
+   &#11015;   
+   <kbd>2</kbd>   
+   &#11015;   
+|         |         |         |         |         |         |         |         |         |
+| ------- |:-------:| -------:| ------- |:-------:| -------:| ------- |:-------:| -------:|
+|         | 2       | 3       | 6       | 7       |         |         |         |         |
+| 8       |         |         | 8       |         |         |         |         |         |
+|         |         |    7    |         |         |    2    |         |         |         |
+|         |         |         | 7       |         |         | 8       |         |         |
+|         |  4      |         | 2       |         |         |         | 7       |         |
+|         |         |         |         | 9       | 6       | 3       | 2       |         |
+| 3       |         |         |         |         |         | 1       |         | 9       |
+|         |   9     |         |         | 8       |         |         |         |         |
+| 5       |         |    6    |         |         |         |         | 4       |         |   
+   
+   &#11015;   
+|         |         |         |         |         |         |         |         |         |
+| ------- |:-------:| -------:| ------- |:-------:| -------:| ------- |:-------:| -------:|
+|         | 2       | 3       | 6       | 7       |         |         |         |         |
+| 8       |&#x1F5B1;|         | 8       |         |         |         |         |         |
+|         |         |    7    |         |         |    2    |         |         |         |
+|         |         |         | 7       |         |         | 8       |         |         |
+|         |  4      |         | 2       |         |         |         | 7       |         |
+|         |         |         |         | 9       | 6       | 3       | 2       |         |
+| 3       |         |         |         |         |         | 1       |         | 9       |
+|         |   9     |         |         | 8       |         |         |         |         |
+| 5       |         |    6    |         |         |         |         | 4       |         |   
+   
+   &#11015;
+   <kbd>5</kbd>   
+   &#11015;    
+|         |         |         |         |         |         |         |         |         |
+| ------- |:-------:| -------:| ------- |:-------:| -------:| ------- |:-------:| -------:|
+|         | 2       | 3       | 6       | 7       |         |         |         |         |
+| 8       | 5       |         | 8       |         |         |         |         |         |
+|         |         |    7    |         |         |    2    |         |         |         |
+|         |         |         | 7       |         |         | 8       |         |         |
+|         |  4      |         | 2       |         |         |         | 7       |         |
+|         |         |         |         | 9       | 6       | 3       | 2       |         |
+| 3       |         |         |         |         |         | 1       |         | 9       |
+|         |   9     |         |         | 8       |         |         |         |         |
+| 5       |         |    6    |         |         |         |         | 4       |         |   
+
+
+
 ### 12. Telepítési terv
 A játékhoz csupán Java telepítésére van szükség, ez több helyről is letölthető (pl.: AdoptOpenJDK: https://adoptopenjdk.net/releases.html), 
 itt kiválaszthatod a Java verziót illetve a platformot. A telepítés során ajánlott a 'JAVA_HOME' automatikus beállítását 
