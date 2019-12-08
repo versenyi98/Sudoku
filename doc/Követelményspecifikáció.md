@@ -13,7 +13,17 @@ A mai napokban szinte lehetetlen a klasszikus játékokat jó minőségben megta
 A jó minőség alatt a legtöbb esetben inkább a játék különböző lehetőségeivel való
 élés illetve a többjátékos mód értendő. Manapság ha rákeresünk egy klasszikus
 játékra mint például a pacman vagy sudoku, akkor a legegyszerűbb változatukat
-találnánk meg, vagy pedig egy annyira megváltoztatott játékot ami már nem is   nevezhető  ugyanannak a játéknak.Mindezekfölött, az előbb említettek minden esetben elveszik  úgy a fiatalok kedvét mint a már idősebb generációk kedvét a játéktól.Manapság a játékok   egyre több erőforrást vesznek igénybe, ami nagyonköltséges tud lenni, főleg a technológia   robbanószerű fejlődése miatt, nem túlzás azt kijelenteni, hogy a legfrissebb játékokat   'teljesen kiélvezni', kis vagyonba kerül, még akkor is ha csak 1-2 alkatrészt kell vásárolni. Egyre kevesebb olyan játékot látunk amely széleskörű felhasználóbázisnak tud minőségi  időtöltési lehetőséget biztosítani megengedhető pénzügyi kereteken belül.Mindezek felül,  manapság a játéktermek mennek ki a divatból és egyre nehezebb egyetlen helyen megtalálni  azokat a klasszikus játékokat, amiért régen siettunk haza iskolából.
+találnánk meg, vagy pedig egy annyira megváltoztatott játékot ami már nem is 
+nevezhető  ugyanannak a játéknak.Mindezekfölött, az előbb említettek minden esetben
+elveszik  úgy a fiatalok kedvét mint a már idősebb generációk kedvét a játéktól.Manapság
+a játékok   egyre több erőforrást vesznek igénybe, ami nagyonköltséges tud lenni, főleg
+a technológia   robbanószerű fejlődése miatt, nem túlzás azt kijelenteni, hogy a legfrissebb 
+játékokat   'teljesen kiélvezni', kis vagyonba kerül, még akkor is ha csak 1-2 alkatrészt
+kell vásárolni. Egyre kevesebb olyan játékot látunk amely széleskörű felhasználóbázisnak
+tud minőségi  időtöltési lehetőséget biztosítani megengedhető pénzügyi kereteken belül.
+Mindezek felül,  manapság a játéktermek mennek ki a divatból és egyre nehezebb egyetlen
+helyen megtalálni  azokat a klasszikus játékokat, amiért régen siettunk haza iskolából.
+A legnagyobb hátrány a többjátékos mód hiánya, hiszen egyedül játszani egy olyan klasszikus játékkal mint például a sudoku nagyon hamar monotonná tud válni, ezen persze enyhítenek a külonféle játékmódok, amelyek megnehezítik a felhasználó dolgát, de egy bizonzos szinten mindenkiben jelen van a kompetitív szellem és legalább egyszer szeretné megmérettetni magát egy másik játékos ellen. Bizonyos helyeken próbálták megfogni a kompetitív szellemet, de helytelenül, hiszen a felhasználónak bár megengedték, hogy felmérje más játékos ellen a tudását, az nem volt biztosítva, hogy hasonló szintű legyen az ellenfél így lehetséges volt az, hogy egy teljesen zöldfülű játékos aki most kezdte a játékot, egy olyan valaki ellen küzdjön, aki már évek óta aktívan játszik viszonylag versenyszerűen. 
 ### 3. Vágyalom rendszer
 ##### 3.1 Célok, összegyűjtött játékok
 Célunk egy olyan játékprogram létrehozása, mely egy helyen gyűjti össze a különböző típusú és nehézségű sudoku játékokat, melyeket minden játékos szabadon elérhet. Ezek közé tartozik a
