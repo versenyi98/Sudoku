@@ -146,8 +146,8 @@ public class GameController {
         }
         Line l1 = new Line(4,4,268,268);
         Line l2 = new Line(268,5, 4,269);
-        l1.setStyle("-fx-stroke: #45454515");
-        l2.setStyle("-fx-stroke: #45454515");
+        l1.setStyle("-fx-stroke: #45454520");
+        l2.setStyle("-fx-stroke: #45454520");
         tableHolder.getChildren().addAll(l1, l2);
     }
 
