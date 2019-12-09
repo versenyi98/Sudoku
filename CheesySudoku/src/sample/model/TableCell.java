@@ -27,6 +27,8 @@ public class TableCell extends Button {
             gc.validation.addEventHandler(ActionEvent.ACTION, e -> {
                 if (!gc.validation.isSelected()) {
                     this.setStyle(this.getStyle() + "\n-fx-text-fill: #007cad;");
+                } else {
+                    this.setStyle(this.getStyle() + "\n-fx-text-fill: #ad007c;");
                 }
             });
         }
