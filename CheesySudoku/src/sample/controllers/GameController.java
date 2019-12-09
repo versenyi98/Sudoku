@@ -19,9 +19,9 @@ public class GameController {
     private AnchorPane tableHolder;
 
     @FXML
-    private RadioMenuItem soundSetting;
+    public RadioMenuItem soundSetting;
     @FXML
-    private RadioMenuItem checkSetting;
+    public RadioMenuItem checkSetting;
 
     public final BaseSudokuGenerator bsg = new BaseSudokuGenerator();
     public final IrregularSudokuGenerator isg = new IrregularSudokuGenerator();

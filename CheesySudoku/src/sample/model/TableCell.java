@@ -24,8 +24,8 @@ public class TableCell extends Button {
         if (value == 0) {
             this.getStyleClass().add("ModifiableCell");
             this.setOnKeyReleased(e -> handleKeyPress(e, c));
-            gc.validation.addEventHandler(ActionEvent.ACTION, e -> {
-                if (!gc.validation.isSelected()) {
+            gc.checkSetting.addEventHandler(ActionEvent.ACTION, e -> {
+                if (!gc.checkSetting.isSelected()) {
                     this.setStyle(this.getStyle() + "\n-fx-text-fill: #007cad;");
                 } else {
                     this.setStyle(this.getStyle() + "\n-fx-text-fill: #ad007c;");
@@ -46,7 +46,7 @@ public class TableCell extends Button {
         if (code.getCode().isDigitKey() && code.getCode() != KeyCode.DIGIT0 && code.getCode() != KeyCode.NUMPAD0) {
             val = code.getCode().isKeypadKey() ? keypadToInt(code) : Integer.parseInt(code.getCode().getName());
             c.accept(val);
-            if (gc.validation.isSelected() && !gc.validate()) {
+            if (gc.checkSetting.isSelected() && !gc.validate()) {
                 this.setStyle(this.getStyle() + "\n-fx-text-fill: #ad007c;");
             } else {
                 this.setStyle(this.getStyle() + "\n-fx-text-fill: #007cad;");
