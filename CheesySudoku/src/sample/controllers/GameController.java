@@ -11,13 +11,17 @@ import sample.model.Difficulty;
 import sample.Main;
 import sample.model.TableCell;
 
+import java.util.HashMap;
+
 public class GameController {
 
     @FXML
     private AnchorPane tableHolder;
 
     @FXML
-    public RadioMenuItem validation;
+    private RadioMenuItem soundSetting;
+    @FXML
+    private RadioMenuItem checkSetting;
 
     public final BaseSudokuGenerator bsg = new BaseSudokuGenerator();
     public final IrregularSudokuGenerator isg = new IrregularSudokuGenerator();
@@ -35,6 +39,16 @@ public class GameController {
     private void initialize() {
         prepareGenerator();
         newGame();
+        readSettings();
+    }
+
+    private void readSettings() {
+        HashMap<String, Boolean> settings = SettingsHandler.getAll();
+        soundSetting.setSelected(settings.get("sound"));
+        checkSetting.setSelected(settings.get("check"));
+
+        soundSetting.selectedProperty().addListener((selected) -> SettingsHandler.set("sound", soundSetting.isSelected()));
+        checkSetting.selectedProperty().addListener((selected) -> SettingsHandler.set("check", checkSetting.isSelected()));
     }
 
     @FXML

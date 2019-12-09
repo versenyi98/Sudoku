@@ -25,26 +25,32 @@ public class MenuController {
     @FXML
     public void initialize() {
         newGameButton.setOnMouseClicked((e) -> {
-            try {
-                // we are in the sample/controllers directory, fxml file is in the sample/fxml directory
-                GAME_LOADER.setLocation(getClass().getResource("../fxml/game.fxml"));
-                Parent root = GAME_LOADER.load();
-                Scene scene = new Scene(root, GAME_WIDTH, GAME_HEIGHT);
-                scene.getStylesheets().add("sample/css/gameStyle.css");
-                mainStage.setResizable(false);
-                mainStage.setTitle("CheesySudoku");
-                mainStage.setScene(scene);
-            }
-            catch (IOException ex) {
-                Logger.getGlobal().log(Level.SEVERE, "Failed to load game: " + ex.getMessage());
-            }
-            catch (IllegalStateException ex) {
-                System.out.println(ex.getMessage() + ex.toString());
-            }
+            loadScene(GAME_LOADER, "sample/css/gameStyle.css");
+        });
+
+        settingsButton.setOnMouseClicked((e) -> {
+            loadScene(SETTINGS_LOADER, "sample/css/settingsStyle.css");
         });
 
         exitButton.setOnMouseClicked((e) -> {
             Platform.exit();
         });
+    }
+
+    private void loadScene(FXMLLoader loader, String style)
+    {
+        try {
+            Parent root = loader.load();
+            Scene scene = new Scene(root, GAME_WIDTH, GAME_HEIGHT);
+            if(!(style == null || ("").equals(style))) { // to avoid null reference exceptions
+                scene.getStylesheets().add(style);
+            }
+            mainStage.setResizable(false);
+            mainStage.setTitle("CheesySudoku");
+            mainStage.setScene(scene);
+        }
+        catch (IOException ex) {
+            Logger.getGlobal().log(Level.SEVERE, "Failed to load game: " + ex.getMessage());
+        }
     }
 }
