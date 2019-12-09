@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<GridPane
+    fx:id="mainGrid"
+    xmlns="http://javafx.com/javafx"
+    xmlns:fx="http://javafx.com/fxml"
+    fx:controller="sample.controllers.SettingsController"
+    gridLinesVisible="true">
+
+    <Label
+        styleClass="settingTitle"
+        GridPane.columnSpan="2"
+        text="Megjelenés:" />
+
+    <Label
+        styleClass="singleSettingLabel"
+        text="Hang:"
+        GridPane.rowIndex="1"/>
+
+    <Button
+        fx:id="soundButton"
+        text="Bekapcsolva"
+        styleClass="settingEnabled"
+        GridPane.columnIndex="1"
+        GridPane.rowIndex="1"/>
+
+    <Label
+        styleClass="singleSettingLabel"
+        text="Ellenőrzés:"
+        GridPane.rowIndex="2" />
+
+    <Button
+        fx:id="checkButton"
+        text="Bekapcsolva"
+        styleClass="settingEnabled"
+        GridPane.columnIndex="1"
+        GridPane.rowIndex="2"/>
+
+</GridPane>

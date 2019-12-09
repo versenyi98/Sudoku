@@ -2,6 +2,7 @@ package sample;
 
 import controllers.Tester;
 import javafx.application.Application;
+import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
@@ -11,6 +12,7 @@ public class Main extends Application {
 
     public static final FXMLLoader MAIN_LOADER = new FXMLLoader();
     public static final FXMLLoader GAME_LOADER = new FXMLLoader();
+    public static final FXMLLoader SETTINGS_LOADER = new FXMLLoader();
     public static Stage mainStage = new Stage();
 
     public static int GAME_WIDTH    = 300,
@@ -27,6 +29,9 @@ public class Main extends Application {
         mainStage.setTitle("CheesySudoku");
         mainStage.setScene(scene);
         mainStage.show();
+
+        GAME_LOADER.setLocation(getClass().getResource("fxml/game.fxml"));
+        SETTINGS_LOADER.setLocation(getClass().getResource("fxml/settings.fxml"));
     }
     
     /**
